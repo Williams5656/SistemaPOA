@@ -16,6 +16,9 @@ public class SISTEMAPOA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("fgdfgdfgfd");
+        System.out.println("dfsdf");
+        System.out.println("dfgdsfsd"); 
     }
     
 }

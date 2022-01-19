@@ -7,10 +7,10 @@ package sistemapoa;
 
 /**
  *
- * @author willi
+ * @author Myrian
  */
-public class williams {
+public class Myrian {
     public static void main(String[] args) {
-        System.out.println("dfsdfsfsd");
+        System.out.println("Myrian");
     }
 }

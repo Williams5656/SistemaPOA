@@ -12,5 +12,7 @@ package sistemapoa;
 public class Kevin_Landivar {
     public static void main(String[] args) {
         System.out.println("Holaaaaa");
+        System.out.println("Que raro");
+        
     }
 }

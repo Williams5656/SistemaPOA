@@ -20,6 +20,7 @@ public class SISTEMA2022 {
         System.out.println("segundo");
         System.out.println("tercero");
         System.out.println("cuarto");
+        System.out.println("quinto");
     }
     
 }

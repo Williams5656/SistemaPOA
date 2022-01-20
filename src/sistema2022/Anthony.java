@@ -11,6 +11,7 @@ package sistema2022;
  */
 public class Anthony {
     public static void main(String[] args) {
-        System.out.println("hola");
+        System.out.println("ANTHONY MOROCHO");
+        System.out.println("PRESENTE");
     }
 }

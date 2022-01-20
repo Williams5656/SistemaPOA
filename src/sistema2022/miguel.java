@@ -12,5 +12,6 @@ package sistema2022;
 public class miguel {
     public static void main(String[] args) {
         System.out.println("prueba mguel");
+        System.out.println(".....");
     }
 }

@@ -18,6 +18,7 @@ public class SISTEMA2022 {
         // TODO code application logic here
         System.out.println("Proyecto nuevo");
         System.out.println("segundo");
+        System.out.println("tercero");
     }
     
 }

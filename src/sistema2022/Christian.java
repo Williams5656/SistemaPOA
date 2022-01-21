@@ -11,6 +11,7 @@ package sistema2022;
  */
 public class Christian {
     public static void main(String[] args) {
-        System.out.println("Prueba.....");
+        System.out.println("Christian__Garaicoa");
+        System.out.println("---");
     }
 }

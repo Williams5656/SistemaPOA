@@ -12,6 +12,5 @@ package sistema2022;
 public class Myrian {
     public static void main(String[] args) {
         System.out.println("Myrian Cutiopala");
-        System.out.println("-----------------");
     }
 }

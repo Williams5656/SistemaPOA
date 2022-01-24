@@ -12,6 +12,7 @@ package sistema2022;
 public class Johann {
     public static void main(String[] args) {
         System.out.println("Johann Arizaga");
+        System.out.println("Hola h");
         
     }
 }

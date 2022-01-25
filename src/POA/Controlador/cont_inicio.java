@@ -1,7 +1,7 @@
 package POA.Controlador;
 import POA.Vista.Vis_Principal;
 import POA.Vista.vis_inicioSesion;
-import Vista.*;
+import POA.Vista.*;
 
 /**
  *

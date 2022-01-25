@@ -15,5 +15,6 @@ public class MAIN {
         vis_inicioSesion vista =new vis_inicioSesion();
         cont_inicio inicio = new cont_inicio(vista);
         System.out.println("Inicio");
+        System.out.println("bien");
     }
 }

@@ -1,5 +1,5 @@
 
-package proyectoauto.Modelo;
+package POA.Modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

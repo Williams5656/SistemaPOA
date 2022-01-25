@@ -24,6 +24,7 @@ public class cont_inicio {
         if (vista.getTxtusuario().getText().equals("admin") && vista.getTxtclave().getText().equals("1234")) {
             Vis_Principal vistamenu = new Vis_Principal();
             vista.setVisible(false);
+            vistamenu.setVisible(true);
         }else{
             vista.getTxtusuario().setText("");
             vista.getTxtclave().setText("");

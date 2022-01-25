@@ -16,6 +16,7 @@ public class Vis_Principal extends javax.swing.JFrame {
      */
     public Vis_Principal() {
         initComponents();
+        this.setExtendedState(Vis_Principal.MAXIMIZED_BOTH);
     }
 
     /**

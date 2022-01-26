@@ -57,6 +57,7 @@ public class vis_inicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtclave = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,6 +84,9 @@ public class vis_inicioSesion extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/user (2).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 130, 160));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 370));
 
         pack();
         setLocationRelativeTo(null);
@@ -134,6 +138,7 @@ public class vis_inicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField txtclave;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables

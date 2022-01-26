@@ -67,20 +67,22 @@ public class vis_inicioSesion extends javax.swing.JFrame {
                 btningresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 190, 40));
+        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 190, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("BIENVENIDO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 240, -1));
-        getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 152, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 240, -1));
+        getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 152, 30));
 
         jLabel2.setText("USUARIO:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, 30));
 
         jLabel3.setText("CONTRASEÑA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, 30));
-        getContentPane().add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 152, 30));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 300));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, 30));
+        getContentPane().add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 152, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/user (2).png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 130, 160));
 
         pack();
         setLocationRelativeTo(null);

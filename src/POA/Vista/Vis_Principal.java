@@ -32,10 +32,12 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         ESCRITORIO = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        MENU_USUARIO = new javax.swing.JMenu();
+        btn_salir = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        MENU_ACADEMICO = new javax.swing.JMenu();
+        btn_asignacion = new javax.swing.JMenuItem();
+        btn_perfil = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,15 +52,15 @@ public class Vis_Principal extends javax.swing.JFrame {
             .addGap(0, 608, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("USUARIO");
+        MENU_USUARIO.setText("USUARIO");
 
-        jMenuItem1.setText("Nuevo");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btn_salir.setText("Nuevo");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btn_salirActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        MENU_USUARIO.add(btn_salir);
 
         jMenuItem2.setText("SALIR");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,12 +68,29 @@ public class Vis_Principal extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        MENU_USUARIO.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MENU_USUARIO);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        MENU_ACADEMICO.setText("ACADEMICO");
+
+        btn_asignacion.setText("Asignacion");
+        btn_asignacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_asignacionActionPerformed(evt);
+            }
+        });
+        MENU_ACADEMICO.add(btn_asignacion);
+
+        btn_perfil.setText("Perfil");
+        btn_perfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_perfilActionPerformed(evt);
+            }
+        });
+        MENU_ACADEMICO.add(btn_perfil);
+
+        jMenuBar1.add(MENU_ACADEMICO);
 
         setJMenuBar(jMenuBar1);
 
@@ -89,7 +108,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         Vis_Usuario user = new Vis_Usuario();
         ESCRITORIO.add(user);
         Dimension desktopSize = ESCRITORIO.getSize();
@@ -97,7 +116,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         user.show();
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         this.setVisible(false);
@@ -105,6 +124,26 @@ public class Vis_Principal extends javax.swing.JFrame {
         user.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void btn_asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asignacionActionPerformed
+        Vis_Asignacion user = new Vis_Asignacion();
+        ESCRITORIO.add(user);
+        Dimension desktopSize = ESCRITORIO.getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        user.show();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_asignacionActionPerformed
+
+    private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
+     Vis_Perfil user = new Vis_Perfil();
+        ESCRITORIO.add(user);
+        Dimension desktopSize = ESCRITORIO.getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        user.show();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_perfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,10 +183,12 @@ public class Vis_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane ESCRITORIO;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu MENU_ACADEMICO;
+    private javax.swing.JMenu MENU_USUARIO;
+    private javax.swing.JMenuItem btn_asignacion;
+    private javax.swing.JMenuItem btn_perfil;
+    private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

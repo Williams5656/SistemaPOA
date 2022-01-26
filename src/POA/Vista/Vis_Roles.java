@@ -5,18 +5,145 @@
  */
 package POA.Vista;
 
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Myrian
  */
-public class vista_roles extends javax.swing.JInternalFrame {
+public class Vis_Roles extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form vista_roles
      */
-    public vista_roles() {
+    public Vis_Roles() {
         initComponents();
     }
+
+    public JButton getBtn_editar() {
+        return btn_editar;
+    }
+
+    public void setBtn_editar(JButton btn_editar) {
+        this.btn_editar = btn_editar;
+    }
+
+    public JButton getBtn_editar_permiso() {
+        return btn_editar_permiso;
+    }
+
+    public void setBtn_editar_permiso(JButton btn_editar_permiso) {
+        this.btn_editar_permiso = btn_editar_permiso;
+    }
+
+    public JButton getBtn_eliminar() {
+        return btn_eliminar;
+    }
+
+    public void setBtn_eliminar(JButton btn_eliminar) {
+        this.btn_eliminar = btn_eliminar;
+    }
+
+    public JButton getBtn_guardar_rol() {
+        return btn_guardar_rol;
+    }
+
+    public void setBtn_guardar_rol(JButton btn_guardar_rol) {
+        this.btn_guardar_rol = btn_guardar_rol;
+    }
+
+    public JButton getBtn_ingresar() {
+        return btn_ingresar;
+    }
+
+    public void setBtn_ingresar(JButton btn_ingresar) {
+        this.btn_ingresar = btn_ingresar;
+    }
+
+    public JButton getBtn_ver_permiso() {
+        return btn_ver_permiso;
+    }
+
+    public void setBtn_ver_permiso(JButton btn_ver_permiso) {
+        this.btn_ver_permiso = btn_ver_permiso;
+    }
+
+    public JButton getjButton1() {
+        return btn_actualizar;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.btn_actualizar = jButton1;
+    }
+
+    public JTable getTabla_rol() {
+        return tabla_rol;
+    }
+
+    public void setTabla_rol(JTable tabla_rol) {
+        this.tabla_rol = tabla_rol;
+    }
+
+    public JTextField getTxt_id() {
+        return txt_id;
+    }
+
+    public void setTxt_id(JTextField txt_id) {
+        this.txt_id = txt_id;
+    }
+
+    public JTextField getTxt_nombrerol() {
+        return txt_nombrerol;
+    }
+
+    public void setTxt_nombrerol(JTextField txt_nombrerol) {
+        this.txt_nombrerol = txt_nombrerol;
+    }
+
+    public JTextField getTxt_numero() {
+        return txt_numero;
+    }
+
+    public void setTxt_numero(JTextField txt_numero) {
+        this.txt_numero = txt_numero;
+    }
+
+    public JTextField getTxt_rol() {
+        return txt_rol;
+    }
+
+    public void setTxt_rol(JTextField txt_rol) {
+        this.txt_rol = txt_rol;
+    }
+
+    public JDialog getVista_NuevoRol() {
+        return vista_NuevoRol;
+    }
+
+    public void setVista_NuevoRol(JDialog vista_NuevoRol) {
+        this.vista_NuevoRol = vista_NuevoRol;
+    }
+
+    public JButton getBtn_actualizar() {
+        return btn_actualizar;
+    }
+
+    public void setBtn_actualizar(JButton btn_actualizar) {
+        this.btn_actualizar = btn_actualizar;
+    }
+
+    public JTextArea getTxt_observaciones() {
+        return txt_observaciones;
+    }
+
+    public void setTxt_observaciones(JTextArea txt_observaciones) {
+        this.txt_observaciones = txt_observaciones;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,14 +163,14 @@ public class vista_roles extends javax.swing.JInternalFrame {
         txt_nombrerol = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txt_observaciones = new javax.swing.JTextArea();
         btn_guardar_rol = new javax.swing.JButton();
         btn_ingresar = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txt_rol = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_actualizar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_rol = new javax.swing.JTable();
         btn_ver_permiso = new javax.swing.JButton();
@@ -69,9 +196,9 @@ public class vista_roles extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Observaciones:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txt_observaciones.setColumns(20);
+        txt_observaciones.setRows(5);
+        jScrollPane1.setViewportView(txt_observaciones);
 
         btn_guardar_rol.setText("Guardar");
 
@@ -127,7 +254,7 @@ public class vista_roles extends javax.swing.JInternalFrame {
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_ingresar.setText("Ingresar");
@@ -143,8 +270,8 @@ public class vista_roles extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 42, 54, -1));
         getContentPane().add(txt_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 38, 227, -1));
 
-        jButton1.setText("Actualizar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 96, -1, -1));
+        btn_actualizar.setText("Actualizar");
+        getContentPane().add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 96, -1, -1));
 
         tabla_rol.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -184,13 +311,13 @@ public class vista_roles extends javax.swing.JInternalFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_actualizar;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_editar_permiso;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar_rol;
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_ver_permiso;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -198,11 +325,11 @@ public class vista_roles extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTable tabla_rol;
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_nombrerol;
     private javax.swing.JTextField txt_numero;
+    private javax.swing.JTextArea txt_observaciones;
     private javax.swing.JTextField txt_rol;
     private javax.swing.JDialog vista_NuevoRol;
     // End of variables declaration//GEN-END:variables

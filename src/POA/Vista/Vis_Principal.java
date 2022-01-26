@@ -155,7 +155,7 @@ public class Vis_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_perfilActionPerformed
 
     private void btn_rolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolesActionPerformed
-        vista_roles user = new vista_roles();
+        Vis_Roles user = new Vis_Roles();
         ESCRITORIO.add(user);
         Dimension desktopSize = ESCRITORIO.getSize();
         Dimension FrameSize = user.getSize();

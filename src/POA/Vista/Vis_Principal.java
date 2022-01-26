@@ -38,6 +38,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         MENU_ACADEMICO = new javax.swing.JMenu();
         btn_asignacion = new javax.swing.JMenuItem();
         btn_perfil = new javax.swing.JMenuItem();
+        btn_roles = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +91,14 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_ACADEMICO.add(btn_perfil);
 
+        btn_roles.setText("Roles");
+        btn_roles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rolesActionPerformed(evt);
+            }
+        });
+        MENU_ACADEMICO.add(btn_roles);
+
         jMenuBar1.add(MENU_ACADEMICO);
 
         setJMenuBar(jMenuBar1);
@@ -136,7 +145,7 @@ public class Vis_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_asignacionActionPerformed
 
     private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
-     Vis_Perfil user = new Vis_Perfil();
+        Vis_Perfil user = new Vis_Perfil();
         ESCRITORIO.add(user);
         Dimension desktopSize = ESCRITORIO.getSize();
         Dimension FrameSize = user.getSize();
@@ -144,6 +153,16 @@ public class Vis_Principal extends javax.swing.JFrame {
         user.show();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_perfilActionPerformed
+
+    private void btn_rolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolesActionPerformed
+        vista_roles user = new vista_roles();
+        ESCRITORIO.add(user);
+        Dimension desktopSize = ESCRITORIO.getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        user.show();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_rolesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +206,7 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu MENU_USUARIO;
     private javax.swing.JMenuItem btn_asignacion;
     private javax.swing.JMenuItem btn_perfil;
+    private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;

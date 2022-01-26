@@ -38,7 +38,7 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         setMaximizable(true);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "alumnos", "Docentes" };
+            String[] strings = { "Alumnos", "Docentes" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });

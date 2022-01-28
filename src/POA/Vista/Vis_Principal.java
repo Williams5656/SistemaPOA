@@ -6,6 +6,8 @@
 package POA.Vista;
 
 import java.awt.Dimension;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -21,6 +23,54 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.setExtendedState(Vis_Principal.MAXIMIZED_BOTH);
     }
 
+    public JMenuItem getBtn_nuevo() {
+        return btn_nuevo;
+    }
+
+    public void setBtn_nuevo(JMenuItem btn_nuevo) {
+        this.btn_nuevo = btn_nuevo;
+    }
+
+    public JMenuItem getBtn_asignacion() {
+        return btn_asignacion;
+    }
+
+    public void setBtn_asignacion(JMenuItem btn_asignacion) {
+        this.btn_asignacion = btn_asignacion;
+    }
+
+    public JMenuItem getBtn_perfil() {
+        return btn_perfil;
+    }
+
+    public void setBtn_perfil(JMenuItem btn_perfil) {
+        this.btn_perfil = btn_perfil;
+    }
+
+    public JMenuItem getBtn_roles() {
+        return btn_roles;
+    }
+
+    public void setBtn_roles(JMenuItem btn_roles) {
+        this.btn_roles = btn_roles;
+    }
+
+    public JMenuItem getBtn_salir() {
+        return btn_nuevo;
+    }
+
+    public void setBtn_salir(JMenuItem btn_salir) {
+        this.btn_nuevo = btn_salir;
+    }
+
+    public JDesktopPane getESCRITORIO() {
+        return ESCRITORIO;
+    }
+
+    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
+        this.ESCRITORIO = ESCRITORIO;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,8 +83,8 @@ public class Vis_Principal extends javax.swing.JFrame {
         ESCRITORIO = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         MENU_USUARIO = new javax.swing.JMenu();
+        btn_nuevo = new javax.swing.JMenuItem();
         btn_salir = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         MENU_ACADEMICO = new javax.swing.JMenu();
         btn_asignacion = new javax.swing.JMenuItem();
         btn_perfil = new javax.swing.JMenuItem();
@@ -55,21 +105,21 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         MENU_USUARIO.setText("USUARIO");
 
-        btn_salir.setText("Nuevo");
+        btn_nuevo.setText("Nuevo");
+        btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevoActionPerformed(evt);
+            }
+        });
+        MENU_USUARIO.add(btn_nuevo);
+
+        btn_salir.setText("SALIR");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
             }
         });
         MENU_USUARIO.add(btn_salir);
-
-        jMenuItem2.setText("SALIR");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        MENU_USUARIO.add(jMenuItem2);
 
         jMenuBar1.add(MENU_USUARIO);
 
@@ -117,50 +167,28 @@ public class Vis_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_nuevoActionPerformed
+
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        Vis_Usuario user = new Vis_Usuario();
-        ESCRITORIO.add(user);
-        Dimension desktopSize = ESCRITORIO.getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+      
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        this.setVisible(false);
-        vis_inicioSesion user = new vis_inicioSesion();
-        user.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void btn_asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asignacionActionPerformed
-        Vis_Asignacion user = new Vis_Asignacion();
-        ESCRITORIO.add(user);
-        Dimension desktopSize = ESCRITORIO.getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_asignacionActionPerformed
 
     private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
-        Vis_Perfil user = new Vis_Perfil();
-        ESCRITORIO.add(user);
-        Dimension desktopSize = ESCRITORIO.getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_perfilActionPerformed
 
     private void btn_rolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolesActionPerformed
-        Vis_Roles user = new Vis_Roles();
-        ESCRITORIO.add(user);
-        Dimension desktopSize = ESCRITORIO.getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_rolesActionPerformed
 
@@ -205,10 +233,10 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu MENU_ACADEMICO;
     private javax.swing.JMenu MENU_USUARIO;
     private javax.swing.JMenuItem btn_asignacion;
+    private javax.swing.JMenuItem btn_nuevo;
     private javax.swing.JMenuItem btn_perfil;
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

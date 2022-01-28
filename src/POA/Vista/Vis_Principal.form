@@ -9,20 +9,20 @@
             <Property name="text" type="java.lang.String" value="USUARIO"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="btn_salir">
+            <MenuItem class="javax.swing.JMenuItem" name="btn_nuevo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nuevoActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="btn_salir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SALIR"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

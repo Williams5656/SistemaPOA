@@ -12,11 +12,15 @@ import POA.Vista.Vis_Perfil;
  * @author USUARIO
  */
 public class Con_perfil {
+
     private final Vis_Perfil vista;
-    
+
     public Con_perfil(Vis_Perfil vista) {
         this.vista = vista;
         vista.setVisible(true);
-        
+        vista.getBtnGuardar().addActionListener(e -> guardar());
     };
+      private void guardar(){
+        
+    }
 }

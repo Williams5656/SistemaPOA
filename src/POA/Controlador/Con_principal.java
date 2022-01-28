@@ -25,7 +25,7 @@ public class Con_principal {
         vista.getBtn_perfil().addActionListener(e -> perfil());
 //        vista.getBtn_asignacion().addActionListener(e -> asignacion());
 //        vista.getBtn_roles().addActionListener(e -> roles());
-//        vista.getBtn_salir().addActionListener(e -> salir());
+        vista.getBtn_salir().addActionListener(e -> salir());
 //        vista.getBtn_nuevo().addActionListener(e -> nuevo());
         
 
@@ -59,11 +59,12 @@ public class Con_principal {
 //        user.show();
 //    }
 //
-//    private void salir() {
-//        this.vista.getESCRITORIO().setVisible(false);
-//        vis_inicioSesion user = new vis_inicioSesion();
-//        user.setVisible(true);
-//    }
+    private void salir() {
+        vis_inicioSesion visin = new vis_inicioSesion();
+        vista.setVisible(false);
+        visin.setVisible(true);
+        cont_inicio inicio = new cont_inicio(visin);
+    }
 //
 //    private void nuevo() {
 //        Vis_Usuario user = new Vis_Usuario();

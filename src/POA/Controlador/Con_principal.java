@@ -30,6 +30,7 @@ public class Con_principal {
         vista.getBtn_roles().addActionListener(e -> roles());
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_nuevo().addActionListener(e -> nuevo());
+        
 
     }
 

@@ -143,6 +143,54 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
     public void setTxt_observaciones(JTextArea txt_observaciones) {
         this.txt_observaciones = txt_observaciones;
     }
+
+    public JButton getBtn_cancelar() {
+        return btn_cancelar;
+    }
+
+    public void setBtn_cancelar(JButton btn_cancelar) {
+        this.btn_cancelar = btn_cancelar;
+    }
+
+    public JButton getBtn_cancelarE() {
+        return btn_cancelarE;
+    }
+
+    public void setBtn_cancelarE(JButton btn_cancelarE) {
+        this.btn_cancelarE = btn_cancelarE;
+    }
+
+    public JButton getBtn_guardarE() {
+        return btn_guardarE;
+    }
+
+    public void setBtn_guardarE(JButton btn_guardarE) {
+        this.btn_guardarE = btn_guardarE;
+    }
+
+    public JTextField getTxt_nombreE() {
+        return txt_nombreE;
+    }
+
+    public void setTxt_nombreE(JTextField txt_nombreE) {
+        this.txt_nombreE = txt_nombreE;
+    }
+
+    public JTextArea getTxt_observacionesE() {
+        return txt_observacionesE;
+    }
+
+    public void setTxt_observacionesE(JTextArea txt_observacionesE) {
+        this.txt_observacionesE = txt_observacionesE;
+    }
+
+    public JDialog getVista_EditarRol() {
+        return vista_EditarRol;
+    }
+
+    public void setVista_EditarRol(JDialog vista_EditarRol) {
+        this.vista_EditarRol = vista_EditarRol;
+    }
     
 
     /**
@@ -165,6 +213,15 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_observaciones = new javax.swing.JTextArea();
         btn_guardar_rol = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        vista_EditarRol = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txt_nombreE = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txt_observacionesE = new javax.swing.JTextArea();
+        btn_cancelarE = new javax.swing.JButton();
+        btn_guardarE = new javax.swing.JButton();
         btn_ingresar = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
@@ -175,6 +232,8 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         tabla_rol = new javax.swing.JTable();
         btn_ver_permiso = new javax.swing.JButton();
         btn_editar_permiso = new javax.swing.JButton();
+
+        vista_NuevoRol.setTitle("Nuevo Rol");
 
         jLabel2.setText("Numero:");
 
@@ -202,12 +261,20 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
         btn_guardar_rol.setText("Guardar");
 
+        btn_cancelar.setText("Cancelar ");
+
         javax.swing.GroupLayout vista_NuevoRolLayout = new javax.swing.GroupLayout(vista_NuevoRol.getContentPane());
         vista_NuevoRol.getContentPane().setLayout(vista_NuevoRolLayout);
         vista_NuevoRolLayout.setHorizontalGroup(
             vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vista_NuevoRolLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_cancelar)
+                .addGap(130, 130, 130)
+                .addComponent(btn_guardar_rol)
+                .addGap(82, 82, 82))
             .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(vista_NuevoRolLayout.createSequentialGroup()
@@ -223,41 +290,96 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
                             .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_nombrerol, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(53, 53, 53)
-                .addComponent(btn_guardar_rol)
-                .addGap(33, 33, 33))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         vista_NuevoRolLayout.setVerticalGroup(
             vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vista_NuevoRolLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_nombrerol, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(btn_guardar_rol))
-                    .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txt_nombrerol, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_guardar_rol)
+                    .addComponent(btn_cancelar))
+                .addGap(38, 38, 38))
+        );
+
+        vista_EditarRol.setTitle("Editar Rol");
+
+        jLabel6.setText("Nombre:");
+
+        jLabel7.setText("Observaciones:");
+
+        txt_observacionesE.setColumns(20);
+        txt_observacionesE.setRows(5);
+        jScrollPane3.setViewportView(txt_observacionesE);
+
+        btn_cancelarE.setText("Cancelar");
+
+        btn_guardarE.setText("Guardar");
+
+        javax.swing.GroupLayout vista_EditarRolLayout = new javax.swing.GroupLayout(vista_EditarRol.getContentPane());
+        vista_EditarRol.getContentPane().setLayout(vista_EditarRolLayout);
+        vista_EditarRolLayout.setHorizontalGroup(
+            vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vista_EditarRolLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                    .addComponent(txt_nombreE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(vista_EditarRolLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(btn_cancelarE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addComponent(btn_guardarE)
+                .addGap(78, 78, 78))
+        );
+        vista_EditarRolLayout.setVerticalGroup(
+            vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vista_EditarRolLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nombreE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(49, 49, 49)
+                .addGroup(vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(vista_EditarRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cancelarE)
+                    .addComponent(btn_guardarE))
+                .addGap(47, 47, 47))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_ingresar.setText("Ingresar");
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 34, -1, -1));
 
         btn_editar.setText("Editar");
@@ -286,7 +408,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(tabla_rol);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 450, 290));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 430, 240));
 
         btn_ver_permiso.setText("Ver permiso");
         getContentPane().add(btn_ver_permiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 30));
@@ -305,6 +427,10 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_idActionPerformed
 
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -312,9 +438,12 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_actualizar;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_cancelarE;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_editar_permiso;
     private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_guardarE;
     private javax.swing.JButton btn_guardar_rol;
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_ver_permiso;
@@ -323,14 +452,20 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tabla_rol;
     private javax.swing.JTextField txt_id;
+    private javax.swing.JTextField txt_nombreE;
     private javax.swing.JTextField txt_nombrerol;
     private javax.swing.JTextField txt_numero;
     private javax.swing.JTextArea txt_observaciones;
+    private javax.swing.JTextArea txt_observacionesE;
     private javax.swing.JTextField txt_rol;
+    private javax.swing.JDialog vista_EditarRol;
     private javax.swing.JDialog vista_NuevoRol;
     // End of variables declaration//GEN-END:variables
 }

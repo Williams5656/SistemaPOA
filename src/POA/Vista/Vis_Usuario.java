@@ -110,21 +110,20 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         txtUsuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtContra = new javax.swing.JTextField();
-        btneliminar = new javax.swing.JButton();
-        btnnuevo = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableUsuario = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnbuscar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
         btnimprimir = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         btnmodificar = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
-        jSeparator4 = new javax.swing.JSeparator();
+        btnnuevo = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
         txtcedula = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -140,12 +139,6 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         jLabel6.setText("Contraseña:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
         getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
-
-        btneliminar.setText("Eliminar");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
-
-        btnnuevo.setText("Nuevo");
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Usuario");
@@ -164,43 +157,52 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 500, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 450, 210));
 
         jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
         btnbuscar.setText("Buscar");
-        jPanel1.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 10, -1, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
+        jPanel1.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, 40));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 160, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 210, 50));
-
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 10, 360));
-
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
+        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
         btnimprimir.setText("Imprimir");
         btnimprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnimprimirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+        jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 470, 60));
+
+        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnmodificar.setText("Modificar");
-        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
+        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
+        btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnguardar.setText("Guardar");
-        jPanel2.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+        jPanel2.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 10, 60));
+        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
+        btnnuevo.setText("Nuevo");
+        jPanel2.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 460, 60));
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
+        btneliminar.setText("Eliminar");
+        jPanel2.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 470, 60));
         getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 140, 30));
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 10, 360));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 360));
@@ -228,8 +230,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tableUsuario;
     private javax.swing.JTextField txtContra;

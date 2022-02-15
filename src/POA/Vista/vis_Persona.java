@@ -32,6 +32,12 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         panel2 = new java.awt.Panel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -65,30 +71,57 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel1.setBackground(new java.awt.Color(235, 192, 36));
+        panel1.setBackground(new java.awt.Color(255, 255, 255));
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(6, 56, 107));
         jLabel3.setText("Persona");
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 11, -1, -1));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, -1));
 
         btnGuardar.setBackground(new java.awt.Color(235, 192, 36));
-        btnGuardar.setText("Guardar");
-        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 95, -1, -1));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
+        btnGuardar.setBorderPainted(false);
+        btnGuardar.setContentAreaFilled(false);
+        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 50, 30));
 
         btnModificar.setBackground(new java.awt.Color(235, 192, 36));
-        btnModificar.setText("Modificar");
-        panel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 95, -1, -1));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
+        btnModificar.setBorderPainted(false);
+        btnModificar.setContentAreaFilled(false);
+        panel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 40, 30));
 
         btnNuevo.setBackground(new java.awt.Color(235, 192, 36));
-        btnNuevo.setText("Nuevo");
-        panel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 95, -1, -1));
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
+        btnNuevo.setBorderPainted(false);
+        btnNuevo.setContentAreaFilled(false);
+        panel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 50, 30));
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/image (1).jpg"))); // NOI18N
+        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, 120));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        panel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 40, 30));
+
+        jLabel15.setText("Guardar");
+        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+
+        jLabel16.setText("Modificar");
+        panel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+
+        jLabel17.setText("Nuevo");
+        panel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
+
+        jLabel18.setText("Imprimir");
+        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
+
+        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 120));
 
         panel2.setBackground(new java.awt.Color(6, 56, 107));
         panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -193,9 +226,10 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo blanco (1).png"))); // NOI18N
         panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 350, 590));
+        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
 
-        panel3.setBackground(new java.awt.Color(255, 255, 255));
+        panel3.setBackground(new java.awt.Color(37, 63, 90));
+        panel3.setEnabled(false);
         panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablePersonas.setModel(new javax.swing.table.DefaultTableModel(
@@ -211,17 +245,26 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablePersonas);
 
-        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 77, 703, 358));
+        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 208, 703, 360));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Lista Persona");
-        panel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
+        panel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
-        btnBuscar.setText("Buscar");
-        panel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 36, -1, -1));
-        panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 37, 210, -1));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setContentAreaFilled(false);
+        panel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 40, -1));
 
-        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 132, -1, -1));
+        txtBuscar.setBorder(null);
+        txtBuscar.setOpaque(false);
+        panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 220, 20));
+
+        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        panel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 220, 10));
+
+        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 760, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -233,12 +276,18 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -254,6 +303,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lbFoto;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;

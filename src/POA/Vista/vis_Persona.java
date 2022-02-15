@@ -50,6 +50,14 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtDireccion = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        lbFoto = new javax.swing.JLabel();
+        btnCargarFoto = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         panel3 = new java.awt.Panel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -89,38 +97,98 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Formulario");
-        panel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 20, -1, -1));
+        panel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cedula:");
         panel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nombres:");
         panel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Apellidos:");
         panel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Fecha Nacimiento:");
-        panel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        panel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo:");
         panel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Direccion:");
         panel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
-        jLabel11.setText("Celular");
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Celular:");
         panel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Foto");
-        panel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
-        panel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 165, -1));
-        panel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 165, -1));
-        panel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 165, -1));
-        panel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 165, -1));
-        panel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 165, -1));
-        panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 165, -1));
-        panel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 156, -1));
+        panel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        txtCedula.setBorder(null);
+        txtCedula.setOpaque(false);
+        panel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 170, 20));
+
+        txtNombre.setBorder(null);
+        txtNombre.setOpaque(false);
+        panel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 170, 20));
+
+        txtApellido.setBorder(null);
+        txtApellido.setOpaque(false);
+        panel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 170, 20));
+
+        txtCorreo.setBorder(null);
+        txtCorreo.setOpaque(false);
+        panel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 170, 20));
+
+        txtDireccion.setBorder(null);
+        txtDireccion.setOpaque(false);
+        panel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 170, 20));
+
+        txtCelular.setBorder(null);
+        txtCelular.setOpaque(false);
+        panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 170, 20));
+        panel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
+
+        lbFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/imagen.png"))); // NOI18N
+        panel2.add(lbFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 130));
+
+        btnCargarFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/cargar foto.png"))); // NOI18N
+        btnCargarFoto.setBorderPainted(false);
+        btnCargarFoto.setContentAreaFilled(false);
+        panel2.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 40, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 170, 10));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 170, 10));
+
+        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 170, 10));
+
+        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 170, 10));
+
+        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, 170, 10));
+
+        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
+        panel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 170, 10));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo blanco (1).png"))); // NOI18N
         panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
@@ -161,6 +229,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCargarFoto;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
@@ -179,6 +248,13 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JLabel lbFoto;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
     private java.awt.Panel panel3;

@@ -56,17 +56,19 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnBuscar = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
 
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         panel1.setBackground(new java.awt.Color(235, 192, 36));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(6, 56, 107));
         jLabel3.setText("Persona");
 
+        btnGuardar.setBackground(new java.awt.Color(235, 192, 36));
         btnGuardar.setText("Guardar");
 
+        btnModificar.setBackground(new java.awt.Color(235, 192, 36));
         btnModificar.setText("Modificar");
 
+        btnNuevo.setBackground(new java.awt.Color(235, 192, 36));
         btnNuevo.setText("Nuevo");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -74,36 +76,36 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addComponent(btnGuardar)
-                .addGap(147, 147, 147)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(459, 459, 459)
+                        .addComponent(jLabel3))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(397, 397, 397)
+                        .addComponent(btnGuardar)
+                        .addGap(18, 18, 18)
                         .addComponent(btnModificar)
-                        .addGap(141, 141, 141)
-                        .addComponent(btnNuevo))
-                    .addComponent(jLabel3))
-                .addContainerGap(373, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevo)))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnNuevo)
-                        .addComponent(btnModificar)))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(panel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 40, Short.MAX_VALUE)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnModificar)
+                    .addComponent(btnNuevo))
+                .addGap(14, 14, 14))
         );
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1106, -1));
+        panel2.setBackground(new java.awt.Color(6, 56, 107));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Formulario");
 
         jLabel5.setText("Cedula:");
@@ -128,9 +130,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel2))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel8))
@@ -160,7 +159,11 @@ public class vis_Persona extends javax.swing.JInternalFrame {
                                     .addComponent(txtApellido)
                                     .addComponent(txtDireccion)
                                     .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addGap(0, 117, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(112, 112, 112))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,12 +200,10 @@ public class vis_Persona extends javax.swing.JInternalFrame {
                     .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 143, -1, 456));
-
-        panel3.setBackground(new java.awt.Color(204, 204, 0));
+        panel3.setBackground(new java.awt.Color(255, 255, 255));
 
         tablePersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -218,6 +219,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablePersonas);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Lista Persona");
 
         btnBuscar.setText("Buscar");
@@ -245,7 +247,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -254,7 +256,27 @@ public class vis_Persona extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 143, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

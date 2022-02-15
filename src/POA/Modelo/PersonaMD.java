@@ -16,7 +16,7 @@ public class PersonaMD {
     
     private String cedula;
     private String nombres;
-    private String apellidos;
+    private String apellidos;   
     private LocalDate fecha_nacimiento;
     private String direccion;
     private String correo;

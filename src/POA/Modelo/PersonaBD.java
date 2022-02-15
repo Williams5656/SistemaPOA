@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.time.LocalDate;
@@ -28,12 +29,13 @@ import org.postgresql.util.Base64;
  * @author MIGUEL
  */
 public class PersonaBD extends PersonaMD {
-    DBConect conectar = new DBConect();
+
+    Conect conectar = new Conect();
 
     public PersonaBD() {
     }
 
-    public PersonaBD(String cedula, String nombres, String apellidos, LocalDate fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
+    public PersonaBD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
         super(cedula, nombres, apellidos, fecha_nacimiento, direccion, correo, telefono, foto);
     }
 
@@ -53,7 +55,7 @@ public class PersonaBD extends PersonaMD {
         // Return the buffered image
         return bimage;
     }
-    
+
     private Image getImage(byte[] bytes, boolean isThumbnail) throws IOException {
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
         Iterator readers = ImageIO.getImageReadersByFormatName("png");
@@ -67,7 +69,7 @@ public class PersonaBD extends PersonaMD {
         }
         return reader.read(0, param);
     }
-    
+
     public List<PersonaMD> mostrardatos() {
 
         try {
@@ -83,9 +85,7 @@ public class PersonaBD extends PersonaMD {
                 p.setDireccion(rs.getString("direccion"));
                 p.setCorreo(rs.getString("correo"));
                 p.setTelefono(rs.getString("telefono"));
-                
-                //p.setFecha_nacimiento(rs.getDate("fecha_nacimiento"));
-                
+                p.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
 
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -111,7 +111,64 @@ public class PersonaBD extends PersonaMD {
         }
 
     }
+
+    public boolean insertar() {
+        String ef = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
+            BufferedImage img = toBufferedImage(getFoto());
+            ImageIO.write(img, "PNG", bos);
+            byte[] imgb = bos.toByteArray();
+            ef = Base64.encodeBytes(imgb);
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String nsql = "INSERT INTO personas(cedula,nombres,apellidos,fecha_nacimiento,direccion,correo,telefono,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getFecha_nacimiento() + "','" + getDireccion() + "','" + getCorreo() + "','" + getTelefono() + "','" + ef + "')";
+
+        if (conectar.noQuery(nsql) == null) {
+            return true;
+        } else {
+
+            System.out.println("Error");
+            return false;
+        }
+
+    }
+
+    public boolean Modificar(String codigo) {
+        String ef = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
+            BufferedImage img = toBufferedImage(getFoto());
+            ImageIO.write(img, "PNG", bos);
+            byte[] imgb = bos.toByteArray();
+            ef = Base64.encodeBytes(imgb);
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String nsql = "UPDATE personas set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"direccion\"='" + getDireccion() + "',\"correo\"='" + getCorreo() + "',\"telefono\"='" + getTelefono() + "',\"foto\"='" + ef + "'"
+                + " where \"cedula\"='" + codigo + "'";
+
+        if (conectar.noQuery(nsql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
     
-    
-    
+    public boolean eliminar(String codigo) {
+        String nsql = "delete from personas where \"cedula\"='" + codigo + "'";
+        if (conectar.noQuery(nsql) == null) {
+            return true;
+        } else {
+            System.out.println("Error eliminar");
+            return false;
+        }
+    }
+
 }

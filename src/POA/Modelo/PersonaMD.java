@@ -17,7 +17,7 @@ public class PersonaMD {
     private String cedula;
     private String nombres;
     private String apellidos;   
-    private LocalDate fecha_nacimiento;
+    private String fecha_nacimiento;
     private String direccion;
     private String correo;
     private String telefono;
@@ -27,7 +27,7 @@ public class PersonaMD {
     public PersonaMD() {
     }
 
-    public PersonaMD(String cedula, String nombres, String apellidos, LocalDate fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
+    public PersonaMD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -62,11 +62,11 @@ public class PersonaMD {
         this.apellidos = apellidos;
     }
 
-    public LocalDate getFecha_nacimiento() {
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 

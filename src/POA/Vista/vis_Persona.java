@@ -5,6 +5,12 @@
  */
 package POA.Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author MIGUEL
@@ -55,7 +61,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtCorreo = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        fecha = new com.toedter.calendar.JDateChooser();
         lbFoto = new javax.swing.JLabel();
         btnCargarFoto = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -199,7 +205,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtCelular.setBorder(null);
         txtCelular.setOpaque(false);
         panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 170, 20));
-        panel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
+        panel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
 
         lbFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/imagen.png"))); // NOI18N
         panel2.add(lbFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 130));
@@ -240,6 +246,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel3.setEnabled(false);
         panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tablePersonas.setBackground(new java.awt.Color(37, 63, 90));
         tablePersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -289,6 +296,133 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JDateChooser getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(JDateChooser fecha) {
+        this.fecha = fecha;
+    }
+
+    public JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
+    public JButton getBtnCargarFoto() {
+        return btnCargarFoto;
+    }
+
+    public void setBtnCargarFoto(JButton btnCargarFoto) {
+        this.btnCargarFoto = btnCargarFoto;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(JButton btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
+    public JButton getBtnImprimir() {
+        return btnImprimir;
+    }
+
+    public void setBtnImprimir(JButton btnImprimir) {
+        this.btnImprimir = btnImprimir;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public void setBtnModificar(JButton btnModificar) {
+        this.btnModificar = btnModificar;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public void setBtnNuevo(JButton btnNuevo) {
+        this.btnNuevo = btnNuevo;
+    }
+
+    public JLabel getLbFoto() {
+        return lbFoto;
+    }
+
+    public void setLbFoto(JLabel lbFoto) {
+        this.lbFoto = lbFoto;
+    }
+
+    public JTable getTablePersonas() {
+        return tablePersonas;
+    }
+
+    public void setTablePersonas(JTable tablePersonas) {
+        this.tablePersonas = tablePersonas;
+    }
+
+    public JTextField getTxtApellido() {
+        return txtApellido;
+    }
+
+    public void setTxtApellido(JTextField txtApellido) {
+        this.txtApellido = txtApellido;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
+    public JTextField getTxtCedula() {
+        return txtCedula;
+    }
+
+    public void setTxtCedula(JTextField txtCedula) {
+        this.txtCedula = txtCedula;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public void setTxtCelular(JTextField txtCelular) {
+        this.txtCelular = txtCelular;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public void setTxtCorreo(JTextField txtCorreo) {
+        this.txtCorreo = txtCorreo;
+    }
+
+    public JTextField getTxtDireccion() {
+        return txtDireccion;
+    }
+
+    public void setTxtDireccion(JTextField txtDireccion) {
+        this.txtDireccion = txtDireccion;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -297,7 +431,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

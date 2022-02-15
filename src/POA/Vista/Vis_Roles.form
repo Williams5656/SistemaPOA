@@ -11,7 +11,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
                   <Component id="btn_cancelar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                   <Component id="btn_guardar_rol" min="-2" max="-2" attributes="0"/>
@@ -31,11 +31,11 @@
                               <Component id="jLabel3" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_id" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
-                              <Component id="txt_numero" min="-2" pref="222" max="-2" attributes="0"/>
-                              <Component id="txt_nombrerol" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_id" alignment="0" pref="222" max="32767" attributes="0"/>
+                              <Component id="txt_numero" pref="222" max="32767" attributes="0"/>
+                              <Component id="txt_nombrerol" alignment="0" pref="222" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

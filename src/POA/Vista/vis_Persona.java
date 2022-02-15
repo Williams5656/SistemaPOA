@@ -33,7 +33,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnModificar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -65,6 +65,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
         panel3 = new java.awt.Panel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePersonas = new javax.swing.JTable();
@@ -72,6 +73,9 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnBuscar = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
+        jLabel19 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -104,10 +108,10 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/image (1).jpg"))); // NOI18N
         panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, 120));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        panel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 40, 30));
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
+        btnImprimir.setBorderPainted(false);
+        btnImprimir.setContentAreaFilled(false);
+        panel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 40, 30));
 
         jLabel15.setText("Guardar");
         panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
@@ -224,7 +228,11 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 170, 10));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo blanco (1).png"))); // NOI18N
-        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+
+        jSeparator9.setBackground(new java.awt.Color(179, 146, 29));
+        jSeparator9.setForeground(new java.awt.Color(179, 146, 29));
+        panel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 10));
 
         getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
 
@@ -245,24 +253,36 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablePersonas);
 
-        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 208, 703, 360));
+        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 703, 410));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Lista Persona");
-        panel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+        panel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
         btnBuscar.setBorderPainted(false);
         btnBuscar.setContentAreaFilled(false);
-        panel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 40, -1));
+        panel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 40, -1));
 
         txtBuscar.setBorder(null);
         txtBuscar.setOpaque(false);
-        panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 220, 20));
+        panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 250, 20));
 
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
-        panel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 220, 10));
+        panel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 250, 10));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo Instituto.png"))); // NOI18N
+        panel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+
+        jSeparator8.setBackground(new java.awt.Color(179, 146, 29));
+        jSeparator8.setForeground(new java.awt.Color(179, 146, 29));
+        panel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, 0, 1110, 40));
+
+        jSeparator10.setBackground(new java.awt.Color(179, 146, 29));
+        jSeparator10.setForeground(new java.awt.Color(179, 146, 29));
+        jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        panel3.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 590));
 
         getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 760, 590));
 
@@ -274,9 +294,9 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCargarFoto;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -288,6 +308,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -298,12 +319,15 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lbFoto;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;

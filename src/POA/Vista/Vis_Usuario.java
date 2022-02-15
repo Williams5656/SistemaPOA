@@ -33,79 +33,121 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         txtUsuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtContra = new javax.swing.JTextField();
-        btnguardar = new javax.swing.JButton();
-        btnmodificar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnnuevo = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableUsuario = new javax.swing.JTable();
         cmbnombre = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jPanel2 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        btnmodificar1 = new javax.swing.JButton();
+        btnguardar1 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel4.setText("Nombre:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 50, 30));
 
         jLabel5.setText("Usuario:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 140, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 30));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 140, 30));
 
         jLabel6.setText("Contraseña:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
-        getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 140, -1));
-
-        btnguardar.setText("Guardar");
-        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
-
-        btnmodificar.setText("Modificar");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
+        getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
 
         jButton3.setText("Eliminar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
         btnnuevo.setText("Nuevo");
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Usuario");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         tableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Usuario", "Contraseña"
             }
         ));
         jScrollPane1.setViewportView(tableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 500, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 500, 210));
 
-        cmbnombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cmbnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 160, -1));
+        getContentPane().add(cmbnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 140, 30));
+
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setText("Buscar");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 10, -1, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 210, 50));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 10, 360));
+
+        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton4.setText("Imprimir");
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+
+        btnmodificar1.setText("Modificar");
+        jPanel2.add(btnmodificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
+
+        btnguardar1.setText("Guardar");
+        jPanel2.add(btnguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 10, 60));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 460, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnguardar;
-    private javax.swing.JButton btnmodificar;
+    private javax.swing.JButton btnguardar1;
+    private javax.swing.JButton btnmodificar1;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbnombre;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tableUsuario;
     private javax.swing.JTextField txtContra;
     private javax.swing.JTextField txtUsuario;

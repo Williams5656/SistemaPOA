@@ -5,6 +5,7 @@
  */
 package POA.Modelo;
 
+import java.awt.Image;
 import java.time.LocalDate;
 
 /**
@@ -20,13 +21,13 @@ public class PersonaMD {
     private String direccion;
     private String correo;
     private String telefono;
-    private byte[] foto;
+    private Image foto;
     
 
     public PersonaMD() {
     }
 
-    public PersonaMD(String cedula, String nombres, String apellidos, LocalDate fecha_nacimiento, String direccion, String correo, String telefono, byte[] foto) {
+    public PersonaMD(String cedula, String nombres, String apellidos, LocalDate fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -93,11 +94,11 @@ public class PersonaMD {
         this.telefono = telefono;
     }
 
-    public byte[] getFoto() {
+    public Image getFoto() {
         return foto;
     }
 
-    public void setFoto(byte[] foto) {
+    public void setFoto(Image foto) {
         this.foto = foto;
     }
     

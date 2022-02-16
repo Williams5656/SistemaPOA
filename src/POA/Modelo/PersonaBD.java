@@ -162,7 +162,7 @@ public class PersonaBD extends PersonaMD {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String nsql = "INSERT INTO persona(cedula,nombres,apellidos,fecha_nacimiento,direccion,correo,telefono,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getFecha_nacimiento() + "','" + getDireccion() + "','" + getCorreo() + "','" + getTelefono() + "','" + ef + "')";
+        String nsql = "INSERT INTO persona (cedula,nombres,apellidos,fecha_nacimiento,direccion,correo,telefono,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getFecha_nacimiento() + "','" + getDireccion() + "','" + getCorreo() + "','" + getTelefono() + "','" + ef + "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -186,7 +186,7 @@ public class PersonaBD extends PersonaMD {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String nsql = "UPDATE personas set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"direccion\"='" + getDireccion() + "',\"correo\"='" + getCorreo() + "',\"telefono\"='" + getTelefono() + "',\"foto\"='" + ef + "'"
+        String nsql = "UPDATE persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"direccion\"='" + getDireccion() + "',\"correo\"='" + getCorreo() + "',\"telefono\"='" + getTelefono() + "',\"foto\"='" + ef + "'"
                 + " where \"cedula\"='" + codigo + "'";
 
         if (conectar.noQuery(nsql) == null) {
@@ -200,7 +200,7 @@ public class PersonaBD extends PersonaMD {
     }
     
     public boolean eliminar(String codigo) {
-        String nsql = "delete from personas where \"cedula\"='" + codigo + "'";
+        String nsql = "delete from persona where \"cedula\"='" + codigo + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {

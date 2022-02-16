@@ -19,8 +19,9 @@ public class con_usuario {
         vista.setVisible(true);
         vista.getBtnguardar().addActionListener(e -> guardar());
     };
-      private void guardar(){
-        
+    
+    private void guardar(){
+        System.out.println("HOLAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
     
 }

@@ -188,8 +188,9 @@ public class Con_persona {
             SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
             String fecha = formato.format(vista.getFecha().getDate());
             per.setFecha_nacimiento(fecha);
+            System.out.println("llego");
             int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar la compra", "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar la compra", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (a == 0 && b == 0) {
                 if (per.insertar()) {
                     JOptionPane.showMessageDialog(null, "Datos guardados correctamente");

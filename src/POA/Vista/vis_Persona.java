@@ -81,9 +81,10 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtBuscar = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
 
+        setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -92,25 +93,25 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(6, 56, 107));
         jLabel3.setText("Persona");
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, -1));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, 40));
 
         btnGuardar.setBackground(new java.awt.Color(235, 192, 36));
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
-        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 50, 30));
+        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 50, 30));
 
         btnModificar.setBackground(new java.awt.Color(235, 192, 36));
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnModificar.setBorderPainted(false);
         btnModificar.setContentAreaFilled(false);
-        panel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 40, 30));
+        panel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 40, 30));
 
         btnNuevo.setBackground(new java.awt.Color(235, 192, 36));
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
         btnNuevo.setBorderPainted(false);
         btnNuevo.setContentAreaFilled(false);
-        panel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 50, 30));
+        panel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 50, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/image (1).jpg"))); // NOI18N
         panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, 120));
@@ -118,21 +119,21 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
         btnImprimir.setBorderPainted(false);
         btnImprimir.setContentAreaFilled(false);
-        panel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 40, 30));
+        panel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 40, 30));
 
         jLabel15.setText("Guardar");
-        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, -1));
 
         jLabel16.setText("Modificar");
-        panel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+        panel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, -1, -1));
 
         jLabel17.setText("Nuevo");
-        panel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
+        panel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
 
         jLabel18.setText("Imprimir");
-        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
+        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 120));
+        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 100));
 
         panel2.setBackground(new java.awt.Color(6, 56, 107));
         panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -250,7 +251,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 170, 10));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo blanco (1).png"))); // NOI18N
-        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 200, 150));
+        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 200, 150));
 
         jSeparator9.setBackground(new java.awt.Color(179, 146, 29));
         jSeparator9.setForeground(new java.awt.Color(179, 146, 29));
@@ -260,9 +261,9 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         lbError.setForeground(new java.awt.Color(255, 51, 51));
         lbError.setText("Cedula Error");
         lbError.setVisible(false);
-        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
+        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
+        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 350, 610));
 
         panel3.setBackground(new java.awt.Color(37, 63, 90));
         panel3.setEnabled(false);
@@ -305,16 +306,16 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo Instituto.png"))); // NOI18N
         panel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
 
-        jSeparator8.setBackground(new java.awt.Color(179, 146, 29));
-        jSeparator8.setForeground(new java.awt.Color(179, 146, 29));
-        panel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, 0, 1110, 40));
-
         jSeparator10.setBackground(new java.awt.Color(179, 146, 29));
         jSeparator10.setForeground(new java.awt.Color(179, 146, 29));
         jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
         panel3.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 590));
 
-        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 760, 590));
+        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 760, 610));
+
+        jSeparator8.setBackground(new java.awt.Color(179, 146, 29));
+        jSeparator8.setForeground(new java.awt.Color(179, 146, 29));
+        getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1110, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

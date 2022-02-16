@@ -135,6 +135,10 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setText("Nombre:");
 
         jLabel2.setText("Descripcion:");

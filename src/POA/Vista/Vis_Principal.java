@@ -71,6 +71,14 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.ESCRITORIO = ESCRITORIO;
     }
 
+    public JMenuItem getM_i_persona() {
+        return m_i_persona;
+    }
+
+    public void setM_i_persona(JMenuItem m_i_persona) {
+        this.m_i_persona = m_i_persona;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,6 +92,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         MENU_USUARIO = new javax.swing.JMenu();
         btn_nuevo = new javax.swing.JMenuItem();
+        m_i_persona = new javax.swing.JMenuItem();
         btn_salir = new javax.swing.JMenuItem();
         MENU_ACADEMICO = new javax.swing.JMenu();
         btn_asignacion = new javax.swing.JMenuItem();
@@ -112,6 +121,9 @@ public class Vis_Principal extends javax.swing.JFrame {
             }
         });
         MENU_USUARIO.add(btn_nuevo);
+
+        m_i_persona.setText("Persona");
+        MENU_USUARIO.add(m_i_persona);
 
         btn_salir.setText("SALIR");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -207,5 +219,6 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem m_i_persona;
     // End of variables declaration//GEN-END:variables
 }

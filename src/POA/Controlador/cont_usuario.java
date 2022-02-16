@@ -55,7 +55,7 @@ public class cont_usuario {
         vista.getBtnmodificar().setEnabled(false);
         vista.getTxtcedula().setText("");
         vista.getTxtUsuario().setText("");
-        vista.getTxtContrasenia().setText("");
+        vista.getTxtcontra().setText("");
         
         
     }
@@ -64,8 +64,8 @@ public class cont_usuario {
         
         bdusuario.setNombre(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
-        bdusuario.setContrasenia((vista.getTxtContrasenia().getText()));
-        if (vista.getTxtcedula().getText().equals("")||vista.getTxtUsuario().getText().equals("")||vista.getTxtContrasenia().getText().equals("")) {
+        bdusuario.setContrasenia((vista.getTxtcontra().getText()));
+        if (vista.getTxtcedula().getText().equals("")||vista.getTxtUsuario().getText().equals("")||vista.getTxtcontra().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
             nuevo();
         }else{
@@ -101,7 +101,7 @@ public class cont_usuario {
     public void modificar() {
         bdusuario.setNombre(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
-        bdusuario.setContrasenia((vista.getTxtContrasenia().getText()));
+        bdusuario.setContrasenia((vista.getTxtcontra().getText()));
         
         int resp2 = JOptionPane.showConfirmDialog(null, "Confirme si esta seguro modificar");
         if (resp2 == 0) {
@@ -131,7 +131,7 @@ public class cont_usuario {
         
         vista.getTxtcedula().setText(bdusuario.getNombre());
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
-        vista.getTxtContrasenia().setText(bdusuario.getContrasenia());        
+        vista.getTxtcontra().setText(bdusuario.getContrasenia());        
     }
     
     public void lista(){

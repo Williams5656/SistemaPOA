@@ -71,12 +71,12 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         this.btnnuevo = btnnuevo;
     }
 
-    public JPasswordField getTxtContrasenia() {
-        return txtContrasenia;
+    public JPasswordField getTxtcontra() {
+        return txtcontra;
     }
 
-    public void setTxtContrasenia(JPasswordField txtContrasenia) {
-        this.txtContrasenia = txtContrasenia;
+    public void setTxtcontra(JPasswordField txtcontra) {
+        this.txtcontra = txtcontra;
     }
 
     public JTextField getTxtUsuario() {
@@ -135,7 +135,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btneliminar = new javax.swing.JButton();
         txtcedula = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
-        txtContrasenia = new javax.swing.JPasswordField();
+        txtcontra = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -214,7 +214,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 10, 360));
-        getContentPane().add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
+        getContentPane().add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 360));
@@ -245,8 +245,8 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tableUsuario;
-    private javax.swing.JPasswordField txtContrasenia;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtcedula;
+    private javax.swing.JPasswordField txtcontra;
     // End of variables declaration//GEN-END:variables
 }

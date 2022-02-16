@@ -6,6 +6,7 @@
 package POA.Vista;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -69,12 +70,12 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         this.btnnuevo = btnnuevo;
     }
 
-    public JTextField getTxtContra() {
-        return txtContra;
+    public JTextField getTxtContrasenia() {
+        return txtContrasenia;
     }
 
-    public void setTxtContra(JTextField txtContra) {
-        this.txtContra = txtContra;
+    public void setTxtContrasenia(JTextField txtContrasenia) {
+        this.txtContrasenia = txtContrasenia;
     }
 
     public JTextField getTxtUsuario() {
@@ -92,6 +93,16 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     public void setTxtcedula(JTextField txtcedula) {
         this.txtcedula = txtcedula;
     }
+
+    public JTable getTableUsuario() {
+        return tableUsuario;
+    }
+
+    public void setTableUsuario(JTable tableUsuario) {
+        this.tableUsuario = tableUsuario;
+    }
+    
+    
     
     
 
@@ -109,7 +120,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtContra = new javax.swing.JTextField();
+        txtContrasenia = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableUsuario = new javax.swing.JTable();
@@ -138,7 +149,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Contraseña:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
-        getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
+        getContentPane().add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Usuario");
@@ -233,7 +244,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tableUsuario;
-    private javax.swing.JTextField txtContra;
+    private javax.swing.JTextField txtContrasenia;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtcedula;
     // End of variables declaration//GEN-END:variables

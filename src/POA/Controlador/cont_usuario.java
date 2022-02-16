@@ -26,6 +26,7 @@ public class cont_usuario {
 
     public cont_usuario(Vis_Usuario vista) {
         this.vista = vista;
+        vista.setVisible(true);
         vista.getBtnnuevo().addActionListener(e->nuevo());
         vista.getBtnguardar().addActionListener(e->guardar());
         vista.getBtnmodificar().addActionListener(e->modificar());
@@ -53,6 +54,7 @@ public class cont_usuario {
     public void nuevo(){
         vista.getBtnguardar().setEnabled(true);
         vista.getBtnmodificar().setEnabled(false);
+        vista.getTxtcedula().setEditable(true);
         vista.getTxtcedula().setText("");
         vista.getTxtUsuario().setText("");
         vista.getTxtcontra().setText("");

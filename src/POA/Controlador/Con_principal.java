@@ -36,7 +36,7 @@ public class Con_principal {
     }
 
     private void perfil() {
-         Vis_Perfil zap = new Vis_Perfil();
+        Vis_Perfil zap = new Vis_Perfil();
         vista.getESCRITORIO().add(zap);
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = zap.getSize();

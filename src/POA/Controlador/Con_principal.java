@@ -22,13 +22,23 @@ public class Con_principal {
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);
-        vista.getBtn_perfil().addActionListener(e -> perfil());
+        vista.getBtn_persona().addActionListener(e -> persona());
 //        vista.getBtn_asignacion().addActionListener(e -> asignacion());
 //        vista.getBtn_roles().addActionListener(e -> roles());
         vista.getBtn_salir().addActionListener(e -> salir());
 //        vista.getBtn_nuevo().addActionListener(e -> nuevo());
         
 
+    }
+    
+     private void persona() {
+        vis_Persona persona = new vis_Persona();
+        vista.getESCRITORIO().add(persona);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = persona.getSize();
+        persona.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_persona per = new Con_persona(persona);
+        
     }
 
     private void perfil() {

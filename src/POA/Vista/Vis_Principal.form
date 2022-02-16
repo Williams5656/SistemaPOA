@@ -17,7 +17,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nuevoActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="m_i_persona">
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_persona">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Persona"/>
               </Properties>

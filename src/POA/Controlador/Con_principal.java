@@ -77,7 +77,7 @@ public class Con_principal {
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_usuario us = new Con_usuario(user);
+        cont_usuario us = new cont_usuario(user);
     }
 
 //    private void asignacion() {

@@ -19,6 +19,10 @@ public class UsuarioMD {
         this.contrasenia = contrasenia;
     }
 
+    public UsuarioMD() {
+    }
+    
+
     public String getNombre() {
         return nombre;
     }

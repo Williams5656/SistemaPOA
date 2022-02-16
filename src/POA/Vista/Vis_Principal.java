@@ -5,7 +5,6 @@
  */
 package POA.Vista;
 
-
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
 
@@ -20,7 +19,7 @@ public class Vis_Principal extends javax.swing.JFrame {
      */
     public Vis_Principal() {
         initComponents();
-        
+
     }
 
     public JMenuItem getBtn_nuevo() {
@@ -63,14 +62,6 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.btn_nuevo = btn_salir;
     }
 
-    public JDesktopPane getESCRITORIO() {
-        return ESCRITORIO;
-    }
-
-    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
-        this.ESCRITORIO = ESCRITORIO;
-    }
-
     public JMenuItem getBtn_persona() {
         return Btn_persona;
     }
@@ -79,7 +70,13 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.Btn_persona = Btn_persona;
     }
 
-   
+    public JDesktopPane getESCRITORIO() {
+        return ESCRITORIO;
+    }
+
+    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
+        this.ESCRITORIO = ESCRITORIO;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -187,29 +184,28 @@ public class Vis_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_nuevoActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-      
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asignacionActionPerformed
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_asignacionActionPerformed
 
     private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
-       
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_perfilActionPerformed
 
     private void btn_rolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolesActionPerformed
-       
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_rolesActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Btn_persona;

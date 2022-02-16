@@ -58,7 +58,7 @@ public class Con_perfil {
         } else if (vista.getTxtDescripcion().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "INGRESE LA DESCRIPCION");
         } else  {
-            bdperfil.setCodigo(Integer.parseInt(vista.getTxtCodigo().getText()));
+            bdperfil.setCodigo(vista.getTxtCodigo().getText());
             bdperfil.setNombre(vista.getTxtNombre().getText());
             bdperfil.setDescripcion(vista.getTxtDescripcion().getText());
             if (bdperfil.insertar()) {

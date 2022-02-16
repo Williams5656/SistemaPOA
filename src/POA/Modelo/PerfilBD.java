@@ -21,9 +21,11 @@ public class PerfilBD extends PerfilMD {
 
     Conect conectar = new Conect();
 
-    public PerfilBD(int codigo, String nombre, String descripcion) {
+    public PerfilBD(String codigo, String nombre, String descripcion) {
         super(codigo, nombre, descripcion);
     }
+
+    
 
     public PerfilBD() {
     }
@@ -50,7 +52,7 @@ public class PerfilBD extends PerfilMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PerfilMD perfil = new PerfilMD();
-                perfil.setCodigo(rs.getInt("codigo"));
+                perfil.setCodigo(rs.getString("codigo"));
                 perfil.setNombre(rs.getString("nombre"));
                 perfil.setDescripcion(rs.getString("descripcion"));
                 lista.add(perfil);
@@ -70,7 +72,7 @@ public class PerfilBD extends PerfilMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PerfilMD perfil = new PerfilMD();
-                perfil.setCodigo(rs.getInt("codigo"));
+                perfil.setCodigo(rs.getString("codigo"));
                 perfil.setNombre(rs.getString("nombre"));
                 perfil.setDescripcion(rs.getString("descripcion"));
                 lista.add(perfil);

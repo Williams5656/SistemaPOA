@@ -39,7 +39,7 @@ public class RolBD extends RolMD{
             return null;
         }
     }
-    public List<RolMD> obtenerDatos(int id_rol){
+    public List<RolMD> obtenerDatos(String id_rol){
         List<RolMD> listar = new  ArrayList<RolMD>();
         try{
             String sql = "select * from rol" + " where \"id_rol\"='" + id_rol + "'";

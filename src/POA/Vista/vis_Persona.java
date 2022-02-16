@@ -301,6 +301,14 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JLabel getLbError() {
+        return lbError;
+    }
+
+    public void setLbError(JLabel lbError) {
+        this.lbError = lbError;
+    }
+
     public JDateChooser getFecha() {
         return fecha;
     }

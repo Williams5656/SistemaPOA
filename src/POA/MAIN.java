@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package POA;
-import POA.Controlador.cont_inicio;
+import POA.Controlador.*;
 import POA.Vista.vis_inicioSesion;
 /**
  *
@@ -13,8 +13,6 @@ import POA.Vista.vis_inicioSesion;
 public class MAIN {
     public static void main(String[] args) {
         vis_inicioSesion vista =new vis_inicioSesion();
-        cont_inicio inicio = new cont_inicio(vista);
-        System.out.println("Inicio");
-        System.out.println("bien");
+        Con_inicio inicio = new Con_inicio(vista);
     }
 }

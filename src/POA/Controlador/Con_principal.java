@@ -68,7 +68,7 @@ public class Con_principal {
         vis_inicioSesion visin = new vis_inicioSesion();
         vista.setVisible(false);
         visin.setVisible(true);
-        cont_inicio inicio = new cont_inicio(visin);
+        Con_inicio inicio = new Con_inicio(visin);
     }
 
     private void usuario() {
@@ -77,7 +77,7 @@ public class Con_principal {
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+        Con_usuario us = new Con_usuario(user);
     }
 
 //    private void asignacion() {

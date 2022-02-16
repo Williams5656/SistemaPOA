@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sun.util.logging.PlatformLogger;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -70,7 +69,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombreUsuario()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "')";
+        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -119,7 +118,7 @@ public class UsuarioBD extends UsuarioMD {
                 UsuarioBD m = new UsuarioBD();
                 m.setNombre(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
-                m.setContrasenia(rs.getString("contrsenia"));
+                m.setContrasenia(rs.getString("contrasenia"));
                 listaA.add(m);
             }
             rs.close();

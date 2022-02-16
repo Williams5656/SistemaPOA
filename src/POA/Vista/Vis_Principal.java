@@ -23,13 +23,7 @@ public class Vis_Principal extends javax.swing.JFrame {
 
     }
 
-    public JDesktopPane getESCRITORIO() {
-        return ESCRITORIO;
-    }
-
-    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
-        this.ESCRITORIO = ESCRITORIO;
-    }
+   
 
     public JMenuItem getBtn_perfil() {
         return btn_perfil;
@@ -71,12 +65,12 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.btn_usuario = btn_usuario;
     }
 
-    public JMenuBar getjMenuBar1() {
-        return jMenuBar1;
+     public JDesktopPane getESCRITORIO() {
+        return ESCRITORIO;
     }
 
-    public void setjMenuBar1(JMenuBar jMenuBar1) {
-        this.jMenuBar1 = jMenuBar1;
+    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
+        this.ESCRITORIO = ESCRITORIO;
     }
 
     

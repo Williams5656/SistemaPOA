@@ -23,7 +23,7 @@ public class Con_principal {
     private final Vis_Principal vista;
 
     public Con_principal(Vis_Principal vista) {
-        this.vista = vista;
+       this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);
@@ -36,12 +36,12 @@ public class Con_principal {
     }
 
     private void perfil() {
-        Vis_Perfil perfil = new Vis_Perfil();
-        vista.getESCRITORIO().add(perfil);
+         Vis_Perfil zap = new Vis_Perfil();
+        vista.getESCRITORIO().add(zap);
         Dimension desktopSize = vista.getESCRITORIO().getSize();
-        Dimension FrameSize = perfil.getSize();
-        perfil.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_perfil per = new Con_perfil(perfil);
+        Dimension FrameSize = zap.getSize();
+        zap.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_perfil zapatos = new Con_perfil(zap);
 
     }
 

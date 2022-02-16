@@ -22,23 +22,12 @@ public class Con_principal {
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);
+        vista.getBtn_perfil().addActionListener(e -> perfil());
         vista.getBtn_persona().addActionListener(e -> persona());
-//        vista.getBtn_asignacion().addActionListener(e -> asignacion());
-//        vista.getBtn_roles().addActionListener(e -> roles());
+        vista.getBtn_roles().addActionListener(e -> roles());
         vista.getBtn_salir().addActionListener(e -> salir());
-//        vista.getBtn_nuevo().addActionListener(e -> nuevo());
-        
+        vista.getBtn_usuario().addActionListener(e -> usuario());
 
-    }
-    
-     private void persona() {
-        vis_Persona persona = new vis_Persona();
-        vista.getESCRITORIO().add(persona);
-        Dimension desktopSize = vista.getESCRITORIO().getSize();
-        Dimension FrameSize = persona.getSize();
-        persona.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_persona per = new Con_persona(persona);
-        
     }
 
     private void perfil() {
@@ -48,36 +37,46 @@ public class Con_principal {
         Dimension FrameSize = perfil.getSize();
         perfil.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         Con_perfil per = new Con_perfil(perfil);
-        
+
     }
 
-//    private void asignacion() {
-//        Vis_Asignacion user = new Vis_Asignacion();
-//        vista.getESCRITORIO().add(user);
-//        Dimension desktopSize = vista.getESCRITORIO().getSize();
-//        Dimension FrameSize = user.getSize();
-//        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-//        user.show();
-//    }
-//
-//    private void roles() {
-//        Vis_Roles user = new Vis_Roles();
-//        vista.getESCRITORIO().add(user);
-//        Dimension desktopSize = vista.getESCRITORIO().getSize();
-//        Dimension FrameSize = user.getSize();
-//        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-//        user.show();
-//    }
-//
+    private void persona() {
+        vis_Persona persona = new vis_Persona();
+        vista.getESCRITORIO().add(persona);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = persona.getSize();
+        persona.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_persona per = new Con_persona(persona);
+
+    }
+
+    private void roles() {
+        Vis_Roles user = new Vis_Roles();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        user.show();
+    }
+
     private void salir() {
         vis_inicioSesion visin = new vis_inicioSesion();
         vista.setVisible(false);
         visin.setVisible(true);
         cont_inicio inicio = new cont_inicio(visin);
     }
-//
-//    private void nuevo() {
-//        Vis_Usuario user = new Vis_Usuario();
+
+    private void usuario() {
+        Vis_Usuario user = new Vis_Usuario();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        user.show();
+    }
+
+//    private void asignacion() {
+//        Vis_Asignacion user = new Vis_Asignacion();
 //        vista.getESCRITORIO().add(user);
 //        Dimension desktopSize = vista.getESCRITORIO().getSize();
 //        Dimension FrameSize = user.getSize();

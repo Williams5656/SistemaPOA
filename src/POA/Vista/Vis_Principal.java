@@ -6,6 +6,7 @@
 package POA.Vista;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
@@ -22,20 +23,12 @@ public class Vis_Principal extends javax.swing.JFrame {
 
     }
 
-    public JMenuItem getBtn_nuevo() {
-        return btn_nuevo;
+    public JDesktopPane getESCRITORIO() {
+        return ESCRITORIO;
     }
 
-    public void setBtn_nuevo(JMenuItem btn_nuevo) {
-        this.btn_nuevo = btn_nuevo;
-    }
-
-    public JMenuItem getBtn_asignacion() {
-        return btn_asignacion;
-    }
-
-    public void setBtn_asignacion(JMenuItem btn_asignacion) {
-        this.btn_asignacion = btn_asignacion;
+    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
+        this.ESCRITORIO = ESCRITORIO;
     }
 
     public JMenuItem getBtn_perfil() {
@@ -44,6 +37,14 @@ public class Vis_Principal extends javax.swing.JFrame {
 
     public void setBtn_perfil(JMenuItem btn_perfil) {
         this.btn_perfil = btn_perfil;
+    }
+
+    public JMenuItem getBtn_persona() {
+        return btn_persona;
+    }
+
+    public void setBtn_persona(JMenuItem btn_persona) {
+        this.btn_persona = btn_persona;
     }
 
     public JMenuItem getBtn_roles() {
@@ -55,29 +56,30 @@ public class Vis_Principal extends javax.swing.JFrame {
     }
 
     public JMenuItem getBtn_salir() {
-        return btn_nuevo;
+        return btn_salir;
     }
 
     public void setBtn_salir(JMenuItem btn_salir) {
-        this.btn_nuevo = btn_salir;
+        this.btn_salir = btn_salir;
     }
 
-    public JMenuItem getBtn_persona() {
-        return Btn_persona;
+    public JMenuItem getBtn_usuario() {
+        return btn_usuario;
     }
 
-    public void setBtn_persona(JMenuItem Btn_persona) {
-        this.Btn_persona = Btn_persona;
+    public void setBtn_usuario(JMenuItem btn_usuario) {
+        this.btn_usuario = btn_usuario;
     }
 
-    public JDesktopPane getESCRITORIO() {
-        return ESCRITORIO;
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
     }
 
-    public void setESCRITORIO(JDesktopPane ESCRITORIO) {
-        this.ESCRITORIO = ESCRITORIO;
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,12 +92,11 @@ public class Vis_Principal extends javax.swing.JFrame {
         ESCRITORIO = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         MENU_USUARIO = new javax.swing.JMenu();
-        btn_nuevo = new javax.swing.JMenuItem();
-        Btn_persona = new javax.swing.JMenuItem();
+        btn_usuario = new javax.swing.JMenuItem();
         btn_salir = new javax.swing.JMenuItem();
         MENU_ACADEMICO = new javax.swing.JMenu();
-        btn_asignacion = new javax.swing.JMenuItem();
         btn_perfil = new javax.swing.JMenuItem();
+        btn_persona = new javax.swing.JMenuItem();
         btn_roles = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,18 +114,15 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         MENU_USUARIO.setText("USUARIO");
 
-        btn_nuevo.setText("Nuevo");
-        btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
+        btn_usuario.setText("Nuevo");
+        btn_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoActionPerformed(evt);
+                btn_usuarioActionPerformed(evt);
             }
         });
-        MENU_USUARIO.add(btn_nuevo);
+        MENU_USUARIO.add(btn_usuario);
 
-        Btn_persona.setText("Persona");
-        MENU_USUARIO.add(Btn_persona);
-
-        btn_salir.setText("SALIR");
+        btn_salir.setText("Salir");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
@@ -136,14 +134,6 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         MENU_ACADEMICO.setText("ACADEMICO");
 
-        btn_asignacion.setText("Asignacion");
-        btn_asignacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_asignacionActionPerformed(evt);
-            }
-        });
-        MENU_ACADEMICO.add(btn_asignacion);
-
         btn_perfil.setText("Perfil");
         btn_perfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +141,14 @@ public class Vis_Principal extends javax.swing.JFrame {
             }
         });
         MENU_ACADEMICO.add(btn_perfil);
+
+        btn_persona.setText("Persona");
+        btn_persona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_personaActionPerformed(evt);
+            }
+        });
+        MENU_ACADEMICO.add(btn_persona);
 
         btn_roles.setText("Roles");
         btn_roles.addActionListener(new java.awt.event.ActionListener() {
@@ -178,20 +176,20 @@ public class Vis_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
+    private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevoActionPerformed
+    }//GEN-LAST:event_btn_usuarioActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void btn_asignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asignacionActionPerformed
+    private void btn_personaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_personaActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_asignacionActionPerformed
+    }//GEN-LAST:event_btn_personaActionPerformed
 
     private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
 
@@ -208,15 +206,14 @@ public class Vis_Principal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Btn_persona;
     private javax.swing.JDesktopPane ESCRITORIO;
     private javax.swing.JMenu MENU_ACADEMICO;
     private javax.swing.JMenu MENU_USUARIO;
-    private javax.swing.JMenuItem btn_asignacion;
-    private javax.swing.JMenuItem btn_nuevo;
     private javax.swing.JMenuItem btn_perfil;
+    private javax.swing.JMenuItem btn_persona;
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
+    private javax.swing.JMenuItem btn_usuario;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

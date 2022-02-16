@@ -27,7 +27,7 @@ public class Letras {
         );
     }
 
-    public static void soloespacios(JTextField t) { //devuelve booleano si el campo posee solo espacios
+    public static void soloespacios(JTextField t) { //consume la tecla espacio si es pulsado dos veces
         t.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {

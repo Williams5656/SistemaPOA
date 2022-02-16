@@ -85,7 +85,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JSeparator();
 
         setClosable(true);
-        setPreferredSize(new java.awt.Dimension(1122, 652));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -264,13 +263,13 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         lbError.setVisible(false);
         panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 350, 610));
+        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 350, 520));
 
-        panel3.setBackground(new java.awt.Color(37, 63, 90));
+        panel3.setBackground(new java.awt.Color(255, 255, 255));
         panel3.setEnabled(false);
         panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tablePersonas.setBackground(new java.awt.Color(37, 63, 90));
+        tablePersonas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tablePersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -287,7 +286,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 703, 350));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Lista Persona");
         panel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
@@ -301,7 +299,8 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtBuscar.setOpaque(false);
         panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 250, 20));
 
-        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         panel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 250, 10));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo Instituto.png"))); // NOI18N

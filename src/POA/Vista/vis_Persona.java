@@ -61,7 +61,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtCorreo = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
-        fecha = new com.toedter.calendar.JDateChooser();
         lbFoto = new javax.swing.JLabel();
         btnCargarFoto = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -205,7 +204,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         txtCelular.setBorder(null);
         txtCelular.setOpaque(false);
         panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 170, 20));
-        panel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
 
         lbFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/imagen.png"))); // NOI18N
         panel2.add(lbFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 130));
@@ -431,7 +429,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -28,8 +28,8 @@ public class Con_rol {
     public Con_rol(Vis_Roles vista) {
         this.vista = vista;
         vista.setVisible(true);
-        vista.getBtn_eliminar().addActionListener(l->eliminar());
         vista.getBtn_editar().setEnabled(true);
+        DefinirMetodo(n);
         vista.getBtn_ingresar().addActionListener(l->{
             try {
                 cargarDialogo(1);
@@ -51,19 +51,20 @@ public class Con_rol {
             }
 
         });
+        vista.getBtn_eliminar().addActionListener(l->eliminar());
         lista();
     }
     private void cargarDialogo(int origen) throws SQLException {
-        vista.getVista_NuevoRol().setSize(950, 400);
-        vista.getVista_NuevoRol().setLocationRelativeTo(vista);
+        vista.getVista_NuevoRol().setSize(950, 400);//dimensiones
+        vista.getVista_NuevoRol().setLocationRelativeTo(vista);//posicion
         fila = vista.getTabla_rol().getSelectedRow();
-        if (origen == 1) {
+        if (origen == 1) {//selecciona ingresar
             n = 1;
             vista.getVista_NuevoRol().setVisible(true);
         } else {
             if (fila == -1) {
                 JOptionPane.showMessageDialog(vista, "SELECCIONE UN DATO DE LA TABLA", "", 2);
-            } else {
+            } else {//ingresa modificar
                 // cargarDatos();
                 vista.getVista_NuevoRol().setTitle("Editar Rol");
                 n = 2;
@@ -72,12 +73,12 @@ public class Con_rol {
 
         }
     }
-    public void DefinirMetodo(int n) throws SQLException {
+    public void DefinirMetodo(int n) {
 
-        if (n == 1) {
+        if (n == 1) {//ingresar
             fila = vista.getTabla_rol().getSelectedRow();
             guardar();
-        } else if (n == 2) {
+        } else if (n == 2) {//modificar
             fila = vista.getTabla_rol().getSelectedRow();
             modificar();
         }

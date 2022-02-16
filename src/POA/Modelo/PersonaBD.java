@@ -12,6 +12,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -110,6 +111,43 @@ public class PersonaBD extends PersonaMD {
             return null;
         }
 
+    }
+    public List<PersonaMD> obtenerdatos(String identificador) {
+        try {
+            List<PersonaMD> lista = new ArrayList<PersonaMD>();
+            String sql = "select * from persona where \"codigo\"='" + identificador + "'";
+            ResultSet rs = conectar.query(sql);
+            byte[] is;
+            while (rs.next()) {
+                PersonaMD p = new PersonaMD();
+                p.setCedula(rs.getString("cedula"));
+                p.setNombres(rs.getString("nombres"));
+                p.setApellidos(rs.getString("apellidos"));
+                p.setDireccion(rs.getString("direccion"));
+                p.setCorreo(rs.getString("correo"));
+                p.setTelefono(rs.getString("telefono"));
+                p.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                is = rs.getBytes("foto");
+                if (is != null) {
+                    try {
+                        is = org.postgresql.util.Base64.decode(is, 0, rs.getBytes("foto").length);
+//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+                        p.setFoto(getImage(is, false));
+                    } catch (Exception ex) {
+                        p.setFoto(null);
+                        Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    p.setFoto(null);
+                }
+                lista.add(p);
+            }
+            rs.close();//cerramos conexion base.
+            return lista;
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     public boolean insertar() {

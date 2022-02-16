@@ -14,6 +14,9 @@ import POA.Vista.vis_Persona;
 import java.awt.Image;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -21,7 +24,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -40,6 +45,10 @@ public class Con_persona {
     public Con_persona(vis_Persona vista) {
         this.vista = vista;
         vista.setVisible(true);
+        vista.getBtnNuevo().addActionListener(e -> nuevo());
+        vista.getBtnGuardar().addActionListener(e -> guardar());
+        vista.getBtnModificar().addActionListener(e -> modificar());
+        vista.getBtnCargarFoto().addActionListener(e -> obtieneImagen());
         Letras.no_espacios(vista.getTxtCedula());
         Numeros.solo_numeros(vista.getTxtCedula());
         Letras.numero_letras(vista.getTxtCedula(), 9);
@@ -50,7 +59,45 @@ public class Con_persona {
         Letras.no_espacios(vista.getTxtCorreo());
         comprobar_ced();
         val_correo();
+        vista.getTablePersonas().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionar();
+            }
+        });
+        lista();
 
+    }
+    public void seleccionar() {
+        vista.getBtnGuardar().setEnabled(false);
+        vista.getBtnModificar().setEnabled(true);
+        DefaultTableModel modelo;
+        modelo = (DefaultTableModel) vista.getTablePersonas().getModel();
+        String cedula = (String) modelo.getValueAt(vista.getTablePersonas().getSelectedRow(), 0);
+        System.out.println(cedula);
+        List<PersonaMD> lista = per.obtenerdatos(cedula);
+        per.setCedula(lista.get(0).getCedula());
+        per.setNombres(lista.get(0).getNombres());
+        per.setApellidos(lista.get(0).getApellidos());
+        per.setDireccion(lista.get(0).getDireccion());
+        per.setCorreo(lista.get(0).getCorreo());
+        per.setTelefono(lista.get(0).getTelefono());
+        per.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
+
+        vista.getTxtCedula().setText(per.getCedula());
+        vista.getTxtNombre().setText(per.getNombres());
+        vista.getTxtApellido().setText(per.getApellidos());
+        vista.getTxtDireccion().setText(per.getDireccion());
+        vista.getTxtCorreo().setText(per.getCorreo());
+        vista.getTxtCelular().setText(per.getTelefono());
+        Image img = lista.get(0).getFoto();
+        if (img != null) {
+            Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(newimg);
+            vista.getLbFoto().setIcon(icon);
+        } else {
+            vista.getLbFoto().setIcon(null);
+        }
     }
 
     public void comprobar_ced() {
@@ -123,7 +170,8 @@ public class Con_persona {
             }
         }
 
-        public void guardar() {
+    }
+     public void guardar() {
             if (vista.getTxtNombre().getText().equals("") || vista.getTxtNombre().getText().equals("") || vista.getTxtApellido().getText().equals("") || vista.getTxtDireccion().getText().equals("") || vista.getTxtCorreo().getText().equals("") || vista.getTxtCelular().getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Llene todos los campos");
             } else {
@@ -187,6 +235,21 @@ public class Con_persona {
             }
 
         }
+        private void obtieneImagen() {
+        vista.getLbFoto().setIcon(null);
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int estado = j.showOpenDialog(null);
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            try {
+                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT);
+                vista.getLbFoto().setIcon(new ImageIcon(icono));
+                vista.getLbFoto().updateUI();
+            } catch (IOException ex) {
+                Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 
         public void modificar() {
 
@@ -244,4 +307,4 @@ public class Con_persona {
             nuevo();
         }
     }
-}
+

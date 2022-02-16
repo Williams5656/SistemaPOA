@@ -210,6 +210,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         txt_observaciones = new javax.swing.JTextArea();
         btn_guardar_rol = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         vista_EditarRol = new javax.swing.JDialog();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -230,91 +231,47 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         btn_editar_permiso = new javax.swing.JButton();
 
         vista_NuevoRol.setTitle("Nuevo Rol");
+        vista_NuevoRol.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Numero:");
+        vista_NuevoRol.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 58, -1, -1));
 
         txt_numero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_numeroActionPerformed(evt);
             }
         });
+        vista_NuevoRol.getContentPane().add(txt_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 50, 204, 32));
 
         jLabel3.setText("ID:");
+        vista_NuevoRol.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 114, -1, 20));
 
         txt_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_idActionPerformed(evt);
             }
         });
+        vista_NuevoRol.getContentPane().add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 108, 204, 32));
 
         jLabel4.setText("Nombre del Rol:");
+        vista_NuevoRol.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 177, -1, -1));
+        vista_NuevoRol.getContentPane().add(txt_nombrerol, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 168, 207, 34));
 
         jLabel5.setText("Observaciones:");
+        vista_NuevoRol.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 246, -1, -1));
 
         txt_observaciones.setColumns(20);
         txt_observaciones.setRows(5);
         jScrollPane1.setViewportView(txt_observaciones);
 
+        vista_NuevoRol.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 246, -1, 155));
+
         btn_guardar_rol.setText("Guardar");
+        vista_NuevoRol.getContentPane().add(btn_guardar_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 436, -1, -1));
 
         btn_cancelar.setText("Cancelar ");
-
-        javax.swing.GroupLayout vista_NuevoRolLayout = new javax.swing.GroupLayout(vista_NuevoRol.getContentPane());
-        vista_NuevoRol.getContentPane().setLayout(vista_NuevoRolLayout);
-        vista_NuevoRolLayout.setHorizontalGroup(
-            vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vista_NuevoRolLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(btn_cancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_guardar_rol)
-                .addGap(77, 77, 77))
-            .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(34, 34, 34)
-                        .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_nombrerol, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txt_numero)
-                                .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(150, Short.MAX_VALUE))
-        );
-        vista_NuevoRolLayout.setVerticalGroup(
-            vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(vista_NuevoRolLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_nombrerol, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(vista_NuevoRolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancelar)
-                    .addComponent(btn_guardar_rol))
-                .addGap(26, 26, 26))
-        );
+        vista_NuevoRol.getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 436, -1, -1));
+        vista_NuevoRol.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
         vista_EditarRol.setTitle("Editar Rol");
 
@@ -506,6 +463,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

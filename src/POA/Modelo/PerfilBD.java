@@ -85,7 +85,7 @@ public class PerfilBD extends PerfilMD {
         }
     }
     public boolean insertar() {
-        String sql = "INSERT INTO perfil(nombre,descripcion)" + "VALUES ('" + getNombre() + getDescripcion() + "')";
+        String sql = "INSERT INTO perfil(nombre,descripcion)" + "VALUES ('" + getNombre() + "','"+ getDescripcion() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;

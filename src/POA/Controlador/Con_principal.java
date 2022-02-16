@@ -5,7 +5,12 @@
  */
 package POA.Controlador;
 
-import POA.Vista.*;
+import POA.Vista.Vis_Perfil;
+import POA.Vista.Vis_Principal;
+import POA.Vista.Vis_Roles;
+import POA.Vista.Vis_Usuario;
+import POA.Vista.vis_Persona;
+import POA.Vista.vis_inicioSesion;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 

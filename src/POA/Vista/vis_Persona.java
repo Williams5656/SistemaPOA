@@ -243,7 +243,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
 
         lbError.setForeground(new java.awt.Color(255, 51, 51));
         lbError.setText("Cedula Error");
-        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, -1));
 
         getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
 

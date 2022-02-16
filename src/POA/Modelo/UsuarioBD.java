@@ -129,6 +129,34 @@ public class UsuarioBD extends UsuarioMD {
         }
 
     }
+    
+    public boolean desactivar(String cedula) {
+        String sql = "UPDATE abaceria set \"estado\"='" + "Inactivo" + "'"
+                + " where \"cedula\"='" + cedula + "'";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
+
+    public boolean activar(String cedula) {
+        String sql = "UPDATE usuario set \"estado\"='" + "Activo" + "'"
+                + " where \"cedula\"='" + cedula + "'";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
 
   
 }

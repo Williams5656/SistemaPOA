@@ -71,6 +71,8 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
+        fecha = new com.toedter.calendar.JDateChooser();
+        lbError = new javax.swing.JLabel();
         panel3 = new java.awt.Panel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePersonas = new javax.swing.JTable();
@@ -237,6 +239,11 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator9.setBackground(new java.awt.Color(179, 146, 29));
         jSeparator9.setForeground(new java.awt.Color(179, 146, 29));
         panel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 10));
+        panel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
+
+        lbError.setForeground(new java.awt.Color(255, 51, 51));
+        lbError.setText("Cedula Error");
+        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
 
@@ -429,6 +436,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
+    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -459,6 +467,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lbError;
     private javax.swing.JLabel lbFoto;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;

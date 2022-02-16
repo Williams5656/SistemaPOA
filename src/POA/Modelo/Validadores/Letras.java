@@ -14,8 +14,8 @@ import javax.swing.JTextField;
  * @author MIGUEL
  */
 public class Letras {
-    
-    public static void solo_letras(JTextField t){
+
+    public static void solo_letras(JTextField t) {
         t.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -26,15 +26,22 @@ public class Letras {
         }
         );
     }
-    
-    public static boolean soloespacios(JTextField t){ //devuelve booleano si el campo posee solo espacios
-        String a=t.getText();
-        for (int i = 0; i < a.length()-1; i++) {
-            if(a.charAt(i)==' ' && a.charAt(i+1)==32) return false;
+
+    public static void soloespacios(JTextField t) { //devuelve booleano si el campo posee solo espacios
+        t.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                String a = t.getText();
+                for (int i = 0; i < a.length() - 1; i++) {
+                    if (a.charAt(i) == ' ' && a.charAt(i + 1) == 32) {
+                       e.consume();
+                    }
+                }
+            }
         }
-        return true;
+        );
     }
-    
+
     public static void no_espacios(JTextField t) { // evita que se puedan colocar espacios
         t.addKeyListener(new KeyAdapter() {
             @Override
@@ -46,21 +53,23 @@ public class Letras {
         }
         );
     }
-    
+
     public static String dato_final(JTextField t) { // borra espacios en blanco al principio , final y espacios dobles o mas entre palabras
-        String a=t.getText().toLowerCase();
+        String a = t.getText().toLowerCase();
         a = a.trim();
         a = a.replaceAll("\\s{2,}", " ");
         return a;
     }
-    
-    public static void numero_letras(JTextField t, int a){ // determina el numero maximo de letras
+
+    public static void numero_letras(JTextField t, int a) { // determina el numero maximo de letras
         t.addKeyListener(new KeyAdapter() {
             @Override
-            public void keyTyped(KeyEvent e){
-                if (t.getText().length()>a) e.consume();
+            public void keyTyped(KeyEvent e) {
+                if (t.getText().length() > a) {
+                    e.consume();
                 }
             }
-        );        
+        }
+        );
     }
 }

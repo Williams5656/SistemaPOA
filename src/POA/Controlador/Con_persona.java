@@ -187,35 +187,61 @@ public class Con_persona {
             }
 
         }
-        
+
         public void modificar() {
-        
-        per.setCedula(vista.getTxtCedula().getText());
-        per.setNombres(vista.getTxtNombre().getText());
-        per.setApellidos(vista.getTxtApellido().getText());
-        
-        String fechanac = Integer.toString(vista.getFecha().getCalendar().get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.MONTH) + 1) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.YEAR));
-        per.setFecha_nacimiento(fechanac);
-        
-        
-        per.setDireccion(vista.getTxtDireccion().getText());
-        per.setCorreo(vista.getTxtCorreo().getText());
-        per.setTelefono(vista.getTxtCelular().getText());
-        ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
-        per.setFoto(ic.getImage());
-        
-        int resp2 = JOptionPane.showConfirmDialog(null, "¿Desea Modificar?");
-        if (resp2 == 0) {
-            if (per.Modificar(vista.getTxtCedula().getText())) {
-                JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS");
-                lista();
-               nuevo();
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al modificar");
+
+            per.setCedula(vista.getTxtCedula().getText());
+            per.setNombres(vista.getTxtNombre().getText());
+            per.setApellidos(vista.getTxtApellido().getText());
+
+            String fechanac = Integer.toString(vista.getFecha().getCalendar().get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.MONTH) + 1) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.YEAR));
+            per.setFecha_nacimiento(fechanac);
+
+            per.setDireccion(vista.getTxtDireccion().getText());
+            per.setCorreo(vista.getTxtCorreo().getText());
+            per.setTelefono(vista.getTxtCelular().getText());
+            ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
+            per.setFoto(ic.getImage());
+
+            int resp2 = JOptionPane.showConfirmDialog(null, "¿Desea Modificar?");
+            if (resp2 == 0) {
+                if (per.Modificar(vista.getTxtCedula().getText())) {
+                    JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS");
+                    lista();
+                    nuevo();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al modificar");
+                }
+
             }
 
         }
-    }
-    }
 
+        public void buscar() {
+            if (vista.getTxtBuscar().getText().equals("")) {
+                lista();
+            } else {
+                DefaultTableModel modelo;
+                modelo = (DefaultTableModel) vista.getTablePersonas().getModel();
+                List<PersonaMD> lista3 = per.mostrardatos();
+                int columnas = modelo.getColumnCount();
+                for (int j = vista.getTablePersonas().getRowCount() - 1; j >= 0; j--) {
+                    modelo.removeRow(j);
+                    for (int i = 0; i < lista3.size(); i++) {
+                        if (lista3.get(i).getCedula().equals(vista.getTxtBuscar().getText())) {
+                            modelo.addRow(new Object[columnas]);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getCedula(), i, 0);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getNombres(), i, 1);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getApellidos(), i, 2);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getDireccion(), i, 3);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getCorreo(), i, 4);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getTelefono(), i, 5);
+                            vista.getTablePersonas().setValueAt(lista3.get(i).getFecha_nacimiento(), i, 6);
+                        }
+                    }
+                }
+            }
+            nuevo();
+        }
+    }
 }

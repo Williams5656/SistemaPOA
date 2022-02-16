@@ -70,8 +70,8 @@ public class con_usuario {
     
     public void guardar(){
         
-        bdusuario.setCedula(vista.getTxtcedula().getText());
-        bdusuario.setUsuario(vista.getTxtUsuario().getText());
+        bdusuario.setNombre(vista.getTxtcedula().getText());
+        bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
         bdusuario.setContrasenia(vista.getTxtContrasenia().getText());
         
 
@@ -79,7 +79,7 @@ public class con_usuario {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
             nuevo();
         }else{
-            if (bdusuario.insertar()) {
+            if (bdusuario.guardar()) {
             JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
             lista();
             nuevo();
@@ -111,8 +111,8 @@ public class con_usuario {
     public void modificar() {
         
         
-        bdusuario.setCedula(vista.getTxtcedula().getText());
-        bdusuario.setUsuario(vista.getTxtUsuario().getText());
+        bdusuario.setNombre(vista.getTxtcedula().getText());
+        bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
         bdusuario.setContrasenia(vista.getTxtContrasenia().getText());
      
  
@@ -138,30 +138,30 @@ public class con_usuario {
         modelo = (DefaultTableModel) vista.getTableUsuario().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTableUsuario().getSelectedRow(), 0);
         System.out.println(cedula);
-        List<UsuarioMD> lista = bdempleado.obtenerdatos(cedula);
-        bdusuario.setCedula(lista.get(0).getCedula());
-        bdusuario.setUsuario(lista.get(0).getNombres());
-        bdusuario.setContrasenia(lista.get(0).getSalario());
-        bdusuario.setDiscapacidad(lista.get(0).getDiscapacidad());
+        List<UsuarioMD> lista = bdusuario.obtenerDatos(cedula);
+        bdusuario.setNombre(lista.get(0).getNombre());
+        bdusuario.setNombreUsuario(lista.get(0).getNombreUsuario());
+        bdusuario.setContrasenia(lista.get(0).getContrasenia());
+
         
-        vista.getTxtcedula().setText(bdusuario.getCedula());
-        vista.getTxtUsuario().setText(bdusuario.getNombres());
-        vista.getTxtContrasenia().setText(bdusuario.getSalario());
+        vista.getTxtcedula().setText(bdusuario.getNombre());
+        vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
+        vista.getTxtContrasenia().setText(bdusuario.getContrasenia());
 
     }
     
     public void lista(){
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTableUsuario().getModel();
-        List<UsuarioMD> lista = bdusuario.mostrarDatos();
+        List<UsuarioMD> lista = bdusuario.mostrardatos();
         int columnas = modelo.getColumnCount();
         for (int j = vista.getTableUsuario().getRowCount()-1;j >= 0; j--) {
             modelo.removeRow(j);        }
         
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vista.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 0);
-            vista.getTableUsuario().setValueAt(lista.get(i).getUsuario(), i, 1);
+            vista.getTableUsuario().setValueAt(lista.get(i).getNombre(), i, 0);
+            vista.getTableUsuario().setValueAt(lista.get(i).getNombreUsuario(), i, 1);
             vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);
             
             

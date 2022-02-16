@@ -45,10 +45,10 @@ public class UsuarioBD extends UsuarioMD {
     public UsuarioBD() {
     }
     
-  public List<UsuarioBD> mostrardatos() {
-        List<UsuarioBD> listaA = new ArrayList<UsuarioBD>();
+  public List<UsuarioMD> mostrardatos() {
+        List<UsuarioMD> listaA = new ArrayList<UsuarioMD>();
         try {
-            String sql = "select * from libreria";
+            String sql = "select * from usuario";
             ResultSet rs = conectar.query(sql);
             byte[] is;
             while (rs.next()) {
@@ -70,7 +70,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuaio,contrasenia)" + "VALUES ('" + getNombreUsuario()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "')";
+        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombreUsuario()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -81,5 +81,55 @@ public class UsuarioBD extends UsuarioMD {
         }
 
     }
+  
+   public boolean modificar(String cedula){
+          //Transformo image a base64 encode para postgresl
+        
+            String nsql= "update usuario set \"usuario\"='"+getNombreUsuario()+  "',\"contrasenia\"='"+getContrasenia()+ "'" 
+                    + " where \"cedula\"='"+cedula+"'";
+            
+            if(conectar.noQuery(nsql)==null){
+                return true;
+                }
+                else{
+                    System.out.println("error al editar");
+                     return false;
+                }
+            
+            }
+   
+    public boolean eliminar(String cedula){
+                String nsql= "delete from usuario where \"cedula\"='" + cedula + "'";
+                if(conectar.noQuery(nsql)==null){
+                return true;
+                }
+                else{
+                    System.out.println("error eliminar");
+                    return false;
+                }        
+    }
+    
+    public List<UsuarioMD> obtenerDatos(String cedula) {
+        List<UsuarioMD> listaA = new ArrayList<UsuarioMD>();
+        try {
+            String sql = "select * from usuario" + " where \"cedula\"='"+cedula+"'";
+            ResultSet rs = conectar.query(sql);
+            byte[] is;
+            while (rs.next()) {
+                UsuarioBD m = new UsuarioBD();
+                m.setNombre(rs.getString("cedula"));
+                m.setNombreUsuario(rs.getString("usuario"));
+                m.setContrasenia(rs.getString("contrsenia"));
+                listaA.add(m);
+            }
+            rs.close();
+            return listaA;
+        } catch (Exception e) {
+            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+
+    }
+
   
 }

@@ -29,6 +29,7 @@ public class Con_rol {
         this.vista = vista;
         vista.setVisible(true);
         vista.getBtn_eliminar().addActionListener(l->eliminar());
+        vista.getBtn_editar().setEnabled(true);
         vista.getBtn_ingresar().addActionListener(l->{
             try {
                 cargarDialogo(1);

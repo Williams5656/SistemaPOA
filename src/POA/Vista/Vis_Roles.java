@@ -369,7 +369,11 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
                 .addGap(47, 47, 47))
         );
 
+        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_ingresar.setText("Ingresar");

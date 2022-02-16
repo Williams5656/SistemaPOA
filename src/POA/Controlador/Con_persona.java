@@ -160,7 +160,6 @@ public class Con_persona {
             vista.getTxtDireccion().setText("");
             vista.getTxtCorreo().setText("");
             Orig = "src/Imagenes/imagen.png";
-            // ImageIcon icon=new ImageIcon(getClass().getResource("/IMAGENES/"+Imagen));
             ImageIcon icon = new ImageIcon(Orig);
             ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));
             vista.getLbFoto().setText(null);
@@ -209,8 +208,8 @@ public class Con_persona {
         if (resp2 == 0) {
             if (per.Modificar(vista.getTxtCedula().getText())) {
                 JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS");
-//                lista();
-//                nuevo();
+                lista();
+               nuevo();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al modificar");
             }

@@ -46,7 +46,7 @@ public class PerfilBD extends PerfilMD {
     public List<PerfilMD> mostrardatos() {
         try {
             List<PerfilMD> lista = new ArrayList<PerfilMD>();
-            String sql = "select * from maquillaje";
+            String sql = "select * from perfil";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PerfilMD perfil = new PerfilMD();

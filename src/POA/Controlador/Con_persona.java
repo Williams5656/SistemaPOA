@@ -49,16 +49,16 @@ public class Con_persona {
         vista.getBtnGuardar().addActionListener(e -> guardar());
         vista.getBtnModificar().addActionListener(e -> modificar());
         vista.getBtnCargarFoto().addActionListener(e -> obtieneImagen());
-        Letras.no_espacios(vista.getTxtCedula());
-        Numeros.solo_numeros(vista.getTxtCedula());
-        Letras.numero_letras(vista.getTxtCedula(), 9);
-        Letras.solo_letras(vista.getTxtNombre());
-        Letras.solo_letras(vista.getTxtApellido());
-        Letras.no_espacios(vista.getTxtCelular());
-        Numeros.solo_numeros(vista.getTxtCelular());
-        Letras.no_espacios(vista.getTxtCorreo());
-        comprobar_ced();
-        val_correo();
+//        Letras.no_espacios(vista.getTxtCedula());
+//        Numeros.solo_numeros(vista.getTxtCedula());
+//        Letras.numero_letras(vista.getTxtCedula(), 9);
+//        Letras.solo_letras(vista.getTxtNombre());
+//        Letras.solo_letras(vista.getTxtApellido());
+//        Letras.no_espacios(vista.getTxtCelular());
+//        Numeros.solo_numeros(vista.getTxtCelular());
+//        Letras.no_espacios(vista.getTxtCorreo());
+//        comprobar_ced();
+//        val_correo();
         vista.getTablePersonas().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

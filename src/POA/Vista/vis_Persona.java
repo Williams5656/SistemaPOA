@@ -146,66 +146,82 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cedula:");
-        panel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        panel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nombres:");
-        panel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        panel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Apellidos:");
-        panel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        panel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Fecha Nacimiento:");
-        panel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        panel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo:");
-        panel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        panel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Direccion:");
-        panel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
+        panel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Celular:");
-        panel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, -1, -1));
+        panel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Foto");
         panel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
+        txtCedula.setForeground(new java.awt.Color(255, 255, 255));
         txtCedula.setBorder(null);
         txtCedula.setOpaque(false);
-        panel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 170, 20));
+        panel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 170, 20));
 
+        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setBorder(null);
         txtNombre.setOpaque(false);
-        panel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 170, 20));
+        panel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 170, 20));
 
+        txtApellido.setForeground(new java.awt.Color(255, 255, 255));
         txtApellido.setBorder(null);
         txtApellido.setOpaque(false);
-        panel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 170, 20));
+        panel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 170, 20));
 
+        txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
         txtCorreo.setBorder(null);
         txtCorreo.setOpaque(false);
-        panel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 170, 20));
+        panel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 170, 20));
 
+        txtDireccion.setForeground(new java.awt.Color(255, 255, 255));
         txtDireccion.setBorder(null);
         txtDireccion.setOpaque(false);
-        panel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 170, 20));
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
+        panel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 170, 20));
 
+        txtCelular.setForeground(new java.awt.Color(255, 255, 255));
         txtCelular.setBorder(null);
         txtCelular.setOpaque(false);
-        panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 170, 20));
+        txtCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelularActionPerformed(evt);
+            }
+        });
+        panel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 170, 20));
 
         lbFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/imagen.png"))); // NOI18N
         panel2.add(lbFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 130));
@@ -216,35 +232,35 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel2.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 40, -1));
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 170, 10));
+        panel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 170, 10));
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 170, 10));
+        panel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 170, 10));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 170, 10));
+        panel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 170, 10));
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 170, 10));
+        panel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 170, 10));
 
         jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, 170, 10));
+        panel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 170, 10));
 
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
-        panel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 170, 10));
+        panel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 170, 10));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo blanco (1).png"))); // NOI18N
-        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+        panel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 200, 150));
 
         jSeparator9.setBackground(new java.awt.Color(179, 146, 29));
         jSeparator9.setForeground(new java.awt.Color(179, 146, 29));
         panel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 10));
-        panel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 170, -1));
+        panel2.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 170, -1));
 
         lbError.setForeground(new java.awt.Color(255, 51, 51));
         lbError.setText("Cedula Error");
         lbError.setVisible(false);
-        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, -1));
+        panel2.add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
 
         getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 350, 590));
 
@@ -266,7 +282,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablePersonas);
 
-        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 703, 410));
+        panel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 703, 350));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -278,6 +294,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         btnBuscar.setContentAreaFilled(false);
         panel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 40, -1));
 
+        txtBuscar.setForeground(new java.awt.Color(255, 255, 255));
         txtBuscar.setBorder(null);
         txtBuscar.setOpaque(false);
         panel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 250, 20));
@@ -286,7 +303,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         panel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 250, 10));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo Instituto.png"))); // NOI18N
-        panel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        panel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
 
         jSeparator8.setBackground(new java.awt.Color(179, 146, 29));
         jSeparator8.setForeground(new java.awt.Color(179, 146, 29));
@@ -301,6 +318,14 @@ public class vis_Persona extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCelularActionPerformed
 
     public JLabel getLbError() {
         return lbError;

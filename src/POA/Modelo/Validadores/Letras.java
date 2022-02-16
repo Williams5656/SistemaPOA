@@ -15,6 +15,18 @@ import javax.swing.JTextField;
  */
 public class Letras {
     
+    public static void solo_letras(JTextField t){
+        t.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!t.getText().matches("[a-zA-ZñÑ_ ]*")) {
+                    e.consume();
+                }
+            }
+        }
+        );
+    }
+    
     public static boolean soloespacios(JTextField t){ //devuelve booleano si el campo posee solo espacios
         String a=t.getText();
         for (int i = 0; i < a.length()-1; i++) {

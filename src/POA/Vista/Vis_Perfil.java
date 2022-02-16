@@ -23,30 +23,62 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public JButton getBtnEliminar() {
-        return btnEliminar;
+    public JButton getBtn_nuevo() {
+        return btn_nuevo;
     }
 
-    public void setBtnEliminar(JButton btnEliminar) {
-        this.btnEliminar = btnEliminar;
+    public void setBtn_nuevo(JButton btn_nuevo) {
+        this.btn_nuevo = btn_nuevo;
     }
 
-    public JButton getBtnGuardar() {
-        return btnGuardar;
+    public JButton getBtn_guardar() {
+        return btn_guardar;
     }
 
-    public void setBtnGuardar(JButton btnGuardar) {
-        this.btnGuardar = btnGuardar;
+    public void setBtn_guardar(JButton btn_guardar) {
+        this.btn_guardar = btn_guardar;
     }
 
-    public JButton getBtnModificar() {
-        return btnModificar;
+    public JButton getBtn_eliminar() {
+        return btn_eliminar;
     }
 
-    public void setBtnModificar(JButton btnModificar) {
-        this.btnModificar = btnModificar;
+    public void setBtn_eliminar(JButton btn_eliminar) {
+        this.btn_eliminar = btn_eliminar;
     }
-    
+
+    public JButton getBtn_imprimir() {
+        return btn_imprimir;
+    }
+
+    public void setBtn_imprimir(JButton btn_imprimir) {
+        this.btn_imprimir = btn_imprimir;
+    }
+
+    public JButton getBtn_modificar() {
+        return btn_modificar;
+    }
+
+    public void setBtn_modificar(JButton btn_modificar) {
+        this.btn_modificar = btn_modificar;
+    }
+
+    public JTable getTablaPerfil() {
+        return tablaPerfil;
+    }
+
+    public void setTablaPerfil(JTable tablaPerfil) {
+        this.tablaPerfil = tablaPerfil;
+    }
+
+    public JTextField getTxtCodigo() {
+        return txtCodigo;
+    }
+
+    public void setTxtCodigo(JTextField txtCodigo) {
+        this.txtCodigo = txtCodigo;
+    }
+
     public JTextArea getTxtDescripcion() {
         return txtDescripcion;
     }
@@ -63,14 +95,6 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         this.txtNombre = txtNombre;
     }
 
-    public JTable getTablaPerfil() {
-        return tablaPerfil;
-    }
-
-    public void setTablaPerfil(JTable tablaPerfil) {
-        this.tablaPerfil = tablaPerfil;
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,11 +112,15 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcion = new javax.swing.JTextArea();
-        btnGuardar = new javax.swing.JButton();
+        btn_guardar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaPerfil = new javax.swing.JTable();
-        btnModificar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btn_modificar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        btn_nuevo = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,21 +143,27 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         txtDescripcion.setRows(5);
         jScrollPane1.setViewportView(txtDescripcion);
 
-        btnGuardar.setText("GUARDAR");
+        btn_guardar.setText("GUARDAR");
 
         tablaPerfil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-
+                "Codigo", "Nombre", "Descripcion"
             }
         ));
         jScrollPane3.setViewportView(tablaPerfil);
 
-        btnModificar.setText("MODIFICAR");
+        btn_modificar.setText("MODIFICAR");
 
-        btnEliminar.setText("ELIMINAR");
+        btn_eliminar.setText("ELIMINAR");
+
+        jLabel3.setText("Codigo:");
+
+        btn_nuevo.setText("NUEVO");
+
+        btn_imprimir.setText("IMPRIMIR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -139,46 +173,60 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(btn_nuevo)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_guardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_modificar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_eliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_imprimir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(33, 33, 33)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(44, 44, 44)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnModificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEliminar)
-                .addGap(22, 22, 22))
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3))
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)))))
+                        .addGap(0, 20, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnModificar)
-                    .addComponent(btnEliminar))
-                .addGap(2, 2, 2)
+                    .addComponent(btn_guardar)
+                    .addComponent(btn_modificar)
+                    .addComponent(btn_eliminar)
+                    .addComponent(btn_nuevo)
+                    .addComponent(btn_imprimir))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -186,13 +234,17 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,17 +252,21 @@ public class Vis_Perfil extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_imprimir;
+    private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_nuevo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable tablaPerfil;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

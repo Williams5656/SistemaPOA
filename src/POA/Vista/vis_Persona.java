@@ -85,6 +85,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JSeparator();
 
         setClosable(true);
+        setPreferredSize(new java.awt.Dimension(1122, 652));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel1.setBackground(new java.awt.Color(255, 255, 255));

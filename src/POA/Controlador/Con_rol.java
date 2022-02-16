@@ -29,7 +29,6 @@ public class Con_rol {
         this.vista = vista;
         vista.setVisible(true);
         vista.getBtn_editar().setEnabled(true);
-        DefinirMetodo(n);
         vista.getBtn_ingresar().addActionListener(l->{
             try {
                 cargarDialogo(1);
@@ -44,6 +43,14 @@ public class Con_rol {
                 Logger.getLogger(Con_rol.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        vista.getBtn_guardar_rol().addActionListener(l -> {
+            try {
+                DefinirMetodo(n);
+            } catch (SQLException ex) {
+                Logger.getLogger(Con_rol.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        vista.getBtn_eliminar().addActionListener(l->eliminar());
         vista.getTabla_rol().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -51,7 +58,7 @@ public class Con_rol {
             }
 
         });
-        vista.getBtn_eliminar().addActionListener(l->eliminar());
+        
         lista();
     }
     private void cargarDialogo(int origen) throws SQLException {
@@ -64,7 +71,7 @@ public class Con_rol {
         } else {
             if (fila == -1) {
                 JOptionPane.showMessageDialog(vista, "SELECCIONE UN DATO DE LA TABLA", "", 2);
-            } else {//ingresa modificar
+            } else {//ingresar modificar
                 // cargarDatos();
                 vista.getVista_NuevoRol().setTitle("Editar Rol");
                 n = 2;
@@ -73,7 +80,7 @@ public class Con_rol {
 
         }
     }
-    public void DefinirMetodo(int n) {
+    public void DefinirMetodo(int n) throws SQLException{
 
         if (n == 1) {//ingresar
             fila = vista.getTabla_rol().getSelectedRow();

@@ -30,7 +30,7 @@ public class cont_usuario {
         vista.getBtnnuevo().addActionListener(e->nuevo());
         vista.getBtnguardar().addActionListener(e->guardar());
         vista.getBtnmodificar().addActionListener(e->modificar());
-        vista.getBtneliminar().addActionListener(e->eliminar());
+        vista.getBtneliminar().addActionListener(e->cambiarestado());
         vista.getTableUsuario().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -58,6 +58,7 @@ public class cont_usuario {
         vista.getTxtcedula().setText("");
         vista.getTxtUsuario().setText("");
         vista.getTxtcontra().setText("");
+        vista.getComboestado().setSelectedIndex(0);
         
         
     }
@@ -67,6 +68,8 @@ public class cont_usuario {
         bdusuario.setNombre(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
         bdusuario.setContrasenia((vista.getTxtcontra().getText()));
+        String estado = (String) vista.getComboestado().getSelectedItem();
+        bdusuario.setEstado(estado);
         if (vista.getTxtcedula().getText().equals("")||vista.getTxtUsuario().getText().equals("")||vista.getTxtcontra().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
             nuevo();
@@ -82,20 +85,41 @@ public class cont_usuario {
         
     }
     
-    public void eliminar(){
-        int resp2 = JOptionPane.showConfirmDialog(null, "Confirme si esta seguro de eliminar el registro");
+    public void cambiarestado() {
+        String estado = (String) vista.getComboestado().getSelectedItem();
+       
+            int resp2 = JOptionPane.showConfirmDialog(null, "Confirme si esta seguro el cambio de estado");
             if (resp2 == 0) {
-                
-                    if (bdusuario.eliminar(vista.getTxtcedula().getText())) {
-                        JOptionPane.showMessageDialog(null, "Datos eliminados correctamente");
+                if (estado.equals("Activo")) {
+                    if (bdusuario.desactivar(vista.getTxtcedula().getText())) {
+                        JOptionPane.showMessageDialog(null, "Datos desactivados correctamente");
                         lista();
                         nuevo();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Error al eliminar");
+                        JOptionPane.showMessageDialog(null, "Error al desactivar");
                     }
+                }
                 
+                if (estado.equals("Inactivo")) {
+                    if (bdusuario.activar(vista.getTxtcedula().getText())) {
+                        JOptionPane.showMessageDialog(null, "Datos activados correctamente");
+                        lista();
+                        nuevo();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al desactivar");
+                    }
+                }
 
             }
+        
+
+        
+            
+               
+
+            
+        
+
     }
 
     
@@ -130,10 +154,13 @@ public class cont_usuario {
         bdusuario.setNombre(lista.get(0).getNombre());
         bdusuario.setNombreUsuario(lista.get(0).getNombreUsuario());
         bdusuario.setContrasenia(lista.get(0).getContrasenia());
+        bdusuario.setEstado(lista.get(0).getEstado());
+        
         
         vista.getTxtcedula().setText(bdusuario.getNombre());
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
-        vista.getTxtcontra().setText(bdusuario.getContrasenia());        
+        vista.getTxtcontra().setText(bdusuario.getContrasenia());     
+        vista.getComboestado().setSelectedItem(bdusuario.getEstado());
     }
     
     public void lista(){
@@ -148,7 +175,8 @@ public class cont_usuario {
             modelo.addRow(new Object[columnas]);
             vista.getTableUsuario().setValueAt(lista.get(i).getNombre(), i, 0);
             vista.getTableUsuario().setValueAt(lista.get(i).getNombreUsuario(), i, 1);
-            vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);            
+            vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);
+            vista.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 3);            
             
         }
     }

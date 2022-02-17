@@ -6,6 +6,7 @@
 package POA.Vista;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -102,10 +103,16 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     public void setTableUsuario(JTable tableUsuario) {
         this.tableUsuario = tableUsuario;
     }
+
+    public JComboBox<String> getComboestado() {
+        return comboestado;
+    }
+
+    public void setComboestado(JComboBox<String> comboestado) {
+        this.comboestado = comboestado;
+    }
     
-    
-    
-    
+      
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,28 +135,32 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btnbuscar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         btnimprimir = new javax.swing.JButton();
+        txtcedula = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         btnmodificar = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
         btnnuevo = new javax.swing.JButton();
-        btneliminar = new javax.swing.JButton();
-        txtcedula = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
         txtcontra = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
+        comboestado = new javax.swing.JComboBox<>();
+        jSeparator7 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        btneliminar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel4.setText("Cedula:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 50, 30));
+        jLabel4.setText("Nombre:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 50, 30));
 
         jLabel5.setText("Usuario:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 30));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 140, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, 30));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 140, 30));
 
         jLabel6.setText("Contraseña:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Usuario");
@@ -157,18 +168,18 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         tableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Usuario", "Contraseña"
+                "Nombre", "Usuario", "Contraseña", "Estado"
             }
         ));
         jScrollPane1.setViewportView(tableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 450, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 450, 180));
 
         jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -188,13 +199,18 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 490, 60));
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, 30));
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 10, 60));
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnmodificar.setText("Modificar");
-        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
 
         btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnguardar.setText("Guardar");
@@ -204,17 +220,32 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btnnuevo.setText("Nuevo");
         jPanel2.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 370, 60));
+        getContentPane().add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, 30));
+
+        jLabel7.setText("Estado:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 60, 30));
+
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 140, 30));
+
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 10, 360));
+
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
-        btneliminar.setText("Eliminar");
-        jPanel2.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        btneliminar.setText("Cambiar estado");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 480, 60));
-        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 140, 30));
-
-        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 10, 360));
-        getContentPane().add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 190, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 360));
@@ -225,6 +256,10 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
     }//GEN-LAST:event_btnimprimirActionPerformed
 
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbuscar;
@@ -233,16 +268,20 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JComboBox<String> comboestado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tableUsuario;
     private javax.swing.JTextField txtUsuario;

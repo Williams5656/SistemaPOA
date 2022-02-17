@@ -37,11 +37,12 @@ import org.postgresql.util.Base64;
 public class UsuarioBD extends UsuarioMD {
     Conect conectar = new Conect();
 
-    public UsuarioBD(String nombre, String nombreUsuario, String contrasenia) {
-        super(nombre, nombreUsuario, contrasenia);
+    public UsuarioBD(String nombre, String nombreUsuario, String contrasenia, String estado) {
+        super(nombre, nombreUsuario, contrasenia, estado);
     }
 
     public UsuarioBD() {
+        
     }
     
   public List<UsuarioMD> mostrardatos() {
@@ -55,6 +56,7 @@ public class UsuarioBD extends UsuarioMD {
                 m.setNombre(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
+                m.setEstado(rs.getString("estado"));
                 
                 listaA.add(m);
             }
@@ -69,7 +71,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "')";
+        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -97,16 +99,7 @@ public class UsuarioBD extends UsuarioMD {
             
             }
    
-    public boolean eliminar(String cedula){
-                String nsql= "delete from usuario where \"cedula\"='" + cedula + "'";
-                if(conectar.noQuery(nsql)==null){
-                return true;
-                }
-                else{
-                    System.out.println("error eliminar");
-                    return false;
-                }        
-    }
+    
     
     public List<UsuarioMD> obtenerDatos(String cedula) {
         List<UsuarioMD> listaA = new ArrayList<UsuarioMD>();
@@ -119,6 +112,7 @@ public class UsuarioBD extends UsuarioMD {
                 m.setNombre(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
+                m.setEstado(rs.getString("estado"));
                 listaA.add(m);
             }
             rs.close();
@@ -131,7 +125,7 @@ public class UsuarioBD extends UsuarioMD {
     }
     
     public boolean desactivar(String cedula) {
-        String sql = "UPDATE abaceria set \"estado\"='" + "Inactivo" + "'"
+        String sql = "UPDATE usuario set \"estado\"='" + "Inactivo" + "'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {

@@ -12,15 +12,18 @@ public class UsuarioMD {
     private String nombre;
     private String nombreUsuario;
     private String contrasenia;
+    private String estado;
 
-    public UsuarioMD(String nombre, String nombreUsuario, String contrasenia) {
+    public UsuarioMD(String nombre, String nombreUsuario, String contrasenia, String estado) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
+        this.estado = estado;
     }
 
     public UsuarioMD() {
     }
+    
     
 
     public String getNombre() {
@@ -46,6 +49,16 @@ public class UsuarioMD {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
     
     
 }

@@ -13,21 +13,21 @@ import java.time.LocalDate;
  * @author MIGUEL y LIZ
  */
 public class PersonaMD {
-    
+
     private String cedula;
     private String nombres;
-    private String apellidos;   
+    private String apellidos;
     private String fecha_nacimiento;
     private String direccion;
     private String correo;
     private String telefono;
+    private String estado;
     private Image foto;
-    
 
     public PersonaMD() {
     }
 
-    public PersonaMD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
+    public PersonaMD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, String estado, Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -35,7 +35,16 @@ public class PersonaMD {
         this.direccion = direccion;
         this.correo = correo;
         this.telefono = telefono;
+        this.estado = estado;
         this.foto = foto;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getCedula() {
@@ -101,7 +110,5 @@ public class PersonaMD {
     public void setFoto(Image foto) {
         this.foto = foto;
     }
-    
 
-    
 }

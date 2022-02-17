@@ -47,11 +47,12 @@ public class Con_principal {
 
     private void persona() {
         vis_Persona persona = new vis_Persona();
+        Con_persona per = new Con_persona(persona);
         vista.getESCRITORIO().add(persona);
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = persona.getSize();
         persona.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_persona per = new Con_persona(persona);
+        
 
     }
 

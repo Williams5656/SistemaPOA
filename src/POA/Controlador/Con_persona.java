@@ -183,6 +183,7 @@ public class Con_persona {
             per.setDireccion(vista.getTxtDireccion().getText());
             per.setCorreo(vista.getTxtCorreo().getText());
             per.setTelefono(vista.getTxtCelular().getText());
+            per.setEstado("ACTIVO");
             ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
             per.setFoto(ic.getImage());
             SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -190,7 +191,7 @@ public class Con_persona {
             per.setFecha_nacimiento(fecha);
             System.out.println("llego");
             int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar la compra", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (a == 0 && b == 0) {
                 if (per.insertar()) {
                     JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
@@ -310,4 +311,29 @@ public class Con_persona {
         }
         nuevo();
     }
+    
+    public void cambiarestado() {
+        List<PersonaMD> lista = per.mostrardatos();
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getCedula().equalsIgnoreCase(vista.getTxtCedula().getText())) {
+                if (lista.get(i).getEstado().equalsIgnoreCase("ACTIVO")) {
+                    per.setEstado("INACTIVO");
+
+                } else {
+                    per.setEstado("ACTIVO");
+                }
+            }
+        }
+        if (per.cambiarestado((vista.getTxtCedula().getText()))) {
+            JOptionPane.showMessageDialog(null, "ESTADO MODIFICADO");
+            lista();
+            nuevo();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al modificar");
+        }
+
+    }
+    
+
+    
 }

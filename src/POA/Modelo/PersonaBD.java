@@ -36,9 +36,11 @@ public class PersonaBD extends PersonaMD {
     public PersonaBD() {
     }
 
-    public PersonaBD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, Image foto) {
-        super(cedula, nombres, apellidos, fecha_nacimiento, direccion, correo, telefono, foto);
+    public PersonaBD(String cedula, String nombres, String apellidos, String fecha_nacimiento, String direccion, String correo, String telefono, String estado, Image foto) {
+        super(cedula, nombres, apellidos, fecha_nacimiento, direccion, correo, telefono, estado, foto);
     }
+
+    
 
     public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
@@ -207,6 +209,20 @@ public class PersonaBD extends PersonaMD {
             System.out.println("Error eliminar");
             return false;
         }
+    }
+    
+    public boolean cambiarestado(String codigo) {
+        String nsql = "UPDATE persona set \"estado\"='" + getEstado() + "'"
+                + " where \"cedula\"='" + codigo + "'";
+
+        if (conectar.noQuery(nsql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
     }
 
 }

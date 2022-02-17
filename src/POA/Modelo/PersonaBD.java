@@ -88,6 +88,7 @@ public class PersonaBD extends PersonaMD {
                 p.setCorreo(rs.getString("correo"));
                 p.setTelefono(rs.getString("telefono"));
                 p.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                p.setEstado(rs.getString("estado"));
 
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -128,6 +129,7 @@ public class PersonaBD extends PersonaMD {
                 p.setCorreo(rs.getString("correo"));
                 p.setTelefono(rs.getString("telefono"));
                 p.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                p.setEstado(rs.getString("estado"));
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
@@ -200,15 +202,7 @@ public class PersonaBD extends PersonaMD {
 
     }
     
-    public boolean eliminar(String codigo) {
-        String nsql = "delete from persona where \"cedula\"='" + codigo + "'";
-        if (conectar.noQuery(nsql) == null) {
-            return true;
-        } else {
-            System.out.println("Error eliminar");
-            return false;
-        }
-    }
+    
     
     public boolean cambiarestado(String codigo) {
         String nsql = "UPDATE persona set \"estado\"='" + getEstado() + "'"

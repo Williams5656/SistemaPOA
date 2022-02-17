@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -97,15 +98,22 @@ public class Con_persona {
         per.setCorreo(lista.get(0).getCorreo());
         per.setTelefono(lista.get(0).getTelefono());
         per.setEstado(lista.get(0).getEstado());
-        
+
         vista.getTxtCedula().setText(per.getCedula());
         vista.getTxtNombre().setText(per.getNombres());
         vista.getTxtApellido().setText(per.getApellidos());
         vista.getTxtDireccion().setText(per.getDireccion());
         vista.getTxtCorreo().setText(per.getCorreo());
         vista.getTxtCelular().setText(per.getTelefono());
-        SimpleDateFormat formato3 = new SimpleDateFormat("dd/MM/yyyy");
-        vista.getFecha().setDate(formato3.parse(per.getFecha_nacimiento()));
+
+        try {
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = formato.parse(per.getFecha_nacimiento());
+            vista.getFecha().setDate(d);
+        } catch (ParseException ex) {
+            Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -201,10 +209,10 @@ public class Con_persona {
             per.setEstado("ACTIVO");
             ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
             per.setFoto(ic.getImage());
-            SimpleDateFormat formato6 = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat formato6 = new SimpleDateFormat("yyyy-MM-dd");
             String fecha = formato6.format(vista.getFecha().getDate());
             per.setFecha_nacimiento(fecha);
-            int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText()+"\nEstado: "+ per.getEstado(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCedula: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText() + "\nEstado: " + per.getEstado(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (a == 0 && b == 0) {
                 if (per.insertar()) {
@@ -283,8 +291,10 @@ public class Con_persona {
         per.setCedula(vista.getTxtCedula().getText());
         per.setNombres(vista.getTxtNombre().getText());
         per.setApellidos(vista.getTxtApellido().getText());
-        String fechanac = Integer.toString(vista.getFecha().getCalendar().get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.MONTH) + 1) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.YEAR));
-        per.setFecha_nacimiento(fechanac);
+        SimpleDateFormat formato6 = new SimpleDateFormat("yyyy-MM-dd");
+        String fecha = formato6.format(vista.getFecha().getDate());
+        per.setFecha_nacimiento(fecha);
+
         per.setDireccion(vista.getTxtDireccion().getText());
         per.setCorreo(vista.getTxtCorreo().getText());
         per.setTelefono(vista.getTxtCelular().getText());

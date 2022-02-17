@@ -117,7 +117,7 @@ public class PersonaBD extends PersonaMD {
     public List<PersonaMD> obtenerdatos(String identificador) {
         try {
             List<PersonaMD> lista = new ArrayList<PersonaMD>();
-            String sql = "select * from persona where \"codigo\"='" + identificador + "'";
+            String sql = "select * from persona where \"cedula\"='" + identificador + "'";
             ResultSet rs = conectar.query(sql);
             byte[] is;
             while (rs.next()) {

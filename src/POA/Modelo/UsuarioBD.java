@@ -71,7 +71,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
+        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia,estado)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;

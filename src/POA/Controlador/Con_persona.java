@@ -51,6 +51,10 @@ public class Con_persona {
         vista.getBtnModificar().addActionListener(e -> modificar());
         vista.getBtnCargarFoto().addActionListener(e -> obtieneImagen());
         vista.getBtnCamEstado().addActionListener(e -> cambiarestado());
+        vista.getBtnGuardar().setEnabled(false);
+        vista.getBtnModificar().setEnabled(false);
+        vista.getBtnCamEstado().setEnabled(false);
+        vista.getBtnImprimir().setEnabled(false);
 //        Letras.no_espacios(vista.getTxtCedula());
 //        Numeros.solo_numeros(vista.getTxtCedula());
 //        Letras.numero_letras(vista.getTxtCedula(), 9);
@@ -98,10 +102,8 @@ public class Con_persona {
         vista.getTxtDireccion().setText(per.getDireccion());
         vista.getTxtCorreo().setText(per.getCorreo());
         vista.getTxtCelular().setText(per.getTelefono());
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-        vista.getFecha().setDate(formato.parse(per.getFecha_nacimiento()));
-        String fecha = formato.format(formato.parse(per.getFecha_nacimiento()));
-        System.out.println(fecha);
+        SimpleDateFormat formato3 = new SimpleDateFormat("yyyy-MM-dd-MM");
+        vista.getFecha().setDate(formato3.parse(per.getFecha_nacimiento()));
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -228,6 +230,7 @@ public class Con_persona {
         vista.getTxtApellido().setText("");
         vista.getTxtDireccion().setText("");
         vista.getTxtCorreo().setText("");
+        vista.getFecha().setDate(null);
         Orig = "src/POA.Vista/POA.Vista.img/imagen.png";
         ImageIcon icon = new ImageIcon(Orig);
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));

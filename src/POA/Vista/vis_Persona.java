@@ -51,7 +51,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JSeparator();
         btnBuscar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        fecha = new com.toedter.calendar.JDateChooser();
         txtCedula = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
@@ -74,6 +73,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jSeparator22 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
         btnCargarFoto = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
         btnCamEstado = new javax.swing.JToggleButton();
         jLabel20 = new javax.swing.JLabel();
@@ -164,7 +164,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Foto");
         panel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
-        panel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 170, -1));
 
         txtCedula.setForeground(new java.awt.Color(255, 255, 255));
         txtCedula.setBorder(null);
@@ -281,6 +280,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
             }
         });
         panel1.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 50));
+        panel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 160, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N
         fondo.setText("jLabel21");
@@ -460,8 +460,8 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel fondo;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;

@@ -27,7 +27,7 @@ public class Con_inicio {
         UsuarioBD dbp = new UsuarioBD();
         List<UsuarioMD> lista = dbp.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
-            if (vista.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vista.getTxtclave().getText().equals(lista.get(i).getContrasenia())||lista.get(i).getEstado().equals("Activo")) {
+            if (vista.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vista.getTxtclave().getText().equals(lista.get(i).getContrasenia())&&lista.get(i).getEstado().equals("Activo")) {
                 Vis_Principal vistamenu = new Vis_Principal();
                 Con_principal menu = new Con_principal(vistamenu);
                 vista.setVisible(false);

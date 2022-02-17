@@ -28,7 +28,7 @@ public class Con_rol {
     public Con_rol(Vis_Roles vista) {
         this.vista = vista;
         vista.setVisible(true);
-        vista.getBtn_editar().setEnabled(true);
+        activarbotones();
         vista.getBtn_ingresar().addActionListener(l->{
             try {
                 cargarDialogo(1);
@@ -61,8 +61,14 @@ public class Con_rol {
         
         lista();
     }
+    public void activarbotones(){
+        vista.getBtn_editar().setEnabled(false);
+        vista.getBtn_eliminar().setEnabled(false);
+        vista.getBtn_ver_permiso().setEnabled(false);
+        vista.getBtn_editar_permiso().setEnabled(false);
+    }
     private void cargarDialogo(int origen) throws SQLException {
-        vista.getVista_NuevoRol().setSize(950, 400);//dimensiones
+        vista.getVista_NuevoRol().setSize(550, 550);//dimensiones
         vista.getVista_NuevoRol().setLocationRelativeTo(vista);//posicion
         fila = vista.getTabla_rol().getSelectedRow();
         if (origen == 1) {//selecciona ingresar
@@ -125,11 +131,13 @@ public class Con_rol {
         }
     }
     public void seleccionar(){
+        vista.getBtn_eliminar().setEnabled(true);
         vista.getBtn_editar().setEnabled(true);
+        vista.getTxt_numero().setEditable(false);
         vista.getTxt_id().setEditable(false);
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTabla_rol().getModel();
-        String id = (String) modelo.getValueAt(vista.getTabla_rol().getSelectedRow(), 0);
+        int id = (int) modelo.getValueAt(vista.getTabla_rol().getSelectedRow(), 0);
         List<RolMD> lista = bdrol.obtenerDatos(id);
         bdrol.setNumero_rol(lista.get(0).getNumero_rol());
         bdrol.setId_rol(lista.get(0).getId_rol());

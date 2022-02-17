@@ -199,6 +199,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         vista_NuevoRol = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_numero = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -210,7 +211,6 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         txt_observaciones = new javax.swing.JTextArea();
         btn_guardar_rol = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         vista_EditarRol = new javax.swing.JDialog();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -232,6 +232,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
         vista_NuevoRol.setTitle("Nuevo Rol");
         vista_NuevoRol.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        vista_NuevoRol.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
         jLabel2.setText("Numero:");
         vista_NuevoRol.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 58, -1, -1));
@@ -271,7 +272,6 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
         btn_cancelar.setText("Cancelar ");
         vista_NuevoRol.getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 436, -1, -1));
-        vista_NuevoRol.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
         vista_EditarRol.setTitle("Editar Rol");
 

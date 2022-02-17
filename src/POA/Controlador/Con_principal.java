@@ -62,7 +62,7 @@ public class Con_principal {
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        user.show();
+        Con_rol rol=new Con_rol(user);
     }
 
     private void salir() {

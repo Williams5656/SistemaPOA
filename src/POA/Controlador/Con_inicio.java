@@ -1,8 +1,11 @@
 package POA.Controlador;
 
+import POA.Modelo.UsuarioBD;
+import POA.Modelo.UsuarioMD;
 import POA.Vista.*;
 import POA.Vista.*;
 import POA.Vista.*;
+import java.util.List;
 
 /**
  *
@@ -21,15 +24,20 @@ public class Con_inicio {
     }
 
     private void ingresar() {
-        if (vista.getTxtusuario().getText().equals("admin") && vista.getTxtclave().getText().equals("1234")) {
-            Vis_Principal vistamenu = new Vis_Principal();
-            Con_principal menu = new Con_principal(vistamenu);
-            vista.setVisible(false);
-            vistamenu.setVisible(true);
-        }else{
-            vista.getTxtusuario().setText("");
-            vista.getTxtclave().setText("");
+        UsuarioBD dbp = new UsuarioBD();
+        List<UsuarioMD> lista = dbp.mostrardatos();
+        for (int i = 0; i < lista.size(); i++) {
+            if (vista.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vista.getTxtclave().getText().equals(lista.get(i).getContrasenia())||lista.get(i).getEstado().equals("Activo")) {
+                Vis_Principal vistamenu = new Vis_Principal();
+                Con_principal menu = new Con_principal(vistamenu);
+                vista.setVisible(false);
+                vistamenu.setVisible(true);
+            }else{
+                vista.getTxtusuario().setText("");
+                vista.getTxtclave().setText("");
+            }
         }
+        
         
 
     }

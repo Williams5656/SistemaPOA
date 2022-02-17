@@ -104,7 +104,7 @@ public class Con_persona {
         vista.getTxtDireccion().setText(per.getDireccion());
         vista.getTxtCorreo().setText(per.getCorreo());
         vista.getTxtCelular().setText(per.getTelefono());
-        SimpleDateFormat formato3 = new SimpleDateFormat("yyyy-MM-dd-MM");
+        SimpleDateFormat formato3 = new SimpleDateFormat("yyyy-MM-dd");
         vista.getFecha().setDate(formato3.parse(per.getFecha_nacimiento()));
         Image img = lista.get(0).getFoto();
         if (img != null) {

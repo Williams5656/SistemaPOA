@@ -163,7 +163,7 @@ public class PersonaBD extends PersonaMD {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String nsql = "INSERT INTO persona (cedula,nombres,apellidos,fecha_nacimiento,direccion,correo,telefono,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getFecha_nacimiento() + "','" + getDireccion() + "','" + getCorreo() + "','" + getTelefono() + "','" + ef + "')";
+        String nsql = "INSERT INTO persona (cedula,nombres,apellidos,fecha_nacimiento,direccion,correo,telefono,foto,estado)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getFecha_nacimiento() + "','" + getDireccion() + "','" + getCorreo() + "','" + getTelefono() + "','" + ef + "','" + getEstado()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;

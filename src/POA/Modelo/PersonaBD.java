@@ -74,7 +74,6 @@ public class PersonaBD extends PersonaMD {
     }
 
     public List<PersonaMD> mostrardatos() {
-
         try {
             List<PersonaMD> lista = new ArrayList<PersonaMD>();
             String sql = "select * from persona Order by 1";

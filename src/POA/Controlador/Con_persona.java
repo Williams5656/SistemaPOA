@@ -84,7 +84,7 @@ public class Con_persona {
         per.setCorreo(lista.get(0).getCorreo());
         per.setTelefono(lista.get(0).getTelefono());
         per.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
-
+        System.out.println("llego");
         vista.getTxtCedula().setText(per.getCedula());
         vista.getTxtNombre().setText(per.getNombres());
         vista.getTxtApellido().setText(per.getApellidos());
@@ -211,7 +211,7 @@ public class Con_persona {
         vista.getTxtApellido().setText("");
         vista.getTxtDireccion().setText("");
         vista.getTxtCorreo().setText("");
-        Orig = "src/Imagenes/imagen.png";
+        Orig = "src/POA.Vista.img/imagen.png";
         ImageIcon icon = new ImageIcon(Orig);
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));
         vista.getLbFoto().setText(null);

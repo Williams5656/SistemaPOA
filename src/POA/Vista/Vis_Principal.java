@@ -53,6 +53,14 @@ public class Vis_Principal extends javax.swing.JFrame {
         return btn_salir;
     }
 
+    public JMenuItem getBtn_carrera() {
+        return btn_carrera;
+    }
+
+    public void setBtn_carrera(JMenuItem btn_carrera) {
+        this.btn_carrera = btn_carrera;
+    }
+
     public void setBtn_salir(JMenuItem btn_salir) {
         this.btn_salir = btn_salir;
     }
@@ -92,6 +100,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_perfil = new javax.swing.JMenuItem();
         btn_persona = new javax.swing.JMenuItem();
         btn_roles = new javax.swing.JMenuItem();
+        btn_carrera = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,11 +112,17 @@ public class Vis_Principal extends javax.swing.JFrame {
         );
         ESCRITORIOLayout.setVerticalGroup(
             ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 605, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuBar1.setForeground(new java.awt.Color(102, 102, 102));
+
+        MENU_USUARIO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Cat_Profile_25px.png"))); // NOI18N
         MENU_USUARIO.setText("USUARIO");
 
+        btn_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icono_agregar.png"))); // NOI18N
         btn_usuario.setText("Nuevo");
         btn_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +131,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_USUARIO.add(btn_usuario);
 
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Double_Left_20px.png"))); // NOI18N
         btn_salir.setText("Salir");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,8 +142,10 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(MENU_USUARIO);
 
+        MENU_ACADEMICO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/consulta_silabo.png"))); // NOI18N
         MENU_ACADEMICO.setText("ACADEMICO");
 
+        btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_School_Director_20px.png"))); // NOI18N
         btn_perfil.setText("Perfil");
         btn_perfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +154,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_ACADEMICO.add(btn_perfil);
 
+        btn_persona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_User_20px.png"))); // NOI18N
         btn_persona.setText("Persona");
         btn_persona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +163,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_ACADEMICO.add(btn_persona);
 
+        btn_roles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_User_Groups_20px.png"))); // NOI18N
         btn_roles.setText("Roles");
         btn_roles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +171,10 @@ public class Vis_Principal extends javax.swing.JFrame {
             }
         });
         MENU_ACADEMICO.add(btn_roles);
+
+        btn_carrera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Permanent_Job_20px.png"))); // NOI18N
+        btn_carrera.setText("Carrera");
+        MENU_ACADEMICO.add(btn_carrera);
 
         jMenuBar1.add(MENU_ACADEMICO);
 
@@ -203,6 +227,7 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane ESCRITORIO;
     private javax.swing.JMenu MENU_ACADEMICO;
     private javax.swing.JMenu MENU_USUARIO;
+    private javax.swing.JMenuItem btn_carrera;
     private javax.swing.JMenuItem btn_perfil;
     private javax.swing.JMenuItem btn_persona;
     private javax.swing.JMenuItem btn_roles;

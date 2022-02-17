@@ -76,7 +76,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         fecha = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
         fondogrande = new javax.swing.JLabel();
-        panel1 = new java.awt.Panel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(1145, 605));
@@ -293,10 +292,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         fondogrande.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/instituto.jpg"))); // NOI18N
         getContentPane().add(fondogrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1140, 570));
 
-        panel1.setBackground(new java.awt.Color(255, 255, 255));
-        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 20));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -488,7 +483,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JLabel lbError;
     private javax.swing.JLabel lbFoto;
-    private java.awt.Panel panel1;
     private javax.swing.JTable tablePersonas;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBuscar;

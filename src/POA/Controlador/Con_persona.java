@@ -104,7 +104,7 @@ public class Con_persona {
         vista.getTxtDireccion().setText(per.getDireccion());
         vista.getTxtCorreo().setText(per.getCorreo());
         vista.getTxtCelular().setText(per.getTelefono());
-        SimpleDateFormat formato3 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formato3 = new SimpleDateFormat("yyyy/MM-/dd");
         vista.getFecha().setDate(formato3.parse(per.getFecha_nacimiento()));
         Image img = lista.get(0).getFoto();
         if (img != null) {
@@ -201,7 +201,7 @@ public class Con_persona {
             per.setEstado("ACTIVO");
             ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
             per.setFoto(ic.getImage());
-            SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             String fecha = formato.format(vista.getFecha().getDate());
             per.setFecha_nacimiento(fecha);
             int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);

@@ -204,7 +204,7 @@ public class Con_persona {
             SimpleDateFormat formato6 = new SimpleDateFormat("dd/MM/yyyy");
             String fecha = formato6.format(vista.getFecha().getDate());
             per.setFecha_nacimiento(fecha);
-            int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText()+"\nEstado"+ per.getEstado(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText()+"\nEstado: "+ per.getEstado(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (a == 0 && b == 0) {
                 if (per.insertar()) {
@@ -242,20 +242,20 @@ public class Con_persona {
     public void lista() {
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablePersonas().getModel();
-        List<PersonaMD> lista3 = per.mostrardatos();
+        List<PersonaMD> lista9 = per.mostrardatos();
         int columnas = modelo.getColumnCount();
         for (int j = vista.getTablePersonas().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
-            for (int i = 0; i < lista3.size(); i++) {
+            for (int i = 0; i < lista9.size(); i++) {
                 modelo.addRow(new Object[columnas]);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getCedula(), i, 0);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getNombres(), i, 1);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getApellidos(), i, 2);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getFecha_nacimiento(), i, 3);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getDireccion(), i, 4);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getCorreo(), i, 5);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getTelefono(), i, 6);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getEstado(), i, 7);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getCedula(), i, 0);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getNombres(), i, 1);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getApellidos(), i, 2);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getFecha_nacimiento(), i, 3);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getDireccion(), i, 4);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getCorreo(), i, 5);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getTelefono(), i, 6);
+                vista.getTablePersonas().setValueAt(lista9.get(i).getEstado(), i, 7);
             }
 
         }
@@ -283,10 +283,8 @@ public class Con_persona {
         per.setCedula(vista.getTxtCedula().getText());
         per.setNombres(vista.getTxtNombre().getText());
         per.setApellidos(vista.getTxtApellido().getText());
-
         String fechanac = Integer.toString(vista.getFecha().getCalendar().get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.MONTH) + 1) + "/" + Integer.toString(vista.getFecha().getCalendar().get(Calendar.YEAR));
         per.setFecha_nacimiento(fechanac);
-
         per.setDireccion(vista.getTxtDireccion().getText());
         per.setCorreo(vista.getTxtCorreo().getText());
         per.setTelefono(vista.getTxtCelular().getText());
@@ -313,20 +311,20 @@ public class Con_persona {
         } else {
             DefaultTableModel modelo;
             modelo = (DefaultTableModel) vista.getTablePersonas().getModel();
-            List<PersonaMD> lista3 = per.mostrardatos();
+            List<PersonaMD> lista1 = per.mostrardatos();
             int columnas = modelo.getColumnCount();
             for (int j = vista.getTablePersonas().getRowCount() - 1; j >= 0; j--) {
                 modelo.removeRow(j);
-                for (int i = 0; i < lista3.size(); i++) {
-                    if (lista3.get(i).getCedula().equals(vista.getTxtBuscar().getText())) {
+                for (int i = 0; i < lista1.size(); i++) {
+                    if (lista1.get(i).getCedula().equals(vista.getTxtBuscar().getText())) {
                         modelo.addRow(new Object[columnas]);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getCedula(), i, 0);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getNombres(), i, 1);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getApellidos(), i, 2);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getDireccion(), i, 3);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getCorreo(), i, 4);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getTelefono(), i, 5);
-                        vista.getTablePersonas().setValueAt(lista3.get(i).getFecha_nacimiento(), i, 6);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getCedula(), i, 0);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getNombres(), i, 1);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getApellidos(), i, 2);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getDireccion(), i, 3);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getCorreo(), i, 4);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getTelefono(), i, 5);
+                        vista.getTablePersonas().setValueAt(lista1.get(i).getFecha_nacimiento(), i, 6);
                     }
                 }
             }

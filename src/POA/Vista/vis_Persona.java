@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -310,6 +311,14 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private void btnCargarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarFotoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCargarFotoActionPerformed
+
+    public JToggleButton getBtnCamEstado() {
+        return btnCamEstado;
+    }
+
+    public void setBtnCamEstado(JToggleButton btnCamEstado) {
+        this.btnCamEstado = btnCamEstado;
+    }
 
     public JLabel getLbError() {
         return lbError;

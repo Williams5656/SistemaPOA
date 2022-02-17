@@ -50,6 +50,7 @@ public class Con_persona {
         vista.getBtnGuardar().addActionListener(e -> guardar());
         vista.getBtnModificar().addActionListener(e -> modificar());
         vista.getBtnCargarFoto().addActionListener(e -> obtieneImagen());
+        vista.getBtnCamEstado().addActionListener(e -> cambiarestado());
 //        Letras.no_espacios(vista.getTxtCedula());
 //        Numeros.solo_numeros(vista.getTxtCedula());
 //        Letras.numero_letras(vista.getTxtCedula(), 9);
@@ -77,6 +78,8 @@ public class Con_persona {
     public void seleccionar() throws ParseException {
         vista.getBtnGuardar().setEnabled(false);
         vista.getBtnModificar().setEnabled(true);
+        vista.getBtnCamEstado().setEnabled(true);
+        vista.getBtnImprimir().setEnabled(true);
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablePersonas().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTablePersonas().getSelectedRow(), 0);
@@ -97,6 +100,8 @@ public class Con_persona {
         vista.getTxtCelular().setText(per.getTelefono());
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         vista.getFecha().setDate(formato.parse(per.getFecha_nacimiento()));
+        String fecha = formato.format(formato.parse(per.getFecha_nacimiento()));
+        System.out.println(fecha);
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -212,12 +217,18 @@ public class Con_persona {
 
     public void nuevo() {
         vista.getBtnGuardar().setEnabled(true);
+        vista.getBtnImprimir().setEnabled(false);
+        vista.getBtnCamEstado().setEnabled(false);
+        vista.getBtnGuardar().setEnabled(true);
         vista.getBtnModificar().setEnabled(false);
+        vista.getTxtNombre().setText("");
+        vista.getTxtCedula().setText("");
+        vista.getTxtCelular().setText("");
         vista.getTxtNombre().setText("");
         vista.getTxtApellido().setText("");
         vista.getTxtDireccion().setText("");
         vista.getTxtCorreo().setText("");
-        Orig = "src/POA.Vista.img/imagen.png";
+        Orig = "src/POA.Vista/POA.Vista.img/imagen.png";
         ImageIcon icon = new ImageIcon(Orig);
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));
         vista.getLbFoto().setText(null);

@@ -2,6 +2,7 @@ package POA.Modelo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,20 @@ public class RolBD extends RolMD{
 
     public RolBD(int numero_rol, int id_rol, String nombre_rol, String observaciones) {
         super(numero_rol, id_rol, nombre_rol, observaciones);
+    }
+    public int codigo() {
+        try {
+            int c = 0;
+            String sql = "select max(numero_rol) as numero_rol from rol";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                c = rs.getInt("numero_rol");
+            }
+            return c + 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(PerfilBD.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
     }
     public List<RolMD> mostrardatos(){
         List<RolMD> listar = new  ArrayList<RolMD>();

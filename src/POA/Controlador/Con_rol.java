@@ -6,6 +6,8 @@
 package POA.Controlador;
 
 import POA.Modelo.*;
+import POA.Modelo.Validadores.Letras;
+import POA.Modelo.Validadores.Numeros;
 import POA.Vista.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,10 +28,15 @@ public class Con_rol {
     RolBD bdrol = new RolBD();
     int fila = -1;
     int n;
+
     public Con_rol(Vis_Roles vista) {
         this.vista = vista;
         vista.setVisible(true);
         activarbotones();
+        nuevo();
+        vista.getTxt_numero().setEditable(false);
+        Numeros.solo_numeros(vista.getTxt_id());
+        Letras.solo_letras(vista.getTxt_nombrerol());
         vista.getBtn_ingresar().addActionListener(l -> {
             try {
                 cargarDialogo(1);
@@ -77,9 +84,9 @@ public class Con_rol {
             nuevo();
             vista.getVista_NuevoRol().setTitle("Ingresar Rol");
             n = 1;
+            vista.getTxt_numero().setText(String.valueOf(bdrol.codigo()));
             vista.getVista_NuevoRol().setVisible(true);
-            vista.getTxt_numero().setEditable(true);
-                vista.getTxt_id().setEditable(true);
+            vista.getTxt_id().setEditable(true);
         } else {
             if (fila == -1) {
                 JOptionPane.showMessageDialog(vista, "SELECCIONE UN DATO DE LA TABLA", "", 2);
@@ -87,7 +94,6 @@ public class Con_rol {
                 vista.getVista_NuevoRol().setTitle("Editar Rol");
                 n = 2;
                 vista.getVista_NuevoRol().setVisible(true);
-                vista.getTxt_numero().setEditable(false);
                 vista.getTxt_id().setEditable(false);
             }
 
@@ -193,6 +199,7 @@ public class Con_rol {
         vista.getTxt_numero().setText("");
         vista.getTxt_nombrerol().setText("");
         vista.getTxt_observaciones().setText("");
+        activarbotones();
     }
 
 }

@@ -17,6 +17,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -62,14 +63,18 @@ public class Con_persona {
         vista.getTablePersonas().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                seleccionar();
+                try {
+                    seleccionar();
+                } catch (ParseException ex) {
+                    Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         lista();
 
     }
 
-    public void seleccionar() {
+    public void seleccionar() throws ParseException {
         vista.getBtnGuardar().setEnabled(false);
         vista.getBtnModificar().setEnabled(true);
         DefaultTableModel modelo;
@@ -84,13 +89,14 @@ public class Con_persona {
         per.setCorreo(lista.get(0).getCorreo());
         per.setTelefono(lista.get(0).getTelefono());
         per.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
-        System.out.println("llego");
         vista.getTxtCedula().setText(per.getCedula());
         vista.getTxtNombre().setText(per.getNombres());
         vista.getTxtApellido().setText(per.getApellidos());
         vista.getTxtDireccion().setText(per.getDireccion());
         vista.getTxtCorreo().setText(per.getCorreo());
         vista.getTxtCelular().setText(per.getTelefono());
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        vista.getFecha().setDate(formato.parse(per.getFecha_nacimiento()));
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -311,7 +317,7 @@ public class Con_persona {
         }
         nuevo();
     }
-    
+
     public void cambiarestado() {
         List<PersonaMD> lista = per.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
@@ -333,7 +339,5 @@ public class Con_persona {
         }
 
     }
-    
 
-    
 }

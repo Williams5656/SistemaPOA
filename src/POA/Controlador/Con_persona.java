@@ -41,7 +41,7 @@ public class Con_persona {
     private final vis_Persona vista;
     PersonaBD per = new PersonaBD();
     String error;
-    protected static String Imagen, Dest, Orig;
+    protected static String Orig;
 
     public Con_persona(vis_Persona vista) {
         this.vista = vista;
@@ -204,7 +204,6 @@ public class Con_persona {
             SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
             String fecha = formato.format(vista.getFecha().getDate());
             per.setFecha_nacimiento(fecha);
-            System.out.println("llego");
             int b = JOptionPane.showConfirmDialog(null, "Confirme los datos: \nCodigo: " + vista.getTxtCedula().getText() + "\nNombre: " + vista.getTxtNombre().getText() + "\nApellidos: " + vista.getTxtApellido().getText() + "\nDireccion: " + vista.getTxtDireccion().getText() + "\nCorreo: " + vista.getTxtCorreo().getText() + "\nTelefono: " + vista.getTxtCelular().getText(), "Confirmar Compra", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             int a = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar", "Confirmar persona", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (a == 0 && b == 0) {
@@ -233,7 +232,7 @@ public class Con_persona {
         vista.getTxtDireccion().setText("");
         vista.getTxtCorreo().setText("");
         vista.getFecha().setDate(null);
-        Orig = "src/POA.Vista/POA.Vista.img/imagen.png";
+        Orig = "src/POA.Vista.img/imagen.png";
         ImageIcon icon = new ImageIcon(Orig);
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));
         vista.getLbFoto().setText(null);

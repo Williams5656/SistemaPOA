@@ -122,13 +122,13 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         tablePersonas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tablePersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cedula", "Nombre", "Apellidos", "Fecha Nacimiento", "Direccion", "Correo", "Celular"
+                "Cedula", "Nombre", "Apellidos", "Fecha Nacimiento", "Direccion", "Correo", "Celular", "Estado"
             }
         ));
         jScrollPane1.setViewportView(tablePersonas);

@@ -92,10 +92,12 @@ public class Con_persona {
         per.setCedula(lista.get(0).getCedula());
         per.setNombres(lista.get(0).getNombres());
         per.setApellidos(lista.get(0).getApellidos());
+        per.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
         per.setDireccion(lista.get(0).getDireccion());
         per.setCorreo(lista.get(0).getCorreo());
         per.setTelefono(lista.get(0).getTelefono());
-        per.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
+        per.setEstado(lista.get(0).getEstado());
+        
         vista.getTxtCedula().setText(per.getCedula());
         vista.getTxtNombre().setText(per.getNombres());
         vista.getTxtApellido().setText(per.getApellidos());
@@ -250,10 +252,11 @@ public class Con_persona {
                 vista.getTablePersonas().setValueAt(lista3.get(i).getCedula(), i, 0);
                 vista.getTablePersonas().setValueAt(lista3.get(i).getNombres(), i, 1);
                 vista.getTablePersonas().setValueAt(lista3.get(i).getApellidos(), i, 2);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getDireccion(), i, 3);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getCorreo(), i, 4);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getTelefono(), i, 5);
-                vista.getTablePersonas().setValueAt(lista3.get(i).getFecha_nacimiento(), i, 6);
+                vista.getTablePersonas().setValueAt(lista3.get(i).getFecha_nacimiento(), i, 3);
+                vista.getTablePersonas().setValueAt(lista3.get(i).getDireccion(), i, 4);
+                vista.getTablePersonas().setValueAt(lista3.get(i).getCorreo(), i, 5);
+                vista.getTablePersonas().setValueAt(lista3.get(i).getTelefono(), i, 6);
+                vista.getTablePersonas().setValueAt(lista3.get(i).getEstado(), i, 7);
             }
 
         }

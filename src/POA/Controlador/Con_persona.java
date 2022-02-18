@@ -22,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -56,15 +58,19 @@ public class Con_persona {
         vista.getBtnModificar().setEnabled(false);
         vista.getBtnCamEstado().setEnabled(false);
         vista.getBtnImprimir().setEnabled(false);
-//        Letras.no_espacios(vista.getTxtCedula());
-//        Numeros.solo_numeros(vista.getTxtCedula());
-//        Letras.numero_letras(vista.getTxtCedula(), 9);
-//        Letras.solo_letras(vista.getTxtNombre());
+        ////////validaciones ced///////
+        Letras.no_espacios(vista.getTxtCedula());
+        Letras.numero_letras(vista.getTxtCedula(), 9);
+        Numeros.solo_numeros(vista.getTxtCedula());
+        comprobar_ced();
+        ///////////////val nombre///////////////
+        
+        Letras.solo_letras(vista.getTxtNombre());
 //        Letras.solo_letras(vista.getTxtApellido());
 //        Letras.no_espacios(vista.getTxtCelular());
 //        Numeros.solo_numeros(vista.getTxtCelular());
 //        Letras.no_espacios(vista.getTxtCorreo());
-//        comprobar_ced();
+//        
 //        val_correo();
         vista.getTablePersonas().addMouseListener(new MouseAdapter() {
             @Override
@@ -130,7 +136,7 @@ public class Con_persona {
             @Override
             public void focusLost(FocusEvent e) {
                 if (!Cedula.valcedula(vista.getTxtCedula())) {
-                    men_error(vista.getTxtCedula().getName());
+                    men_error(1);
                 }
             }
         }
@@ -145,7 +151,7 @@ public class Con_persona {
                 Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
                 Matcher mather = pattern.matcher(vista.getTxtCorreo().getText());
                 if (!mather.find()) {
-                    men_error(vista.getTxtCorreo().getName());
+                    men_error(5);
                 }
             }
 
@@ -153,47 +159,43 @@ public class Con_persona {
         );
     }
 
-    public void men_error(String a) {
-        if (a.equals(vista.getTxtCedula().getName())) {
-            error = "Cedula Erronea";
+    public void men_error(int a) {
+        switch (a){
+            case 1:{
+                error = "Cedula Erronea";
+            }
+            case 2:{
+                error = "Nombre Erroneo";
+            }
+            case 3:{
+                error = "Apellido Erroneo";
+            }
+            case 4:{
+                 error = "Correo Erroneo";
+            }
+            case 5:{
+                error = "Direccion Erronea";
+            }
+            case 6:{
+                error = "Celular Erroneo";
+            }
+            case 7:{
+                error = "Fecha Erronea";
+            }
+            
         }
-        if (a.equals(vista.getTxtNombre().getName())) {
-            error = "Nombre Erroneo";
-        }
-        if (a.equals(vista.getTxtApellido().getName())) {
-            error = "Apellido Erroneo";
-        }
-        if (a.equals(vista.getTxtCorreo().getName())) {
-            error = "Correo Erroneo";
-        }
-        if (a.equals(vista.getTxtDireccion().getName())) {
-            error = "Direccion Erronea";
-        }
-        if (a.equals(vista.getTxtCelular().getName())) {
-            error = "Celular Erroneo";
-        }
-        if (a.equals(vista.getFecha().getName())) {
-            error = "Fecha Erronea";
-        }
-        pro_error err = new pro_error();
-        err.run();
     }
 
-    public class pro_error extends Thread {
-
-        @Override
-        public void run() {
-            try {
-                vista.getLbError().setText(error);
-                vista.getLbError().setVisible(true);
-                Thread.sleep(3000);
-                vista.getLbError().setVisible(false);
-                error = "";
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
+    public void pro_error(String err) {
+        Timer tiempo;
+        TimerTask men_erro;
+        men_erro = new TimerTask(){
+            @Override
+            public void run() {
+                
             }
-        }
-
+            
+        };
     }
 
     public void guardar() {

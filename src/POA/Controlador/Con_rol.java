@@ -9,6 +9,7 @@ import POA.Modelo.*;
 import POA.Modelo.Validadores.Letras;
 import POA.Modelo.Validadores.Numeros;
 import POA.Vista.*;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -65,14 +66,15 @@ public class Con_rol {
                 seleccionar();
             }
         });
-
+        vista.getBtn_ver_permiso().addActionListener(l->verPermiso());
+        vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
     }
 
     public void activarbotones() {
         vista.getBtn_editar().setEnabled(false);
         vista.getBtn_eliminar().setEnabled(false);
-        vista.getBtn_ver_permiso().setEnabled(false);
+        vista.getBtn_ver_permiso().setEnabled(true);
         vista.getBtn_editar_permiso().setEnabled(false);
     }
 
@@ -98,6 +100,24 @@ public class Con_rol {
             }
 
         }
+    }
+
+    boolean validarId() {
+        int codigo = Integer.parseInt(vista.getTxt_id().getText());
+        List<RolMD> list_id = bdrol.obtenerDatos(1);
+        for (int i = 0; i < list_id.size(); i++) {
+            if (codigo == (list_id.get(i).getId_rol())) {
+                JOptionPane.showMessageDialog(null, "EL CODIGO YA EXISTE!", "Verificacion", 0);
+                return false;
+            }
+        }
+        return true;
+    }
+    public void verPermiso(){
+        Vis_Permisos per=new Vis_Permisos();
+        //vista.getESCRITORIO().add(per);
+        per.toFront();
+        per.setVisible(true);
     }
 
     public void DefinirMetodo(int n) throws SQLException {
@@ -130,16 +150,18 @@ public class Con_rol {
 
     public void guardar() {
         if (!vista.getTxt_numero().getText().equals("") && !vista.getTxt_id().getText().equals("") && !vista.getTxt_nombrerol().getText().equals("")) {
-            bdrol.setNumero_rol(Integer.parseInt(vista.getTxt_numero().getText()));
-            bdrol.setId_rol(Integer.parseInt(vista.getTxt_id().getText()));
-            bdrol.setNombre_rol(vista.getTxt_nombrerol().getText());
-            bdrol.setObservaciones(vista.getTxt_observaciones().getText());
-            if (bdrol.insertar()) {
-                JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
-                lista();
-                nuevo();
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRROR AL GUARDAR");
+            if (validarId() == true) {
+                bdrol.setNumero_rol(Integer.parseInt(vista.getTxt_numero().getText()));
+                bdrol.setId_rol(Integer.parseInt(vista.getTxt_id().getText()));
+                bdrol.setNombre_rol(vista.getTxt_nombrerol().getText());
+                bdrol.setObservaciones(vista.getTxt_observaciones().getText());
+                if (bdrol.insertar()) {
+                    JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
+                    lista();
+                    nuevo();
+                } else {
+                    JOptionPane.showMessageDialog(null, "ERRROR AL GUARDAR");
+                }
             }
         } else {
             JOptionPane.showMessageDialog(null, "LLENAR TODOS L0S CAMPOS");

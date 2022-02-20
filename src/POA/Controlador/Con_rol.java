@@ -104,9 +104,9 @@ public class Con_rol {
 
     boolean validarId() {
         int codigo = Integer.parseInt(vista.getTxt_id().getText());
-        List<RolMD> list_id = bdrol.obtenerDatos(1);
-        for (int i = 0; i < list_id.size(); i++) {
-            if (codigo == (list_id.get(i).getId_rol())) {
+        List<RolMD> lista_id = bdrol.obtenerDatos(1);
+        for (int i = 0; i < lista_id.size(); i++) {
+            if (codigo == (lista_id.get(i).getId_rol())) {
                 JOptionPane.showMessageDialog(null, "EL CODIGO YA EXISTE!", "Verificacion", 0);
                 return false;
             }

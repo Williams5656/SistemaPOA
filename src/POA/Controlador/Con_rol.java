@@ -66,7 +66,7 @@ public class Con_rol {
                 seleccionar();
             }
         });
-        vista.getBtn_ver_permiso().addActionListener(l->verPermiso());
+        vista.getBtn_ver_permiso().addActionListener(l -> verPermiso());
         vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
     }
@@ -113,8 +113,9 @@ public class Con_rol {
         }
         return true;
     }
-    public void verPermiso(){
-        Vis_Permisos per=new Vis_Permisos();
+
+    public void verPermiso() {
+        Vis_Permisos per = new Vis_Permisos();
         //vista.getESCRITORIO().add(per);
         per.toFront();
         per.setVisible(true);
@@ -129,7 +130,7 @@ public class Con_rol {
             modificar();
         }
     }
-    
+
     public void modificar() {
 
         bdrol.setId_rol(Integer.parseInt(vista.getTxt_id().getText()));
@@ -159,6 +160,7 @@ public class Con_rol {
                     JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
                     lista();
                     nuevo();
+                    vista.getTxt_numero().setText(String.valueOf(bdrol.codigo()));
                 } else {
                     JOptionPane.showMessageDialog(null, "ERRROR AL GUARDAR");
                 }
@@ -215,6 +217,7 @@ public class Con_rol {
             }
         }
     }
+
     public void nuevo() {
         vista.getTxt_id().setText("");
         vista.getTxt_numero().setText("");

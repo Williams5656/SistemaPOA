@@ -115,10 +115,13 @@ public class Con_rol {
     }
 
     public void verPermiso() {
-        Vis_Permisos per = new Vis_Permisos();
-        //vista.getESCRITORIO().add(per);
-        per.toFront();
-        per.setVisible(true);
+       Vis_Principal principal = new Vis_Principal();
+        Vis_Permisos permisos = new Vis_Permisos();
+        Con_permisos perm = new Con_permisos(permisos);
+        principal.getESCRITORIO().add(permisos);
+        Dimension desktopSize = principal.getESCRITORIO().getSize();
+        Dimension FrameSize = permisos.getSize();
+        permisos.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
 
     public void DefinirMetodo(int n) throws SQLException {

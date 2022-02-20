@@ -19,7 +19,6 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
@@ -32,7 +31,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -48,7 +46,9 @@ public class Con_persona {
 
     public Con_persona(vis_Persona vista) {
         this.vista = vista;
+        validadores();
         vista.setVisible(true);
+        vista.getLbError().setVisible(false);
         vista.getBtnNuevo().addActionListener(e -> nuevo());
         vista.getBtnGuardar().addActionListener(e -> guardar());
         vista.getBtnModificar().addActionListener(e -> modificar());
@@ -58,30 +58,6 @@ public class Con_persona {
         vista.getBtnModificar().setEnabled(false);
         vista.getBtnCamEstado().setEnabled(false);
         vista.getBtnImprimir().setEnabled(false);
-        ////////validaciones ced///////
-        Letras.no_espacios(vista.getTxtCedula());
-        Letras.numero_letras(vista.getTxtCedula(), 9);
-        Numeros.solo_numeros(vista.getTxtCedula());
-        comprobar_ced();
-        ///////////////val nombre///////////////
-
-        Letras.solo_letras(vista.getTxtNombre());
-//        Letras.solo_letras(vista.getTxtApellido());
-//        Letras.no_espacios(vista.getTxtCelular());
-//        Numeros.solo_numeros(vista.getTxtCelular());
-//        Letras.no_espacios(vista.getTxtCorreo());
-//        
-//        val_correo();
-        vista.getTablePersonas().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                try {
-                    seleccionar();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
         lista();
 
     }
@@ -163,42 +139,47 @@ public class Con_persona {
         switch (a) {
             case 1: {
                 error = "Cedula Erronea";
+                break;
             }
             case 2: {
                 error = "Nombre Erroneo";
+                break;
             }
             case 3: {
                 error = "Apellido Erroneo";
+                break;
             }
             case 4: {
                 error = "Correo Erroneo";
+                break;
             }
             case 5: {
                 error = "Direccion Erronea";
+                break;
             }
             case 6: {
                 error = "Celular Erroneo";
+                break;
             }
             case 7: {
                 error = "Fecha Erronea";
+                break;
             }
         }
         Timer tiempo = new Timer();
         TimerTask men_erro;
-
+        vista.getLbError().setText(error);
+        vista.getLbError().setVisible(true);
         men_erro = new TimerTask() {
             @Override
             public void run() {
-                vista.getLbError().setText(error);
-                vista.getLbError().setVisible(true);
-                System.out.println("tiempo aqui");
+                vista.getLbError().setText("");
+                vista.getLbError().setVisible(false);
             }
         };
-        
-        tiempo.schedule(men_erro,3000);
-        
-        vista.getLbError().setText("");
-        vista.getLbError().setVisible(false);
+
+        tiempo.schedule(men_erro, 3000);
+
     }
 
     public void guardar() {
@@ -366,6 +347,37 @@ public class Con_persona {
         } else {
             JOptionPane.showMessageDialog(null, "Error al modificar");
         }
+
+    }
+
+    public void validadores() {
+
+        ////////validaciones ced///////
+        Letras.no_espacios(vista.getTxtCedula());
+        Letras.numero_letras(vista.getTxtCedula(), 9);
+        Numeros.solo_numeros(vista.getTxtCedula());
+        comprobar_ced();
+        ///////////////val nombre///////////////
+        Letras.solo_letras(vista.getTxtNombre());
+        Letras.dosespacios(vista.getTxtNombre());
+        //////////////val apellidos////////////
+        Letras.solo_letras(vista.getTxtApellido());
+        Letras.dosespacios(vista.getTxtApellido());
+        ///////////////// resto ///////////////////
+        Numeros.solo_numeros(vista.getTxtCelular());
+        Letras.numero_letras(vista.getTxtCelular(), 9);
+        Letras.no_espacios(vista.getTxtCorreo());
+        val_correo();
+        vista.getTablePersonas().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    seleccionar();
+                } catch (ParseException ex) {
+                    Logger.getLogger(Con_persona.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
 
     }
 

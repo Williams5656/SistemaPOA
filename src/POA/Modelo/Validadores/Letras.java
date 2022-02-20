@@ -18,8 +18,17 @@ public class Letras {
     public static void solo_letras(JTextField t) {
         t.addKeyListener(new KeyAdapter() {
             @Override
-            public void keyTyped(KeyEvent e) {
+            public void keyPressed(KeyEvent e) {
                 if (!t.getText().matches("[a-zA-ZñÑ_ ]*")) {
+                    e.consume();
+                }
+            }
+        }
+        );
+        t.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.toString(e.getKeyChar()).matches("[a-zA-ZñÑ_ ]*")) {
                     e.consume();
                 }
             }
@@ -27,19 +36,20 @@ public class Letras {
         );
     }
 
-    public static void soloespacios(JTextField t) { //consume la tecla espacio si es pulsado dos veces
+    public static void dosespacios(JTextField t) { //consume elespacio si es pulsado dos veces
         t.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 String a = t.getText();
-                for (int i = 0; i < a.length() - 1; i++) {
-                    if (a.charAt(i) == ' ' && a.charAt(i + 1) == 32) {
-                       e.consume();
+                if (a.length() > 0) {
+                    if (a.charAt(a.length() - 1) == 32 && e.getKeyChar() == 32) {
+                        e.consume();
                     }
                 }
             }
         }
         );
+
     }
 
     public static void no_espacios(JTextField t) { // evita que se puedan colocar espacios

@@ -24,6 +24,7 @@ public class ControladorAsignacion {
         ventanaAsignacion.setTitle("Asignación");
         
         ventanaAsignacion.getBtnGuardar().addActionListener(e -> guardar());
+        ventanaAsignacion.getBtnModificar().addActionListener(e -> modificar());
         
         
         

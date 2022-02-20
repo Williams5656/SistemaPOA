@@ -53,7 +53,7 @@ public class UsuarioBD extends UsuarioMD {
             byte[] is;
             while (rs.next()) {
                 UsuarioBD m = new UsuarioBD();
-                m.setNombre(rs.getString("cedula"));
+                m.setNombre(rs.getString("nombre"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
                 m.setEstado(rs.getString("estado"));
@@ -71,7 +71,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia,estado)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
+        String nsql = "INSERT INTO usuario(nombre,usuario,contrasenia,estado)" + "VALUES ('" + getNombre()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -83,11 +83,11 @@ public class UsuarioBD extends UsuarioMD {
 
     }
   
-   public boolean modificar(String cedula){
+   public boolean modificar(String nombre){
           //Transformo image a base64 encode para postgresl
         
             String nsql= "update usuario set \"usuario\"='"+getNombreUsuario()+  "',\"contrasenia\"='"+getContrasenia()+ "'" 
-                    + " where \"cedula\"='"+cedula+"'";
+                    + " where \"nombre\"='"+nombre+"'";
             
             if(conectar.noQuery(nsql)==null){
                 return true;
@@ -101,15 +101,15 @@ public class UsuarioBD extends UsuarioMD {
    
     
     
-    public List<UsuarioMD> obtenerDatos(String cedula) {
+    public List<UsuarioMD> obtenerDatos(String nombre) {
         List<UsuarioMD> listaA = new ArrayList<UsuarioMD>();
         try {
-            String sql = "select * from usuario" + " where \"cedula\"='"+cedula+"'";
+            String sql = "select * from usuario" + " where \"nombre\"='"+nombre+"'";
             ResultSet rs = conectar.query(sql);
             byte[] is;
             while (rs.next()) {
                 UsuarioBD m = new UsuarioBD();
-                m.setNombre(rs.getString("cedula"));
+                m.setNombre(rs.getString("nombre"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
                 m.setEstado(rs.getString("estado"));
@@ -124,9 +124,9 @@ public class UsuarioBD extends UsuarioMD {
 
     }
     
-    public boolean desactivar(String cedula) {
+    public boolean desactivar(String nombre) {
         String sql = "UPDATE usuario set \"estado\"='" + "Inactivo" + "'"
-                + " where \"cedula\"='" + cedula + "'";
+                + " where \"nombre\"='" + nombre + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -138,9 +138,9 @@ public class UsuarioBD extends UsuarioMD {
 
     }
 
-    public boolean activar(String cedula) {
+    public boolean activar(String nombre) {
         String sql = "UPDATE usuario set \"estado\"='" + "Activo" + "'"
-                + " where \"cedula\"='" + cedula + "'";
+                + " where \"nombre\"='" + nombre + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;

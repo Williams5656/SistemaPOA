@@ -43,8 +43,8 @@ public class Con_persona {
 
     private final vis_Persona vista;
     PersonaBD per = new PersonaBD();
-    String error;
     protected static String Orig;
+    String error;
 
     public Con_persona(vis_Persona vista) {
         this.vista = vista;
@@ -64,7 +64,7 @@ public class Con_persona {
         Numeros.solo_numeros(vista.getTxtCedula());
         comprobar_ced();
         ///////////////val nombre///////////////
-        
+
         Letras.solo_letras(vista.getTxtNombre());
 //        Letras.solo_letras(vista.getTxtApellido());
 //        Letras.no_espacios(vista.getTxtCelular());
@@ -160,42 +160,45 @@ public class Con_persona {
     }
 
     public void men_error(int a) {
-        switch (a){
-            case 1:{
+        switch (a) {
+            case 1: {
                 error = "Cedula Erronea";
             }
-            case 2:{
+            case 2: {
                 error = "Nombre Erroneo";
             }
-            case 3:{
+            case 3: {
                 error = "Apellido Erroneo";
             }
-            case 4:{
-                 error = "Correo Erroneo";
+            case 4: {
+                error = "Correo Erroneo";
             }
-            case 5:{
+            case 5: {
                 error = "Direccion Erronea";
             }
-            case 6:{
+            case 6: {
                 error = "Celular Erroneo";
             }
-            case 7:{
+            case 7: {
                 error = "Fecha Erronea";
             }
-            
         }
-    }
-
-    public void pro_error(String err) {
-        Timer tiempo;
+        Timer tiempo = new Timer();
         TimerTask men_erro;
-        men_erro = new TimerTask(){
+
+        men_erro = new TimerTask() {
             @Override
             public void run() {
-                
+                vista.getLbError().setText(error);
+                vista.getLbError().setVisible(true);
+                System.out.println("tiempo aqui");
             }
-            
         };
+        
+        tiempo.schedule(men_erro,3000);
+        
+        vista.getLbError().setText("");
+        vista.getLbError().setVisible(false);
     }
 
     public void guardar() {

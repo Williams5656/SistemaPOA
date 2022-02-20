@@ -206,8 +206,7 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 170, 20));
 
         lbError.setForeground(new java.awt.Color(255, 51, 51));
-        lbError.setText("Cedula Error");
-        lbError.setVisible(false);
+        lbError.setText("erroorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
         getContentPane().add(lbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

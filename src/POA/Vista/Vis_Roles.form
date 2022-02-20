@@ -157,10 +157,12 @@
                       <Component id="jLabel1" min="-2" pref="54" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txt_rol" min="-2" pref="227" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="btn_ingresar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="btn_editar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_eliminar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
@@ -172,9 +174,7 @@
                       <Component id="jScrollPane2" min="-2" pref="430" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btn_eliminar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -200,7 +200,7 @@
                       <Component id="btn_editar_permiso" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

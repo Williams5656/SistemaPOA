@@ -129,7 +129,7 @@ public class Con_rol {
             modificar();
         }
     }
-
+    
     public void modificar() {
 
         bdrol.setId_rol(Integer.parseInt(vista.getTxt_id().getText()));
@@ -215,7 +215,6 @@ public class Con_rol {
             }
         }
     }
-
     public void nuevo() {
         vista.getTxt_id().setText("");
         vista.getTxt_numero().setText("");

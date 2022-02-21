@@ -93,7 +93,7 @@ public class Con_principal {
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        ControladorAsignacion us = new ControladorAsignacion(user);
+        ControladorAsignacion rol=new ControladorAsignacion(user);
     }
     public void permisos() {
         Vis_Permisos user = new Vis_Permisos();

@@ -108,7 +108,9 @@ public class Vis_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         ESCRITORIO = new javax.swing.JDesktopPane();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MENU_USUARIO = new javax.swing.JMenu();
         btn_usuario = new javax.swing.JMenuItem();
@@ -121,22 +123,19 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_carrera = new javax.swing.JMenuItem();
         btn_permisos = new javax.swing.JMenuItem();
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/ISTA.jpg"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout ESCRITORIOLayout = new javax.swing.GroupLayout(ESCRITORIO);
-        ESCRITORIO.setLayout(ESCRITORIOLayout);
-        ESCRITORIOLayout.setHorizontalGroup(
-            ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 907, Short.MAX_VALUE)
-        );
-        ESCRITORIOLayout.setVerticalGroup(
-            ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 605, Short.MAX_VALUE)
-        );
+        ESCRITORIO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo2222.png"))); // NOI18N
+        ESCRITORIO.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, 410, 360));
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenuBar1.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuBar1.setForeground(new java.awt.Color(204, 204, 204));
+        jMenuBar1.setFont(new java.awt.Font("Trebuchet MS", 0, 15)); // NOI18N
 
         MENU_USUARIO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Cat_Profile_25px.png"))); // NOI18N
         MENU_USUARIO.setText("USUARIO");
@@ -173,6 +172,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_ACADEMICO.add(btn_perfil);
 
+        btn_asignacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/consultar_silabo_menu.png"))); // NOI18N
         btn_asignacion.setText("Asignacion");
         MENU_ACADEMICO.add(btn_asignacion);
 
@@ -198,6 +198,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_carrera.setText("Carrera");
         MENU_ACADEMICO.add(btn_carrera);
 
+        btn_permisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Report_Card_20px.png"))); // NOI18N
         btn_permisos.setText("Permisos");
         MENU_ACADEMICO.add(btn_permisos);
 
@@ -209,11 +210,11 @@ public class Vis_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ESCRITORIO)
+            .addComponent(ESCRITORIO, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ESCRITORIO)
+            .addComponent(ESCRITORIO, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
         );
 
         pack();
@@ -260,6 +261,8 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuItem btn_usuario;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

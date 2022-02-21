@@ -66,7 +66,7 @@ public class Con_rol {
                 seleccionar();
             }
         });
-        vista.getBtn_ver_permiso().addActionListener(l -> Permiso());
+        vista.getBtn_ver_permiso().addActionListener(l -> permisos());
         vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
     }
@@ -126,10 +126,14 @@ public class Con_rol {
         Dimension FrameSize = permisos.getSize();
         permisos.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
-    public void Permiso() {
-        Vis_Principal p = new Vis_Principal();
-        Con_principal principal = new Con_principal(p);
-        principal.permisos();
+    
+    public void permisos() {
+        Vis_Permisos user = new Vis_Permisos();
+        Con_principal.vista.getESCRITORIO().add(user);
+        Dimension desktopSize = Con_principal.vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_permisos rol=new Con_permisos(user);
     }
     
 

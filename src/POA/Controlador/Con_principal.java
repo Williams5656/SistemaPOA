@@ -22,7 +22,7 @@ import static java.awt.Frame.MAXIMIZED_BOTH;
  */
 public class Con_principal {
 
-    private final Vis_Principal vista;
+    public static Vis_Principal vista;
 
     public Con_principal(Vis_Principal vista) {
        this.vista = vista;
@@ -35,7 +35,6 @@ public class Con_principal {
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_usuario().addActionListener(e -> usuario());
         vista.getBtn_asignacion().addActionListener(e -> asignacion());
-        vista.getBtn_permisos().addActionListener(e -> permisos());
 
     }
 
@@ -94,13 +93,5 @@ public class Con_principal {
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         ControladorAsignacion rol=new ControladorAsignacion(user);
-    }
-    public void permisos() {
-        Vis_Permisos user = new Vis_Permisos();
-        vista.getESCRITORIO().add(user);
-        Dimension desktopSize = vista.getESCRITORIO().getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_permisos rol=new Con_permisos(user);
-    }
+    }    
 }

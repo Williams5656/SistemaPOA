@@ -149,6 +149,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btneliminar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -210,7 +211,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnmodificar.setText("Modificar");
-        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+        jPanel2.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
         btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnguardar.setText("Guardar");
@@ -220,7 +221,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btnnuevo.setText("Nuevo");
         jPanel2.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 370, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 380, 60));
         getContentPane().add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, 30));
 
         jLabel7.setText("Estado:");

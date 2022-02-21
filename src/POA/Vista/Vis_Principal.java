@@ -127,10 +127,24 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ESCRITORIO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/logo2222.png"))); // NOI18N
-        ESCRITORIO.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, 410, 360));
+
+        ESCRITORIO.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout ESCRITORIOLayout = new javax.swing.GroupLayout(ESCRITORIO);
+        ESCRITORIO.setLayout(ESCRITORIOLayout);
+        ESCRITORIOLayout.setHorizontalGroup(
+            ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ESCRITORIOLayout.createSequentialGroup()
+                .addGap(730, 730, 730)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        ESCRITORIOLayout.setVerticalGroup(
+            ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ESCRITORIOLayout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -210,11 +224,11 @@ public class Vis_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ESCRITORIO, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+            .addComponent(ESCRITORIO)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ESCRITORIO, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
+            .addComponent(ESCRITORIO)
         );
 
         pack();

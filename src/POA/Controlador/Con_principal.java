@@ -6,6 +6,7 @@
 package POA.Controlador;
 
 import POA.Vista.Vis_Perfil;
+import POA.Vista.Vis_Permisos;
 import POA.Vista.Vis_Principal;
 import POA.Vista.Vis_Roles;
 import POA.Vista.Vis_Usuario;
@@ -64,6 +65,15 @@ public class Con_principal {
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         Con_rol rol=new Con_rol(user);
     }
+    public void permisos() {
+        Vis_Permisos user = new Vis_Permisos();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_permisos rol=new Con_permisos(user);
+    }
+    
 
     private void salir() {
         vis_inicioSesion visin = new vis_inicioSesion();

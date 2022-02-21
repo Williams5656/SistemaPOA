@@ -66,7 +66,7 @@ public class Con_rol {
                 seleccionar();
             }
         });
-        vista.getBtn_ver_permiso().addActionListener(l -> verPermiso());
+        vista.getBtn_ver_permiso().addActionListener(l -> Permiso());
         vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
     }
@@ -115,14 +115,23 @@ public class Con_rol {
     }
 
     public void verPermiso() {
+        System.out.println("hola");
        Vis_Principal principal = new Vis_Principal();
         Vis_Permisos permisos = new Vis_Permisos();
         Con_permisos perm = new Con_permisos(permisos);
         principal.getESCRITORIO().add(permisos);
+        principal.getESCRITORIO().show();
+        permisos.setVisible(true);
         Dimension desktopSize = principal.getESCRITORIO().getSize();
         Dimension FrameSize = permisos.getSize();
         permisos.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
+    public void Permiso() {
+        Vis_Principal p = new Vis_Principal();
+        Con_principal principal = new Con_principal(p);
+        principal.permisos();
+    }
+    
 
     public void DefinirMetodo(int n) throws SQLException {
         if (n == 1) {//ingresar

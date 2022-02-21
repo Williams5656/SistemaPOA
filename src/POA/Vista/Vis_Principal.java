@@ -69,6 +69,23 @@ public class Vis_Principal extends javax.swing.JFrame {
         return btn_usuario;
     }
 
+    public JMenuItem getBtn_asignacion() {
+        return btn_asignacion;
+    }
+
+    public void setBtn_asignacion(JMenuItem btn_asignacion) {
+        this.btn_asignacion = btn_asignacion;
+    }
+
+    public JMenuItem getBtn_permisos() {
+        return btn_permisos;
+    }
+
+    public void setBtn_permisos(JMenuItem btn_permisos) {
+        this.btn_permisos = btn_permisos;
+    }
+
+    
     public void setBtn_usuario(JMenuItem btn_usuario) {
         this.btn_usuario = btn_usuario;
     }
@@ -98,9 +115,11 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_salir = new javax.swing.JMenuItem();
         MENU_ACADEMICO = new javax.swing.JMenu();
         btn_perfil = new javax.swing.JMenuItem();
+        btn_asignacion = new javax.swing.JMenuItem();
         btn_persona = new javax.swing.JMenuItem();
         btn_roles = new javax.swing.JMenuItem();
         btn_carrera = new javax.swing.JMenuItem();
+        btn_permisos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,6 +173,9 @@ public class Vis_Principal extends javax.swing.JFrame {
         });
         MENU_ACADEMICO.add(btn_perfil);
 
+        btn_asignacion.setText("Asignacion");
+        MENU_ACADEMICO.add(btn_asignacion);
+
         btn_persona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_User_20px.png"))); // NOI18N
         btn_persona.setText("Persona");
         btn_persona.addActionListener(new java.awt.event.ActionListener() {
@@ -175,6 +197,9 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_carrera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/icons8_Permanent_Job_20px.png"))); // NOI18N
         btn_carrera.setText("Carrera");
         MENU_ACADEMICO.add(btn_carrera);
+
+        btn_permisos.setText("Permisos");
+        MENU_ACADEMICO.add(btn_permisos);
 
         jMenuBar1.add(MENU_ACADEMICO);
 
@@ -227,8 +252,10 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane ESCRITORIO;
     private javax.swing.JMenu MENU_ACADEMICO;
     private javax.swing.JMenu MENU_USUARIO;
+    private javax.swing.JMenuItem btn_asignacion;
     private javax.swing.JMenuItem btn_carrera;
     private javax.swing.JMenuItem btn_perfil;
+    private javax.swing.JMenuItem btn_permisos;
     private javax.swing.JMenuItem btn_persona;
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;

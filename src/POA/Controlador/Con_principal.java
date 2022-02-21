@@ -5,6 +5,7 @@
  */
 package POA.Controlador;
 
+import POA.Vista.Vis_Asignacion;
 import POA.Vista.Vis_Perfil;
 import POA.Vista.Vis_Permisos;
 import POA.Vista.Vis_Principal;
@@ -33,6 +34,8 @@ public class Con_principal {
         vista.getBtn_roles().addActionListener(e -> roles());
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_usuario().addActionListener(e -> usuario());
+        vista.getBtn_asignacion().addActionListener(e -> asignacion());
+        vista.getBtn_permisos().addActionListener(e -> permisos());
 
     }
 
@@ -65,14 +68,7 @@ public class Con_principal {
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         Con_rol rol=new Con_rol(user);
     }
-    public void permisos() {
-        Vis_Permisos user = new Vis_Permisos();
-        vista.getESCRITORIO().add(user);
-        Dimension desktopSize = vista.getESCRITORIO().getSize();
-        Dimension FrameSize = user.getSize();
-        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_permisos rol=new Con_permisos(user);
-    }
+    
     
 
     private void salir() {
@@ -91,12 +87,20 @@ public class Con_principal {
         cont_usuario us = new cont_usuario(user);
     }
 
-//    private void asignacion() {
-//        Vis_Asignacion user = new Vis_Asignacion();
-//        vista.getESCRITORIO().add(user);
-//        Dimension desktopSize = vista.getESCRITORIO().getSize();
-//        Dimension FrameSize = user.getSize();
-//        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-//        user.show();
-//    }
+    private void asignacion() {
+        Vis_Asignacion user = new Vis_Asignacion();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        ControladorAsignacion us = new ControladorAsignacion(user);
+    }
+    public void permisos() {
+        Vis_Permisos user = new Vis_Permisos();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Con_permisos rol=new Con_permisos(user);
+    }
 }

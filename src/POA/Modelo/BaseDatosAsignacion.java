@@ -26,7 +26,7 @@ public class BaseDatosAsignacion {
                 ModeloAsignacion m = new ModeloAsignacion();
                 m.setId(rs.getInt("id"));
                 m.setCodigoPersona(rs.getString("cedula_persona"));
-                m.setPerfil(rs.getString("perfil"));
+                m.setPerfil(rs.getInt("perfil"));
                 
                 lista.add(m);
             }
@@ -38,19 +38,19 @@ public class BaseDatosAsignacion {
         return lista;
     }
     
-    public void guardar(String cedulaPersona, String perfil){
+    public void guardar(String cedulaPersona, int perfil){
         
         String sql = "insert into asignacion (cedula_persona, perfil) VALUES ('"  
-                + cedulaPersona + "', '" + perfil + "');";
+                + cedulaPersona + "', " + perfil + ");";
         
         conn.noQuery(sql);
         
     }
     
-    public void modificar(int codigo, String cedulaPersona, String perfil){
+    public void modificar(int codigo, String cedulaPersona, int perfil){
         
-        String sql = "update asignacion set cedula_persona = '" + cedulaPersona + "', perfil = '" + perfil + "' "
-                + "where codigo = " + codigo + ";";
+        String sql = "update asignacion set cedula_persona = '" + cedulaPersona + "', perfil = " + perfil + " "
+                + "where id = " + codigo + ";";
         
         conn.noQuery(sql);
         

@@ -21,11 +21,9 @@ public class PerfilBD extends PerfilMD {
 
     Conect conectar = new Conect();
 
-    public PerfilBD(String codigo, String nombre, String descripcion) {
+    public PerfilBD(int codigo, String nombre, String descripcion) {
         super(codigo, nombre, descripcion);
     }
-
-    
 
     public PerfilBD() {
     }
@@ -52,7 +50,7 @@ public class PerfilBD extends PerfilMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PerfilMD perfil = new PerfilMD();
-                perfil.setCodigo(rs.getString("codigo"));
+                perfil.setCodigo(rs.getInt("codigo"));
                 perfil.setNombre(rs.getString("nombre"));
                 perfil.setDescripcion(rs.getString("descripcion"));
                 lista.add(perfil);
@@ -72,7 +70,7 @@ public class PerfilBD extends PerfilMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PerfilMD perfil = new PerfilMD();
-                perfil.setCodigo(rs.getString("codigo"));
+                perfil.setCodigo(rs.getInt("codigo"));
                 perfil.setNombre(rs.getString("nombre"));
                 perfil.setDescripcion(rs.getString("descripcion"));
                 lista.add(perfil);
@@ -85,7 +83,7 @@ public class PerfilBD extends PerfilMD {
         }
     }
     public boolean insertar() {
-        String sql = "INSERT INTO perfil(codigo, nombre,descripcion)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() + "')";
+        String sql = "INSERT INTO perfil(nombre, descripcion)" + "VALUES ('" + getNombre() + "','" + getDescripcion() + "')";
         System.out.println(sql);
         
         if (conectar.noQuery(sql) == null) {
@@ -96,9 +94,9 @@ public class PerfilBD extends PerfilMD {
             return false;
         }
     }
-        public boolean modificar(String identificador) {
+        public boolean modificar(int identificador) {
         String sql = "update perfil set \"nombre\"='"+getNombre()+ "',\"descripcion\"='" + getDescripcion()+"'"
-                + " where \"codigo\"='" + identificador + "'";
+                + " where \"codigo\"= " + identificador + ";";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -108,8 +106,8 @@ public class PerfilBD extends PerfilMD {
             return false;
         }
     }
-    public boolean eliminar(String identificador){
-        String sql = "delete from perfil where \"codigo\"='" + identificador + "'";
+    public boolean eliminar(int identificador){
+        String sql = "delete from perfil where \"codigo\"=" + identificador + ";";
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {

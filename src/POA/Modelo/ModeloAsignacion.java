@@ -11,12 +11,12 @@ package POA.Modelo;
 public class ModeloAsignacion {
     private int id;
     private String codigoPersona;
-    private String perfil;
+    private int perfil;
 
     public ModeloAsignacion() {
     }
 
-    public ModeloAsignacion(int id, String codigoPersona, String perfil) {
+    public ModeloAsignacion(int id, String codigoPersona, int perfil) {
         this.id = id;
         this.codigoPersona = codigoPersona;
         this.perfil = perfil;
@@ -38,13 +38,14 @@ public class ModeloAsignacion {
         this.codigoPersona = codigoPersona;
     }
 
-    public String getPerfil() {
+    public int getPerfil() {
         return perfil;
     }
 
-    public void setPerfil(String perfil) {
+    public void setPerfil(int perfil) {
         this.perfil = perfil;
     }
+
     
     
 }

@@ -5,12 +5,14 @@
  */
 package POA.Controlador;
 
+import POA.Modelo.ModeloAsignacion;
 import POA.Modelo.PerfilBD;
 import POA.Modelo.PerfilMD;
 import POA.Modelo.Validadores.Letras;
-import POA.Vista.Vis_Perfil;
+import POA.Vista.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,12 +24,14 @@ import javax.swing.table.DefaultTableModel;
 public class Con_perfil {
 
     private final Vis_Perfil vista;
-    PerfilBD bdperfil = new PerfilBD();
+    private PerfilBD bdperfil = new PerfilBD();
+    private DefaultTableModel modelo = new DefaultTableModel();
+    private List<PerfilMD> lista = new ArrayList<>();
 
     public Con_perfil(Vis_Perfil vista) {
         this.vista = vista;
         vista.setVisible(true);
-        vista.getBtn_nuevo().addActionListener(e -> nuevo());
+        
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
@@ -38,6 +42,12 @@ public class Con_perfil {
                 seleccionar();
             }
         });
+        
+        vista.getPanel().addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                nuevo();
+            }
+        });
         lista();
     }
 
@@ -46,8 +56,7 @@ public class Con_perfil {
         vista.getBtn_guardar().setEnabled(true);
         vista.getBtn_modificar().setEnabled(false);
         vista.getBtn_eliminar().setEnabled(false);
-        vista.getTxtCodigo().setEditable(false);
-        vista.getTxtCodigo().setText(String.valueOf(bdperfil.codigo()));
+        
         vista.getTxtNombre().setText("");
         vista.getTxtDescripcion().setText("");
     }
@@ -58,7 +67,7 @@ public class Con_perfil {
         } else if (vista.getTxtDescripcion().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "INGRESE LA DESCRIPCION");
         } else  {
-            bdperfil.setCodigo(vista.getTxtCodigo().getText());
+            
             bdperfil.setNombre(vista.getTxtNombre().getText());
             bdperfil.setDescripcion(vista.getTxtDescripcion().getText());
             if (bdperfil.insertar()) {
@@ -73,12 +82,13 @@ public class Con_perfil {
     }
 
     private void modificar() {
-        vista.getTxtCodigo().setEnabled(false);
+        int seleccionado = vista.getTablaPerfil().getSelectedRow();
+        
         bdperfil.setNombre(vista.getTxtNombre().getText());
         bdperfil.setDescripcion(vista.getTxtDescripcion().getText());
         int resp2 = JOptionPane.showConfirmDialog(null, "CONFIRME SI ESTA SEGURO DE MODIFICAR");
         if (resp2 == 0) {
-            if (bdperfil.modificar(vista.getTxtCodigo().getText())) {
+            if (bdperfil.modificar(lista.get(seleccionado).getCodigo())) {
                 JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
                 lista();
                 nuevo();
@@ -89,9 +99,10 @@ public class Con_perfil {
     }
 
     private void eliminar() {
+        int seleccionado = vista.getTablaPerfil().getSelectedRow();
         int resp2 = JOptionPane.showConfirmDialog(null, "CONFIRME SI ESTA SEGURO DE MODIFICAR");
         if (resp2 == 0) {
-            if (bdperfil.eliminar(vista.getTxtCodigo().getText())) {
+            if (bdperfil.eliminar(lista.get(seleccionado).getCodigo())) {
                 JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
                 lista();
                 nuevo();
@@ -103,37 +114,35 @@ public class Con_perfil {
     }
 
     private void seleccionar() {
+        int select = vista.getTablaPerfil().getSelectedRow();
         vista.getBtn_modificar().setEnabled(true);
         vista.getBtn_eliminar().setEnabled(true);
         vista.getBtn_guardar().setEnabled(false);
-        vista.getTxtCodigo().setEditable(false);
-        DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTablaPerfil().getModel();
-        String maquillaje = (String) modelo.getValueAt(vista.getTablaPerfil().getSelectedRow(), 0);
-        List<PerfilMD> lista = bdperfil.obtenerdatos(maquillaje);
-        bdperfil.setCodigo(lista.get(0).getCodigo());
-        bdperfil.setNombre(lista.get(0).getNombre());
-        bdperfil.setDescripcion(lista.get(0).getDescripcion());
-
-        vista.getTxtCodigo().setText(bdperfil.getCodigo() + "");
-        vista.getTxtNombre().setText(bdperfil.getNombre());
-        vista.getTxtDescripcion().setText(bdperfil.getDescripcion());
+  
+        lista = bdperfil.mostrardatos();
+        vista.getTxtNombre().setText(lista.get(select).getNombre());
+        vista.getTxtDescripcion().setText(lista.get(select).getDescripcion());
     }
 
-    public void lista() {
-        DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTablaPerfil().getModel();
-        List<PerfilMD> lista = bdperfil.mostrardatos();
-        int columnas = modelo.getColumnCount();
-        for (int j = vista.getTablaPerfil().getRowCount() - 1; j >= 0; j--) {
-            modelo.removeRow(j);
+    public void lista(){
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        
+        modelo.addColumn("Id");
+        modelo.addColumn("Cédula Persona");
+        modelo.addColumn("Perfil");
+        
+        lista = bdperfil.mostrardatos();
+        for (PerfilMD user : lista) {
+            Object[] fila = new Object[3];
+            fila[0] = user.getCodigo();
+            fila[1] = user.getNombre();
+            fila[2] = user.getDescripcion();
+            
+            modelo.addRow(fila);
         }
+        
+        vista.getTablaPerfil().setModel(modelo);
 
-        for (int i = 0; i < lista.size(); i++) {
-            modelo.addRow(new Object[columnas]);
-            vista.getTablaPerfil().setValueAt(lista.get(i).getCodigo(), i, 0);
-            vista.getTablaPerfil().setValueAt(lista.get(i).getNombre(), i, 1);
-            vista.getTablaPerfil().setValueAt(lista.get(i).getDescripcion(), i, 2);
-        }
     }
 }

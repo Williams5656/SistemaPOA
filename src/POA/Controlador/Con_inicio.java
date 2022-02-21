@@ -16,6 +16,7 @@ public class Con_inicio {
     private final vis_inicioSesion vista;
 
     public Con_inicio(vis_inicioSesion vista) {
+        vista.getLblcomp().setVisible(false);
         this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
@@ -31,10 +32,10 @@ public class Con_inicio {
                 Vis_Principal vistamenu = new Vis_Principal();
                 Con_principal menu = new Con_principal(vistamenu);
                 vista.setVisible(false);
+                vista.getLblcomp().setVisible(false);
                 vistamenu.setVisible(true);
             }else{
-                vista.getTxtusuario().setText("");
-                vista.getTxtclave().setText("");
+                vista.getLblcomp().setVisible(true);
             }
         }
         

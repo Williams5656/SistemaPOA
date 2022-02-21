@@ -1,6 +1,7 @@
 package POA.Vista;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -40,6 +41,16 @@ public class vis_inicioSesion extends javax.swing.JFrame {
     public void setTxtusuario(JTextField txtusuario) {
         this.txtusuario = txtusuario;
     }
+
+    public JLabel getLblcomp() {
+        return lblcomp;
+    }
+
+    public void setLblcomp(JLabel lblcomp) {
+        this.lblcomp = lblcomp;
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,8 +68,9 @@ public class vis_inicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtclave = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
+        lblcomp = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,7 +82,7 @@ public class vis_inicioSesion extends javax.swing.JFrame {
                 btningresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 190, 40));
+        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 190, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("BIENVENIDO");
@@ -89,11 +101,16 @@ public class vis_inicioSesion extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/user (2).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 130, 160));
 
+        lblcomp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblcomp.setForeground(new java.awt.Color(255, 0, 0));
+        lblcomp.setText("*CREDENCIALES INCORRECTAS");
+        getContentPane().add(lblcomp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 240, 30));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 360));
 
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 120, 60));
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -146,7 +163,8 @@ public class vis_inicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lblcomp;
     private javax.swing.JPasswordField txtclave;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables

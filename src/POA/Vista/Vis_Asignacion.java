@@ -101,15 +101,15 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cédula:");
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
-        panel.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 140, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        panel.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 140, -1));
 
-        panel.add(comboPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 140, -1));
+        panel.add(comboPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Perfil:");
-        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnGuardar.setText("GUARDAR");

@@ -72,10 +72,10 @@ public class Con_principal {
     
 
     private void salir() {
-        vis_inicioSesion visin = new vis_inicioSesion();
+        vis_inicioSesion inicios = new vis_inicioSesion();
         vista.setVisible(false);
-        visin.setVisible(true);
-        Con_inicio inicio = new Con_inicio(visin);
+        inicios.setVisible(true);
+        Con_inicio inicio = new Con_inicio(inicios);
     }
 
     private void usuario() {

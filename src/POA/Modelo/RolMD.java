@@ -18,6 +18,10 @@ public class RolMD {
     public RolMD() {
     }
 
+    public RolMD(int id_rol) {
+        this.id_rol = id_rol;
+    }
+
     public RolMD(int numero_rol, int id_rol, String nombre_rol, String observaciones) {
         this.numero_rol = numero_rol;
         this.id_rol = id_rol;

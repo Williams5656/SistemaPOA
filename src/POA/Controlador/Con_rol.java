@@ -134,6 +134,10 @@ public class Con_rol {
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         Con_permisos rol=new Con_permisos(user);
+        int fila = vista.getTabla_rol().getSelectedRow();
+        int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila,1).toString());
+        Con_permisos.vista.getTxtidRol().setText(""+idrol);
+        System.out.println(idrol+"sad");
     }
     
 
@@ -186,7 +190,7 @@ public class Con_rol {
         }
     }
 
-    public void seleccionar() {
+    public void seleccionar() {        
         vista.getBtn_eliminar().setEnabled(true);
         vista.getBtn_editar().setEnabled(true);
         DefaultTableModel modelo;

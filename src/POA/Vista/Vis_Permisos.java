@@ -5,6 +5,11 @@
  */
 package POA.Vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author KEVIN LANDIVAR
@@ -18,6 +23,32 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JTable getTablapermisos() {
+        return tablapermisos;
+    }
+
+    public void setTablapermisos(JTable tablapermisos) {
+        this.tablapermisos = tablapermisos;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(JButton btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
+    public JTextField getTxtidRol() {
+        return txtidRol;
+    }
+
+    public void setTxtidRol(JTextField txtidRol) {
+        this.txtidRol = txtidRol;
+    }
+
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,17 +59,11 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablapermisos = new javax.swing.JTable();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
+        txtidRol = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -46,43 +71,23 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Perpetua", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PERMISOS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 11, 256, 62));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/Save-icon (4).png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, -1, -1));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/Save-icon (4).png"))); // NOI18N
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, -1, -1));
 
         jButton2.setText("SELECCIONAR TODO");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, -1, -1));
 
         tablapermisos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", ":v", null},
-                {"2", ":v", null},
-                {"3", ":v", null},
-                {"4", ":v", null},
-                {"5", ":v", null},
-                {"6", ":v", null},
-                {"7", ":v", null},
-                {"8", ":v", null},
-                {"9", ":v", null},
-                {"10", ":v", null},
-                {"11", ":v", null},
-                {"12", ":v", null},
-                {"13", ":v", null},
-                {"14", ":v", null},
-                {"15", ":v", null},
-                {"16", ":v", null},
-                {"17", ":v", null},
-                {"18", ":v", null},
-                {"19", ":v", null},
-                {"20", ":v", null},
-                {"21", ":v", null},
-                {"22", ":v", null},
-                {"23", ":v", null},
-                {"24", ":v", null},
-                {"25", null, null}
+                {"1", "Boton Usuarios", false},
+                {"2", "Boton Perfil", false},
+                {"3", "Boton Asignacion", false},
+                {"4", "Boton Persona", false},
+                {"5", "Boton Roles", false},
+                {"6", "Boton Carrera", false},
             },
             new String [] {
                 "No.", "Permisos", "Activo"
@@ -98,115 +103,19 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tablapermisos);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
-
-        jInternalFrame1.setClosable(true);
-        jInternalFrame1.setIconifiable(true);
-        jInternalFrame1.setMaximizable(true);
-
-        jLabel2.setFont(new java.awt.Font("Perpetua", 0, 36)); // NOI18N
-        jLabel2.setText("PERMISOS");
-
-        jButton3.setText("GUARDAR CAMBIOS");
-
-        jButton4.setText("SELECCIONAR TODO");
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"1", ":v", null},
-                {"2", ":v", null},
-                {"3", ":v", null},
-                {"4", ":v", null},
-                {"5", ":v", null},
-                {"6", ":v", null},
-                {"7", ":v", null},
-                {"8", ":v", null},
-                {"9", ":v", null},
-                {"10", ":v", null},
-                {"11", ":v", null},
-                {"12", ":v", null},
-                {"13", ":v", null},
-                {"14", ":v", null},
-                {"15", ":v", null},
-                {"16", ":v", null},
-                {"17", ":v", null},
-                {"18", ":v", null},
-                {"19", ":v", null},
-                {"20", ":v", null},
-                {"21", ":v", null},
-                {"22", ":v", null},
-                {"23", ":v", null},
-                {"24", ":v", null},
-                {"25", null, null}
-            },
-            new String [] {
-                "No.", "Permisos", "Activo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable2);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(39, 39, 39)
-                .addComponent(jButton3)
-                .addContainerGap())
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 285, 0, 0));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, 220));
+        getContentPane().add(txtidRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 30, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable tablapermisos;
+    private javax.swing.JTextField txtidRol;
     // End of variables declaration//GEN-END:variables
 }

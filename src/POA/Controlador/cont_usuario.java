@@ -102,15 +102,19 @@ public class cont_usuario {
         
         switch(n){
             case 1: 
+                
                  for (int i = 0; i < lista.size(); i++) {
-                    for (int j = 0; j < listau.size(); j++) {
-                        if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
-                            cedexistente();
-                        }else{
-                            vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
-                            cedcorrect();
+                    if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
+                        for (int j = 0; j < listau.size(); j++) {
+                            if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
+                                cedexistente();
+                            }else{
+                                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                                cedcorrect();
+                            }
                         }
                     }
+                    
                  }
                 
                 break;

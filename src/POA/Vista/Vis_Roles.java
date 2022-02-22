@@ -145,7 +145,6 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         vista_NuevoRol = new javax.swing.JDialog();
-        jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_numero = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -157,6 +156,7 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         txt_observaciones = new javax.swing.JTextArea();
         btn_guardar_rol = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         btn_ingresar = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
@@ -169,8 +169,9 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
 
         vista_NuevoRol.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        vista_NuevoRol.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Numero:");
         vista_NuevoRol.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 58, -1, -1));
 
@@ -181,6 +182,8 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         });
         vista_NuevoRol.getContentPane().add(txt_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 50, 204, 32));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ID:");
         vista_NuevoRol.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 114, -1, 20));
 
@@ -191,10 +194,14 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
         });
         vista_NuevoRol.getContentPane().add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 108, 204, 32));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre del Rol:");
         vista_NuevoRol.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 177, -1, -1));
         vista_NuevoRol.getContentPane().add(txt_nombrerol, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 168, 207, 34));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Observaciones:");
         vista_NuevoRol.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 246, -1, -1));
 
@@ -204,11 +211,14 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
         vista_NuevoRol.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 246, -1, 155));
 
-        btn_guardar_rol.setText("Guardar");
+        btn_guardar_rol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/Save-icon (4).png"))); // NOI18N
         vista_NuevoRol.getContentPane().add(btn_guardar_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 436, -1, -1));
 
-        btn_cancelar.setText("Cancelar ");
+        btn_cancelar.setText("CANCELAR");
         vista_NuevoRol.getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 436, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N
+        vista_NuevoRol.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 500));
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);

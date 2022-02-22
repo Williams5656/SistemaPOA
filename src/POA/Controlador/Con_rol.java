@@ -130,10 +130,11 @@ public class Con_rol {
     
     public void cargarTabla() {
         DefaultTableModel model = new DefaultTableModel();
+        model = (DefaultTableModel) vista.getTabla_rol().getModel();
         model.addColumn("id");
         model.addColumn("id_Rol");
         model.addColumn("Nombre_Permiso");        
-       Con_permisos.vista.getTablapermisos().setModel(model);
+       //Con_permisos.vista.getTablapermisos().setModel(model);
        cargarRol();
     }
     

@@ -78,7 +78,6 @@ public class cont_usuario {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
-                cedexistente();
                 vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
                 
                 

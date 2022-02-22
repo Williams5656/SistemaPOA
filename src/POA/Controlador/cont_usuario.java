@@ -104,7 +104,7 @@ public class cont_usuario {
                                 cedexistente();
                                 n=1;
                             }else{
-                                
+                                cedcorrect();
                             }
                         }
         

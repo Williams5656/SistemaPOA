@@ -40,7 +40,7 @@ public class cont_usuario {
         vista.getBtnmodificar().addActionListener(e->modificar());
         vista.getBtneliminar().addActionListener(e->cambiarestado());
         vista.getBtncedula().addActionListener(e->buscarced());
-        vista.getComborol().addActionListener(e-> roles());
+        
         vista.getTableUsuario().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -50,6 +50,7 @@ public class cont_usuario {
         });
         
 //        validar();
+        roles();
         lista();
         
     }
@@ -64,10 +65,11 @@ public class cont_usuario {
     public void roles(){
         RolBD bdrol = new RolBD();
         List<RolMD> listar = bdrol.mostrardatos();
-        
         for (int i = 0; i < listar.size(); i++) {
             vista.getComborol().addItem(listar.get(i).getNombre_rol());
         }
+        
+        
     }
     public void buscarced(){
         PersonaBD dbp = new PersonaBD();

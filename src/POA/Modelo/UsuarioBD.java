@@ -52,7 +52,7 @@ public class UsuarioBD extends UsuarioMD {
             ResultSet rs = conectar.query(sql);
             byte[] is;
             while (rs.next()) {
-                UsuarioBD m = new UsuarioBD();
+                UsuarioMD m = new UsuarioMD();
                 m.setNombre(rs.getString("nombre"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));

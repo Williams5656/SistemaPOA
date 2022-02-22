@@ -98,12 +98,12 @@ public class Con_principal {
     }   
      private void carrera() {
         Vis_Carrera carrera = new Vis_Carrera();
-        con_carrera per = new con_carrera(carrera);
+       
         vista.getESCRITORIO().add(carrera);
         Dimension desktopSize = vista.getESCRITORIO().getSize();
         Dimension FrameSize = carrera.getSize();
         carrera.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+         con_carrera concarrera = new con_carrera(carrera);
 
     }
 }

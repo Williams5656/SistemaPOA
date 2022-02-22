@@ -7,12 +7,14 @@ package POA.Controlador;
 
 import POA.Modelo.PersonaBD;
 import POA.Modelo.PersonaMD;
+import POA.Modelo.RolMD;
 import POA.Modelo.UsuarioBD;
 import POA.Modelo.UsuarioMD;
 import POA.Vista.Vis_Usuario;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -55,7 +57,13 @@ public class cont_usuario {
 //        
 //    }
     
-    
+    public void roles(){
+        List<RolMD> listar = new  ArrayList<RolMD>();
+        
+        for (int i = 0; i < listar.size(); i++) {
+            vista.getComborol().addItem(listar.get(i).getNombre_rol());
+        }
+    }
     public void buscarced(){
         PersonaBD dbp = new PersonaBD();
         List<PersonaMD> lista = dbp.mostrardatos();

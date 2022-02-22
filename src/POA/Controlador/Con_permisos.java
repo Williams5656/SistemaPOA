@@ -103,9 +103,14 @@ public class Con_permisos {
         boolean estado;
         for (int i = 0; i < vista.getTablapermisos().getRowCount(); i++) {
             id = Integer.parseInt(vista.getTablapermisos().getValueAt(i, 0).toString());
-            estado = Boolean.parseBoolean(vista.getTablapermisos().getValueAt(i, 2).toString());
+            if (vista.getTablapermisos().getValueAt(i, 2) == null) {
+                estado = false;
+            } else {
+                estado = Boolean.parseBoolean(vista.getTablapermisos().getValueAt(i, 2).toString());
+            }
             bdPermisos.setEstado(estado);
             bdPermisos.Modificar(idrol, id);
+            
         }
         JOptionPane.showMessageDialog(null, "Editado correctamente");
     }
@@ -118,7 +123,11 @@ public class Con_permisos {
         for (int i = 0; i < vista.getTablapermisos().getRowCount(); i++) {
             id = Integer.parseInt(vista.getTablapermisos().getValueAt(i, 0).toString());
             nombrPermiso = vista.getTablapermisos().getValueAt(i, 1).toString();
-            estado = Boolean.parseBoolean(vista.getTablapermisos().getValueAt(i, 2).toString());
+            if (vista.getTablapermisos().getValueAt(i, 2) == null) {
+                estado = false;
+            } else {
+                estado = Boolean.parseBoolean(vista.getTablapermisos().getValueAt(i, 2).toString());
+            }
             bdPermisos.setId(id);
             bdPermisos.setNombre_permiso(nombrPermiso);
             bdPermisos.setEstado(estado);

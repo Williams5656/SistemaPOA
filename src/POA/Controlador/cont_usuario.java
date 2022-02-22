@@ -73,12 +73,15 @@ public class cont_usuario {
         List<PersonaMD> lista = dbp.mostrardatos();
         UsuarioBD dbpu = new UsuarioBD();
         List<UsuarioMD> listau = dbpu.mostrardatos();
+        int n=0;
         for (int i = 0; i < lista.size(); i++) {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
                 cedexistente();
                 vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                n=1;
+                
 //                for (int j = 0; j < listau.size(); j++) {
 //                    if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
 //                        cedexistente();
@@ -96,6 +99,26 @@ public class cont_usuario {
             }
            
         }
+        
+        switch(n){
+            case 1: 
+                 for (int i = 0; i < lista.size(); i++) {
+                    for (int j = 0; j < listau.size(); j++) {
+                        if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
+                            cedexistente();
+                        }else{
+                            vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                            cedcorrect();
+                        }
+                    }
+                 }
+                
+                break;
+            case 0: cedexistente();
+                    JOptionPane.showMessageDialog(null, "*Persona no registrada");
+                break;
+        }
+        
         
         
     }

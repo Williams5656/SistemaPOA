@@ -65,7 +65,7 @@ public class cont_usuario {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < listau.size(); j++) {
                     if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
                         cedexistente();
                     }else{
@@ -89,7 +89,7 @@ public class cont_usuario {
         vista.getTxtcedula().setEditable(false);
         vista.getTxtUsuario().setEditable(false);
         vista.getTxtcontra().setEditable(false);
-        vista.getLblmensaje().setVisible(true);
+        vista.getLblmensaje().setVisible(false);
         vista.getLblnombre().setText("");
         vista.getComboestado().setEditable(false);
         

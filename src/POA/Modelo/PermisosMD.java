@@ -8,20 +8,20 @@ package POA.Modelo;
  *
  * @author Isaac Mejia
  */
-public class Permisos {
+public class PermisosMD {
     private int id;
     private int id_rol;
     private String nombre_permiso;
     private boolean estado;
 
-    public Permisos(int id, int id_rol, String nombre_permiso, boolean estado) {
+    public PermisosMD(int id, int id_rol, String nombre_permiso, boolean estado) {
         this.id = id;
         this.id_rol = id_rol;
         this.nombre_permiso = nombre_permiso;
         this.estado = estado;
     }
 
-    public Permisos() {
+    public PermisosMD() {
     }
 
     

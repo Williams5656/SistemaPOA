@@ -5,6 +5,8 @@
  */
 package POA.Controlador;
 
+import POA.Modelo.PersonaBD;
+import POA.Modelo.PersonaMD;
 import POA.Modelo.UsuarioBD;
 import POA.Modelo.UsuarioMD;
 import POA.Vista.Vis_Usuario;
@@ -31,6 +33,7 @@ public class cont_usuario {
         vista.getBtnguardar().addActionListener(e->guardar());
         vista.getBtnmodificar().addActionListener(e->modificar());
         vista.getBtneliminar().addActionListener(e->cambiarestado());
+        vista.getBtncedula().addActionListener(e->cambiarestado());
         vista.getTableUsuario().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -50,6 +53,21 @@ public class cont_usuario {
 //        vista.getTxtsalario().addKeyListener(new TxtVNumeros(vista.getTxtsalario()));
 //        
 //    }
+    
+    
+    public void buscarced(){
+        PersonaBD dbp = new PersonaBD();
+        List<PersonaMD> lista = dbp.mostrardatos();
+        for (int i = 0; i < lista.size(); i++) {
+            if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
+                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                
+                
+            }else{
+                
+            }
+        }
+    }
     
     public void nuevo(){
         vista.getBtnguardar().setEnabled(true);

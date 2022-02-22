@@ -58,6 +58,13 @@ public class Con_persona {
         vista.getBtnModificar().setEnabled(false);
         vista.getBtnCamEstado().setEnabled(false);
         vista.getBtnImprimir().setEnabled(false);
+        vista.getTxtCedula().setEnabled(false);
+        vista.getTxtNombre().setEnabled(false);
+        vista.getTxtApellido().setEnabled(false);
+        vista.getTxtCelular().setEnabled(false);
+        vista.getTxtDireccion().setEnabled(false);
+        vista.getFecha().setEnabled(false);
+        vista.getTxtCorreo().setEnabled(false);
         lista();
 
     }
@@ -213,6 +220,13 @@ public class Con_persona {
     }
 
     public void nuevo() {
+        vista.getTxtCedula().setEnabled(true);
+        vista.getTxtNombre().setEnabled(true);
+        vista.getTxtApellido().setEnabled(true);
+        vista.getTxtCelular().setEnabled(true);
+        vista.getTxtDireccion().setEnabled(true);
+        vista.getFecha().setEnabled(true);
+        vista.getTxtCorreo().setEnabled(true);
         vista.getBtnGuardar().setEnabled(true);
         vista.getBtnImprimir().setEnabled(false);
         vista.getBtnCamEstado().setEnabled(false);

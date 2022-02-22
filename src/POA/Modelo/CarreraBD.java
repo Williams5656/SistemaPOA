@@ -32,8 +32,8 @@ public class CarreraBD extends CarreraMD {
 
     Conect conectar = new Conect();
 
-    public CarreraBD(String nombre_carrera, String codigo_carrera, String fecha_inicio, String modalidad, String horario) {
-        super(nombre_carrera, codigo_carrera, fecha_inicio, modalidad, horario);
+    public CarreraBD(String nombre_carrera, String codigo_carrera, String fecha_inicio, String modalidad, String coordinador) {
+        super(nombre_carrera, codigo_carrera, fecha_inicio, modalidad, coordinador);
     }
 
     public CarreraBD() {
@@ -51,7 +51,8 @@ public class CarreraBD extends CarreraMD {
                 m.setCodigo_carrera(rs.getString("codigo"));
                 m.setFecha_inicio(rs.getString("fecha_inicio"));
                 m.setModalidad(rs.getString("modalidad"));
-                m.setHorario(rs.getString("horario"));
+                m.setCoordinador(rs.getString("coordinador"));
+//                m.setHorario(rs.getString("horario"));
 
                 lista.add(m);
 
@@ -77,7 +78,8 @@ public class CarreraBD extends CarreraMD {
                 m.setCodigo_carrera(rs.getString("codigo"));
                 m.setFecha_inicio(rs.getString("fecha_inicio"));
                 m.setModalidad(rs.getString("modalidad"));
-                m.setHorario(rs.getString("horario"));
+                m.setCoordinador(rs.getString("coordinador"));
+//                m.setHorario(rs.getString("horario"));
 
                 lista.add(m);
 
@@ -93,7 +95,7 @@ public class CarreraBD extends CarreraMD {
 
     public boolean insertar() {
 
-        String nsql = "INSERT INTO carrera(nombre,codigo,fecha_inicio,modalidad,horario)" + "VALUES ('" + getNombre_carrera() + "','" + getCodigo_carrera() + "','" + getFecha_inicio() + "','" + getModalidad() + "','" + getHorario() + "')";
+        String nsql = "INSERT INTO carrera(nombre,codigo,fecha_inicio,modalidad,coordinador)" + "VALUES ('" + getNombre_carrera() + "','" + getCodigo_carrera() + "','" + getFecha_inicio() + "','" + getModalidad() + "','" + getCoordinador()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -107,7 +109,7 @@ public class CarreraBD extends CarreraMD {
     public boolean modificar(String placa) {
 
         String nsql = "UPDATE carrera SET \n"
-                + "  nombre = '" + getNombre_carrera() + "',fecha_inicio ='" + getFecha_inicio() + "',modalidad ='" + getModalidad() + "',horario ='" + getHorario() + "'\n"
+                + "  nombre = '" + getNombre_carrera() + "',fecha_inicio ='" + getFecha_inicio() + "',modalidad ='" + getModalidad() + "',coordinador ='" + getCoordinador()+ "'\n"
                 + "WHERE  ='" + getCodigo_carrera() + "';";
 
         if (conectar.noQuery(nsql) == null) {

@@ -44,16 +44,6 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
         this.btnGuardar = btnGuardar;
     }
 
-    public JComboBox<String> getCmbHorario() {
-        return cmbHorario;
-    }
-
-    public void setCmbHorario(JComboBox<String> cmbHorario) {
-        this.cmbHorario = cmbHorario;
-    }
-
- 
-
     public JButton getBtnImprimir() {
         return btnImprimir;
     }
@@ -86,12 +76,12 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
         this.cmbModalidad = cmbModalidad;
     }
 
-    public JTable getTblCarrera() {
-        return tblCarrera;
+    public JTable getTablaCarrera() {
+        return tablaCarrera;
     }
 
-    public void setTblCarrera(JTable tblCarrera) {
-        this.tblCarrera = tblCarrera;
+    public void setTablaCarrera(JTable tablaCarrera) {
+        this.tablaCarrera = tablaCarrera;
     }
 
     public JTextField getTxtCodigo_carrera() {
@@ -117,6 +107,30 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
     public void setTxtNombre_carrera(JTextField txtNombre_carrera) {
         this.txtNombre_carrera = txtNombre_carrera;
     }
+
+    public JTextField getTxtCoordinador() {
+        return txtCoordinador;
+    }
+
+    public void setTxtCoordinador(JTextField txtCoordinador) {
+        this.txtCoordinador = txtCoordinador;
+    }
+
+    public JButton getBtnBuscarc() {
+        return btnBuscarc;
+    }
+
+    public void setBtnBuscarc(JButton btnBuscarc) {
+        this.btnBuscarc = btnBuscarc;
+    }
+
+    public JButton getBtnBuscarnc() {
+        return btnBuscarnc;
+    }
+
+    public void setBtnBuscarnc(JButton btnBuscarnc) {
+        this.btnBuscarnc = btnBuscarnc;
+    }
   
 
     /**
@@ -135,16 +149,14 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
         txtFecha_inicio = new javax.swing.JTextField();
         jlabel6 = new javax.swing.JLabel();
         cmbModalidad = new javax.swing.JComboBox<>();
-        jlabel3 = new javax.swing.JLabel();
-        cmbHorario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtCoordinador = new javax.swing.JTextField();
+        btnBuscarc = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCarrera = new javax.swing.JTable();
+        tablaCarrera = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         txtCodigo_carrera = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnBuscarnc = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -156,148 +168,151 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         fondogrande = new javax.swing.JLabel();
 
+        setClosable(true);
+        setPreferredSize(new java.awt.Dimension(1039, 580));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre Carrera:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         txtNombre_carrera.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jPanel1.add(txtNombre_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 550, 40));
+        jPanel1.add(txtNombre_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 390, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Fecha de inicio:");
         jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, -1));
 
         txtFecha_inicio.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jPanel1.add(txtFecha_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 150, 40));
+        jPanel1.add(txtFecha_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 140, 20));
 
         jlabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlabel6.setForeground(new java.awt.Color(255, 255, 255));
         jlabel6.setText("Modalidad:");
-        jPanel1.add(jlabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
+        jPanel1.add(jlabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, -1, -1));
 
         cmbModalidad.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        cmbModalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Presencial", "Virtual" }));
-        jPanel1.add(cmbModalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 150, 40));
-
-        jlabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jlabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jlabel3.setText("Horario:");
-        jPanel1.add(jlabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, -1, -1));
-
-        cmbHorario.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        cmbHorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Matutino", "Vespertino", "Nocturno" }));
-        jPanel1.add(cmbHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 140, 40));
+        cmbModalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Presencial", "Dual", "Virtual" }));
+        cmbModalidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbModalidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbModalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 100, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Coordinadoor:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 110, 20));
+        jLabel3.setText("Coordinador:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 110, 20));
 
-        jTextField3.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 550, 40));
+        txtCoordinador.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jPanel1.add(txtCoordinador, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 400, 20));
 
-        jButton1.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
-        jButton1.setText("Buscar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, -1, 40));
+        btnBuscarc.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnBuscarc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btnBuscarc.setText("Buscar");
+        jPanel1.add(btnBuscarc, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 120, 40));
 
-        tblCarrera.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCarrera.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cedula", "Nombre", "Carrera"
+                "Código", "Nombre Carrera", "Fecha Inicio", "Modalidad", "Coordinador"
             }
         ));
-        jScrollPane1.setViewportView(tblCarrera);
+        jScrollPane1.setViewportView(tablaCarrera);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 760, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 780, 180));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Codigo Carrera:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
+        jLabel4.setText("Código Carrera:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
         txtCodigo_carrera.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jPanel1.add(txtCodigo_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 160, 40));
+        jPanel1.add(txtCodigo_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 130, 20));
 
-        jButton2.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
-        jButton2.setText("Buscar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 60, -1, 40));
+        btnBuscarnc.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnBuscarnc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btnBuscarnc.setText("Buscar");
+        jPanel1.add(btnBuscarnc, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 120, 40));
 
         btnGuardar.setFont(new java.awt.Font("Roboto Black", 0, 11)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
         btnGuardar.setText("Guardar");
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 120, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 100, 120, -1));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnModificar.setText("Modificar");
-        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 620, 130, -1));
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 170, 120, -1));
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, -1, -1));
 
         btnNuevo.setFont(new java.awt.Font("Roboto Black", 0, 11)); // NOI18N
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
-        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 620, 120, -1));
+        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 120, -1));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setToolTipText("");
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 140, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 240, 120, -1));
 
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
         btnImprimir.setText("Imprimir");
-        jPanel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 620, 120, 40));
+        jPanel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 120, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N
         fondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 56, 107)));
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 830, 310));
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 700, 270));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel5.setText("Lista Persona");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(6, 56, 107));
         jLabel7.setText("Carrera");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, 40));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 140, 40));
 
         fondogrande.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/instituto.jpg"))); // NOI18N
-        jPanel1.add(fondogrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1140, 570));
+        fondogrande.setPreferredSize(new java.awt.Dimension(1950, 1180));
+        jPanel1.add(fondogrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbModalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModalidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbModalidadActionPerformed
+
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarc;
+    private javax.swing.JButton btnBuscarnc;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private javax.swing.JComboBox<String> cmbHorario;
     private javax.swing.JComboBox<String> cmbModalidad;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel fondogrande;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -307,11 +322,10 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JLabel jlabel3;
     private javax.swing.JLabel jlabel6;
-    private javax.swing.JTable tblCarrera;
+    private javax.swing.JTable tablaCarrera;
     private javax.swing.JTextField txtCodigo_carrera;
+    private javax.swing.JTextField txtCoordinador;
     private javax.swing.JTextField txtFecha_inicio;
     private javax.swing.JTextField txtNombre_carrera;
     // End of variables declaration//GEN-END:variables

@@ -14,21 +14,22 @@ public class CarreraMD {
     private String codigo_carrera;
     private String fecha_inicio;
     private String modalidad;
-    private String horario;
+    private String coordinador;
+//    private String horario;
 
-    public CarreraMD(String nombre_carrera, String codigo_carrera, String fecha_inicio, String modalidad, String horario) {
+    public CarreraMD(String nombre_carrera, String codigo_carrera, String fecha_inicio, String modalidad, String coordinador) {
         this.nombre_carrera = nombre_carrera;
         this.codigo_carrera = codigo_carrera;
         this.fecha_inicio = fecha_inicio;
         this.modalidad = modalidad;
-        this.horario = horario;
+        this.coordinador = coordinador;
     }
 
     
     public CarreraMD(){
         
     }
-            
+
     public String getNombre_carrera() {
         return nombre_carrera;
     }
@@ -61,14 +62,12 @@ public class CarreraMD {
         this.modalidad = modalidad;
     }
 
-    public String getHorario() {
-        return horario;
+    public String getCoordinador() {
+        return coordinador;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public void setCoordinador(String coordinador) {
+        this.coordinador = coordinador;
     }
-    
-    
-    
+
 }

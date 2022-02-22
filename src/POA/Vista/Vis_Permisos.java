@@ -27,14 +27,6 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         return tablapermisos;
     }
 
-    public JButton getBtn_seleccionar() {
-        return btn_seleccionar;
-    }
-
-    public void setBtn_seleccionar(JButton btn_seleccionar) {
-        this.btn_seleccionar = btn_seleccionar;
-    }
-
     public void setTablapermisos(JTable tablapermisos) {
         this.tablapermisos = tablapermisos;
     }
@@ -68,7 +60,7 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
-        btn_seleccionar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablapermisos = new javax.swing.JTable();
         txtidRol = new javax.swing.JTextField();
@@ -85,14 +77,30 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/Save-icon (4).png"))); // NOI18N
         getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, -1, -1));
 
-        btn_seleccionar.setText("SELECCIONAR TODO");
-        btn_seleccionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_seleccionarActionPerformed(evt);
+        jButton2.setText("SELECCIONAR TODO");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, -1, -1));
+
+        tablapermisos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Boton Usuarios", false},
+                {"2", "Boton Perfil", false},
+                {"3", "Boton Asignacion", false},
+                {"4", "Boton Persona", false},
+                {"5", "Boton Roles", false},
+                {"6", "Boton Carrera", false},
+            },
+            new String [] {
+                "No.", "Permisos", "Activo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
-        getContentPane().add(btn_seleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, -1, -1));
-
         jScrollPane2.setViewportView(tablapermisos);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, 220));
@@ -101,14 +109,10 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_seleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccionarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_seleccionarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btn_seleccionar;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tablapermisos;

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  *
  * @author Isaac Mejia
  */
-public class permisosBD extends PermisosMD{
+public class permisosBD extends Permisos{
     Conect conectar = new Conect();
 
     public permisosBD() {    }
@@ -46,17 +46,16 @@ public class permisosBD extends PermisosMD{
         } 
     }
     
-    public List<PermisosMD> obtenerDatos(int idRol){
-        List<PermisosMD> listar = new  ArrayList<PermisosMD>();
+    public List<Permisos> obtenerDatos(int idRol){
+        List<Permisos> listar = new  ArrayList<Permisos>();
         try{
             String sql = "select * from editar_permisos" + " where \"id_rol\"='" + idRol + "' and estado = 'true'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()){
-                PermisosMD r = new PermisosMD();
+                Permisos r = new Permisos();
                 r.setId(rs.getInt("id"));
                 r.setId_rol(rs.getInt("id_rol"));
                 r.setNombre_permiso(rs.getString("nombre_permiso"));
-                
                 listar.add(r);
             }
             rs.close();

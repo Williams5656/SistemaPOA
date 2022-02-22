@@ -123,10 +123,8 @@ public class Con_rol {
         Dimension desktopSize = Con_principal.vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_permisos rol=new Con_permisos(user);
-        user.getBtnGuardar().setVisible(false);
-        user.getBtn_seleccionar().setVisible(false);
         cargarTabla();
+        Con_permisos rol=new Con_permisos(user);
         
     }
     
@@ -134,8 +132,8 @@ public class Con_rol {
         DefaultTableModel model = new DefaultTableModel();
         model = (DefaultTableModel) vista.getTabla_rol().getModel();
         model.addColumn("id");
-        model.addColumn("nombre_permisos");
-        model.addColumn("Estado");       
+        model.addColumn("id_Rol");
+        model.addColumn("Nombre_Permiso");        
        //Con_permisos.vista.getTablapermisos().setModel(model);
        cargarRol();
     }
@@ -145,17 +143,17 @@ public class Con_rol {
         modelo = (DefaultTableModel) vista.getTabla_rol().getModel();
         permisosBD bdPermisos = new permisosBD();
         int fila = vista.getTabla_rol().getSelectedRow();
-        int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 0).toString());
-        List<PermisosMD> lista = bdPermisos.obtenerDatos(idrol);
+        int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 1).toString());
+        List<Permisos> lista = bdPermisos.obtenerDatos(idrol);
         int columnas = modelo.getColumnCount();
-        for (int j = vista.getTabla_rol().getRowCount() - 1; j >= 0; j--) {
-            modelo.removeRow(j);
-        }
+//        for (int j = vista.getTabla_rol().getRowCount() - 1; j >= 0; j--) {
+//            modelo.removeRow(j);
+//        }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
             Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getId(), i, 0);
-            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getNombre_permiso(), i, 1);
-            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).isEstado(), i, 2);
+            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getId_rol(), i, 1);
+            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getNombre_permiso(), i, 2);
         }
     }
     

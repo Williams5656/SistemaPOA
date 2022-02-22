@@ -33,6 +33,7 @@ public class cont_usuario {
     public cont_usuario(Vis_Usuario vista) {
         this.vista = vista;
         vista.setVisible(true);
+        cedexistente();
         vista.getLblmensaje().setVisible(true);
         vista.getBtnnuevo().addActionListener(e->nuevo());
         vista.getBtnguardar().addActionListener(e->guardar());
@@ -78,7 +79,9 @@ public class cont_usuario {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
-                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());                
+                cedcorrect();
+                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                
             }
            
         }
@@ -88,7 +91,7 @@ public class cont_usuario {
                                 cedexistente();
                                 n=1;
                             }else{
-                                
+                                cedcorrect();
                             }
                         }
         

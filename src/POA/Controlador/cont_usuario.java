@@ -240,7 +240,14 @@ public class cont_usuario {
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
         vista.getTxtcontra().setText(bdusuario.getContrasenia());     
         vista.getComboestado().setSelectedItem(bdusuario.getEstado());
-        cedcorrect();
+        
+        vista.getTxtcedula().setEditable(false);
+        vista.getTxtcedula().setEditable(true);
+        vista.getTxtUsuario().setEditable(true);
+        vista.getTxtcontra().setEditable(true);
+        vista.getLblmensaje().setVisible(false);
+        vista.getComboestado().setEnabled(true);
+        
     }
     
     public void lista(){

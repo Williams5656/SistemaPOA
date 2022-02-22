@@ -80,6 +80,8 @@ public class cont_usuario {
         vista.getTxtcedula().setText("");
         vista.getTxtUsuario().setText("");
         vista.getTxtcontra().setText("");
+        vista.getLblmensaje().setVisible(true);
+        vista.getLblnombre().setText("");
         vista.getComboestado().setSelectedIndex(0);
         
         

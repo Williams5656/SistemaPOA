@@ -82,25 +82,12 @@ public class Vis_Permisos extends javax.swing.JInternalFrame {
 
         tablapermisos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Boton Usuarios", false},
-                {"2", "Boton Perfil", false},
-                {"3", "Boton Asignacion", false},
-                {"4", "Boton Persona", false},
-                {"5", "Boton Roles", false},
-                {"6", "Boton Carrera", false},
+
             },
             new String [] {
-                "No.", "Permisos", "Activo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-        });
+        ));
         jScrollPane2.setViewportView(tablapermisos);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, 220));

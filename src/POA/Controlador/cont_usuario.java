@@ -77,18 +77,20 @@ public class cont_usuario {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
-                for (int j = 0; j < listau.size(); j++) {
-                    if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
-                        cedexistente();
-                    }else{
-                        vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
-                        cedcorrect();
-                    }
-                    
-                    
-                    
-                }  
-            }else{
+                cedexistente();
+                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+//                for (int j = 0; j < listau.size(); j++) {
+//                    if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
+//                        cedexistente();
+//                    }else{
+//                        vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+//                        cedcorrect();
+//                    }
+//                    
+//                    
+//                    
+//                }  
+//            }else{
                 
                 
             }

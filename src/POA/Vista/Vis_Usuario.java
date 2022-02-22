@@ -321,16 +321,18 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 230, 20));
 
         jLabel10.setText("Nombre");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 40, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 70, 30));
 
         btncedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btncedula.setBorder(null);
+        btncedula.setBorderPainted(false);
         btncedula.setContentAreaFilled(false);
         btncedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncedulaActionPerformed(evt);
             }
         });
-        getContentPane().add(btncedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 40, 30));
+        getContentPane().add(btncedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 40, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 360));

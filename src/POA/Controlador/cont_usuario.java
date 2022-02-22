@@ -33,7 +33,7 @@ public class cont_usuario {
         vista.getBtnguardar().addActionListener(e->guardar());
         vista.getBtnmodificar().addActionListener(e->modificar());
         vista.getBtneliminar().addActionListener(e->cambiarestado());
-        vista.getBtncedula().addActionListener(e->cambiarestado());
+        vista.getBtncedula().addActionListener(e->buscarced());
         vista.getTableUsuario().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {

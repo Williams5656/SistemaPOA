@@ -221,7 +221,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         btnnuevo.setText("Nuevo");
         jPanel2.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 380, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, 60));
         getContentPane().add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, 30));
 
         jLabel7.setText("Estado:");

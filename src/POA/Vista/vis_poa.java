@@ -57,6 +57,7 @@ public class vis_poa extends javax.swing.JInternalFrame {
 
         jToolBar1.setRollover(true);
 
+        setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("CARRERA:");

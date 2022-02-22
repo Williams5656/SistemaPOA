@@ -7,6 +7,7 @@ package POA.Controlador;
 import POA.Modelo.Permisos;
 import POA.Modelo.permisosBD;
 import POA.Vista.Vis_Permisos;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -64,5 +65,5 @@ public class Con_permisos {
             bdPermisos.setId_rol(idrol);
             bdPermisos.insertar();
         }
-    }
+    }    
 }

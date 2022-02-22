@@ -5,6 +5,8 @@
 package POA.Modelo;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,6 +44,26 @@ public class permisosBD extends Permisos{
             System.out.println("ERROR AL EDITAR");
             return false;
         } 
+    }
+    
+    public List<Permisos> obtenerDatos(int idRol){
+        List<Permisos> listar = new  ArrayList<Permisos>();
+        try{
+            String sql = "select * from editar_permisos" + " where \"id_rol\"='" + idRol + "' and estado = 'true'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()){
+                Permisos r = new Permisos();
+                r.setId(rs.getInt("id"));
+                r.setId_rol(rs.getInt("id_rol"));
+                r.setNombre_permiso(rs.getString("nombre_permiso"));
+                listar.add(r);
+            }
+            rs.close();
+            return listar;
+        }catch (Exception e) {
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
     }
     
     public int Validar(int id_rol){

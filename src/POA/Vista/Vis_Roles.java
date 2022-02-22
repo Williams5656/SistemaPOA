@@ -256,10 +256,10 @@ public class Vis_Roles extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 430, 210));
 
-        btn_ver_permiso.setText("Ver permiso");
+        btn_ver_permiso.setText("Editar Permisos");
         getContentPane().add(btn_ver_permiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 30));
 
-        btn_editar_permiso.setText("Editar Permiso");
+        btn_editar_permiso.setText("Ver Permisos");
         getContentPane().add(btn_editar_permiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 120, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N

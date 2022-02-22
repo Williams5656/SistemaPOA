@@ -268,7 +268,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btn_ver_permiso">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ver permiso"/>
+        <Property name="text" type="java.lang.String" value="Editar Permisos"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -278,7 +278,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_editar_permiso">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Editar Permiso"/>
+        <Property name="text" type="java.lang.String" value="Ver Permisos"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

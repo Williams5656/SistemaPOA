@@ -37,6 +37,7 @@ public class cont_usuario {
         vista.getBtnmodificar().addActionListener(e->modificar());
         vista.getBtneliminar().addActionListener(e->cambiarestado());
         vista.getBtncedula().addActionListener(e->buscarced());
+        vista.getComborol().addActionListener(e-> roles());
         vista.getTableUsuario().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {

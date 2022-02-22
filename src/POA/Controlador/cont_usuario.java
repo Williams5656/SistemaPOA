@@ -107,13 +107,7 @@ public class cont_usuario {
                             }
                         }
         
-        switch(n){
-            
-             
-            case 0: cedexistente();
-                    JOptionPane.showMessageDialog(null, "*Persona no registrada");
-                break;
-        }
+        
         
         
         

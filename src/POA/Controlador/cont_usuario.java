@@ -7,6 +7,8 @@ package POA.Controlador;
 
 import POA.Modelo.PersonaBD;
 import POA.Modelo.PersonaMD;
+import POA.Controlador.Con_rol;
+import POA.Modelo.RolBD;
 import POA.Modelo.RolMD;
 import POA.Modelo.UsuarioBD;
 import POA.Modelo.UsuarioMD;
@@ -59,7 +61,8 @@ public class cont_usuario {
 //    }
     
     public void roles(){
-        List<RolMD> listar = new  ArrayList<RolMD>();
+        RolBD bdrol = new RolBD();
+        List<RolMD> listar = bdrol.mostrardatos();
         
         for (int i = 0; i < listar.size(); i++) {
             vista.getComborol().addItem(listar.get(i).getNombre_rol());

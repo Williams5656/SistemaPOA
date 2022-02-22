@@ -36,7 +36,7 @@ public class Con_principal {
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_usuario().addActionListener(e -> usuario());
         vista.getBtn_asignacion().addActionListener(e -> asignacion());
-         vista.getBtn_persona().addActionListener(e -> carrera());
+         vista.getBtn_carrera().addActionListener(e -> carrera());
 
     }
 

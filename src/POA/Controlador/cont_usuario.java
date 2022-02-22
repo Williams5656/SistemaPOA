@@ -65,7 +65,7 @@ public class cont_usuario {
     
     public void guardar(){
         
-        bdusuario.setNombre(vista.getTxtcedula().getText());
+        bdusuario.setCedula(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
         bdusuario.setContrasenia((vista.getTxtcontra().getText()));
         String estado = (String) vista.getComboestado().getSelectedItem();
@@ -125,7 +125,7 @@ public class cont_usuario {
     
 
     public void modificar() {
-        bdusuario.setNombre(vista.getTxtcedula().getText());
+        bdusuario.setCedula(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
         bdusuario.setContrasenia((vista.getTxtcontra().getText()));
         
@@ -151,13 +151,13 @@ public class cont_usuario {
         String cedula = (String) modelo.getValueAt(vista.getTableUsuario().getSelectedRow(), 0);
         System.out.println(cedula);
         List<UsuarioMD> lista = bdusuario.obtenerDatos(cedula);
-        bdusuario.setNombre(lista.get(0).getNombre());
+        bdusuario.setCedula(lista.get(0).getCedula());
         bdusuario.setNombreUsuario(lista.get(0).getNombreUsuario());
         bdusuario.setContrasenia(lista.get(0).getContrasenia());
         bdusuario.setEstado(lista.get(0).getEstado());
         
         
-        vista.getTxtcedula().setText(bdusuario.getNombre());
+        vista.getTxtcedula().setText(bdusuario.getCedula());
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
         vista.getTxtcontra().setText(bdusuario.getContrasenia());     
         vista.getComboestado().setSelectedItem(bdusuario.getEstado());
@@ -173,7 +173,7 @@ public class cont_usuario {
         
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vista.getTableUsuario().setValueAt(lista.get(i).getNombre(), i, 0);
+            vista.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 0);
             vista.getTableUsuario().setValueAt(lista.get(i).getNombreUsuario(), i, 1);
             vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);
             vista.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 3);            

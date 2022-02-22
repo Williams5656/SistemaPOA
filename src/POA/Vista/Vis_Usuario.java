@@ -175,7 +175,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Usuario", "Contraseña", "Estado"
+                "Cedula", "Usuario", "Contraseña", "Estado"
             }
         ));
         jScrollPane1.setViewportView(tableUsuario);

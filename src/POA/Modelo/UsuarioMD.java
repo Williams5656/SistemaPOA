@@ -9,30 +9,31 @@ package POA.Modelo;
  * @author sebastian
  */
 public class UsuarioMD {
-    private String nombre;
+    private String cedula;
     private String nombreUsuario;
     private String contrasenia;
     private String estado;
 
-    public UsuarioMD(String nombre, String nombreUsuario, String contrasenia, String estado) {
-        this.nombre = nombre;
+    public UsuarioMD(String cedula, String nombreUsuario, String contrasenia, String estado) {
+        this.cedula = cedula;
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.estado = estado;
     }
 
+    
+
     public UsuarioMD() {
     }
-    
-    
 
-    public String getNombre() {
-        return nombre;
+    public String getCedula() {
+        return cedula;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
+    
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -56,9 +57,5 @@ public class UsuarioMD {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-    
-    
-    
-    
+    } 
 }

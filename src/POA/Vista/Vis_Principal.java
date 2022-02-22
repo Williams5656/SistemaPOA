@@ -135,15 +135,15 @@ public class Vis_Principal extends javax.swing.JFrame {
         ESCRITORIO.setLayout(ESCRITORIOLayout);
         ESCRITORIOLayout.setHorizontalGroup(
             ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ESCRITORIOLayout.createSequentialGroup()
-                .addGap(730, 730, 730)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ESCRITORIOLayout.createSequentialGroup()
+                .addGap(0, 740, Short.MAX_VALUE)
+                .addComponent(jLabel4))
         );
         ESCRITORIOLayout.setVerticalGroup(
             ESCRITORIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ESCRITORIOLayout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ESCRITORIOLayout.createSequentialGroup()
+                .addGap(0, 398, Short.MAX_VALUE)
+                .addComponent(jLabel4))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));

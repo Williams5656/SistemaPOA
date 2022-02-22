@@ -240,6 +240,7 @@ public class cont_usuario {
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
         vista.getTxtcontra().setText(bdusuario.getContrasenia());     
         vista.getComboestado().setSelectedItem(bdusuario.getEstado());
+        cedcorrect();
     }
     
     public void lista(){

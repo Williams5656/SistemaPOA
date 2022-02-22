@@ -59,12 +59,23 @@ public class cont_usuario {
     public void buscarced(){
         PersonaBD dbp = new PersonaBD();
         List<PersonaMD> lista = dbp.mostrardatos();
+        UsuarioBD dbpu = new UsuarioBD();
+        List<UsuarioMD> listau = dbpu.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
                 vista.getLblmensaje().setVisible(false);
-                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
-                
+                for (int j = 0; j < 10; j++) {
+                    if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
+                        cedexistente();
+                    }else{
+                        vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
+                        cedcorrect();
+                    }
+                    
+                    
+                    
+                }  
             }else{
                 
                 
@@ -72,6 +83,31 @@ public class cont_usuario {
            
         }
     }
+    public void cedexistente(){
+        
+        vista.getTxtcedula().setEditable(true);
+        vista.getTxtcedula().setEditable(false);
+        vista.getTxtUsuario().setEditable(false);
+        vista.getTxtcontra().setEditable(false);
+        vista.getLblmensaje().setVisible(true);
+        vista.getLblnombre().setText("");
+        vista.getComboestado().setEditable(false);
+        
+        
+    }
+    public void cedcorrect(){
+        
+        vista.getTxtcedula().setEditable(true);
+        vista.getTxtcedula().setEditable(true);
+        vista.getTxtUsuario().setEditable(true);
+        vista.getTxtcontra().setEditable(true);
+        vista.getLblmensaje().setVisible(true);
+        
+        vista.getComboestado().setEditable(true);
+        
+        
+    }
+    
     
     public void nuevo(){
         vista.getBtnguardar().setEnabled(true);

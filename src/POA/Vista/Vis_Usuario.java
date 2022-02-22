@@ -260,6 +260,11 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         txtcedula.setBorder(null);
         txtcedula.setOpaque(false);
+        txtcedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtcedulaKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 140, 30));
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
@@ -347,7 +352,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         lblmensaje.setForeground(new java.awt.Color(255, 0, 0));
         lblmensaje.setText("*PERSONA NO REGISTRADA");
-        getContentPane().add(lblmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 150, 20));
+        getContentPane().add(lblmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 200, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 360));
@@ -365,6 +370,10 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private void btncedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncedulaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btncedulaActionPerformed
+
+    private void txtcedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedulaKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcedulaKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

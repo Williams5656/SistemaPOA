@@ -94,6 +94,8 @@ public class cont_usuario {
             }
            
         }
+        
+        
     }
     public void cedexistente(){
         
@@ -103,7 +105,7 @@ public class cont_usuario {
         vista.getTxtcontra().setEditable(false);
         vista.getLblmensaje().setVisible(false);
         vista.getLblnombre().setText("");
-        vista.getComboestado().setEditable(false);
+        vista.getComboestado().setEnabled(false);
         
         
     }
@@ -113,8 +115,7 @@ public class cont_usuario {
         vista.getTxtcedula().setEditable(true);
         vista.getTxtUsuario().setEditable(true);
         vista.getTxtcontra().setEditable(true);
-        vista.getLblmensaje().setVisible(true);
-        
+        vista.getLblmensaje().setVisible(false);
         vista.getComboestado().setEditable(true);
         
         

@@ -60,11 +60,9 @@ public class cont_usuario {
         List<PersonaMD> lista = dbp.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
-                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
-                
-                
+                vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());   
             }else{
-                
+                JOptionPane.showMessageDialog(null, "*PERSONA NO REGISTRADA");
             }
         }
     }

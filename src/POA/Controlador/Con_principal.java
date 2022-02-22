@@ -10,6 +10,7 @@ import POA.Vista.Vis_Perfil;
 import POA.Vista.Vis_Permisos;
 import POA.Vista.Vis_Principal;
 import POA.Vista.Vis_Roles;
+import POA.Vista.Vis_Carrera;
 import POA.Vista.Vis_Usuario;
 import POA.Vista.vis_Persona;
 import POA.Vista.vis_inicioSesion;
@@ -35,6 +36,7 @@ public class Con_principal {
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_usuario().addActionListener(e -> usuario());
         vista.getBtn_asignacion().addActionListener(e -> asignacion());
+         vista.getBtn_persona().addActionListener(e -> carrera());
 
     }
 
@@ -93,5 +95,16 @@ public class Con_principal {
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         ControladorAsignacion rol=new ControladorAsignacion(user);
-    }    
+    }   
+     private void carrera() {
+        Vis_Carrera carrera = new Vis_Carrera();
+        con_carrera per = new con_carrera(carrera);
+        vista.getESCRITORIO().add(carrera);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = carrera.getSize();
+        carrera.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        
+
+    }
 }
+

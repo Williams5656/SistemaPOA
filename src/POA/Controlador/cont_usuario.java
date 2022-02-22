@@ -156,6 +156,7 @@ public class cont_usuario {
             JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
             lista();
             nuevo();
+            cedexistente();
             }else{
                 JOptionPane.showMessageDialog(null, "Error al Guardar");
             }

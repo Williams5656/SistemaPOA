@@ -136,6 +136,16 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     public void setBtncedula(JButton btncedula) {
         this.btncedula = btncedula;
     }
+
+    public JLabel getLblmensaje() {
+        return lblmensaje;
+    }
+
+    public void setLblmensaje(JLabel lblmensaje) {
+        this.lblmensaje = lblmensaje;
+    }
+    
+    
     
     
     
@@ -183,6 +193,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         lblnombre = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btncedula = new javax.swing.JButton();
+        lblmensaje = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -334,6 +345,10 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btncedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 40, 40));
 
+        lblmensaje.setForeground(new java.awt.Color(255, 0, 0));
+        lblmensaje.setText("*PERSONA NO REGISTRADA");
+        getContentPane().add(lblmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 150, 20));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/My project.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 360));
 
@@ -382,6 +397,7 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblmensaje;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JTable tableUsuario;
     private javax.swing.JTextField txtUsuario;

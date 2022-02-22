@@ -102,12 +102,15 @@ public class cont_usuario {
         for (int j = 0; j < listau.size(); j++) {
                             if (vista.getTxtcedula().getText().equals(listau.get(j).getCedula())) {
                                 cedexistente();
+                                n=1;
                             }else{
                                 
                             }
                         }
         
-        
+        switch(n){
+            case 1: JOptionPane.showMessageDialog(null, "*Usuario ya existente");
+        }
         
         
         

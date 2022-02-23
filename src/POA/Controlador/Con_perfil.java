@@ -31,10 +31,10 @@ public class Con_perfil {
     public Con_perfil(Vis_Perfil vista) {
         this.vista = vista;
         vista.setVisible(true);
-        
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
+        vista.getBtn_nuevo().addActionListener(e -> nuevo());
         Letras.solo_letras(vista.getTxtNombre());
         vista.getTablaPerfil().addMouseListener(new MouseAdapter() {
             @Override
@@ -42,7 +42,11 @@ public class Con_perfil {
                 seleccionar();
             }
         });
-        
+        vista.getBtn_guardar().setEnabled(false);
+        vista.getBtn_modificar().setEnabled(false);
+        vista.getBtn_eliminar().setEnabled(false);
+        vista.getTxtNombre().setEnabled(false);
+        vista.getTxtDescripcion().setEnabled(false);
         vista.getPanel().addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 nuevo();
@@ -56,7 +60,8 @@ public class Con_perfil {
         vista.getBtn_guardar().setEnabled(true);
         vista.getBtn_modificar().setEnabled(false);
         vista.getBtn_eliminar().setEnabled(false);
-        
+        vista.getTxtNombre().setEnabled(true);
+        vista.getTxtDescripcion().setEnabled(true);
         vista.getTxtNombre().setText("");
         vista.getTxtDescripcion().setText("");
     }

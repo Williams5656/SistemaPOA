@@ -37,10 +37,13 @@ public class ControladorAsignacion {
         ventanaAsignacion.setTitle("Asignación");
         ventanaAsignacion.setVisible(true);
         lista();
-        
+        ventanaAsignacion.getTxtCedula().setEnabled(false);
+        ventanaAsignacion.getComboPerfil().setEnabled(false);
         ventanaAsignacion.getBtnModificar().setEnabled(false);
-   
+        ventanaAsignacion.getBtnEliminar().setEnabled(false);
+        ventanaAsignacion.getBtnGuardar().setEnabled(false);
         ventanaAsignacion.getBtnGuardar().addActionListener(e -> guardar());
+        ventanaAsignacion.getBtnNuevo().addActionListener(e -> nuevo());
         ventanaAsignacion.getBtnModificar().addActionListener(e -> modificar());
         ventanaAsignacion.getPanel().addMouseListener(new MouseAdapter() {
             @Override
@@ -201,6 +204,7 @@ public class ControladorAsignacion {
     
     public void seleccionar(){
         ventanaAsignacion.getBtnModificar().setEnabled(true);
+        ventanaAsignacion.getBtnEliminar().setEnabled(true);
         ventanaAsignacion.getBtnGuardar().setEnabled(false);
         
         int seleccionado = ventanaAsignacion.getTablaAsignacion().getSelectedRow();
@@ -233,10 +237,13 @@ public class ControladorAsignacion {
     }
     
     public void nuevo(){
+        ventanaAsignacion.getBtnModificar().setEnabled(false);
+        ventanaAsignacion.getBtnEliminar().setEnabled(false);
+        ventanaAsignacion.getBtnGuardar().setEnabled(true);
+        ventanaAsignacion.getTxtCedula().setEnabled(true);
+        ventanaAsignacion.getComboPerfil().setEnabled(true);
         ventanaAsignacion.getTxtCedula().setText("");
         ventanaAsignacion.getComboPerfil().setSelectedIndex(0);
-        ventanaAsignacion.getBtnModificar().setEnabled(false);
-        ventanaAsignacion.getBtnGuardar().setEnabled(true);
         ventanaAsignacion.getLblNombre().setText("");
         
         ventanaAsignacion.getTablaAsignacion().setCellSelectionEnabled(false);

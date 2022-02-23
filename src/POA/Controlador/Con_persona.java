@@ -240,7 +240,7 @@ public class Con_persona {
         vista.getTxtDireccion().setText("");
         vista.getTxtCorreo().setText("");
         vista.getFecha().setDate(null);
-        Orig = "src/POA.Vista.img/imagen.png";
+        Orig = "/POA/Vista/img/imagen.png";
         ImageIcon icon = new ImageIcon(Orig);
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT));
         vista.getLbFoto().setText(null);

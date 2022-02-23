@@ -7,6 +7,7 @@ package POA.Controlador;
 import POA.Modelo.Permisos;
 import POA.Modelo.permisosBD;
 import POA.Vista.Vis_Permisos;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -27,6 +28,20 @@ public class Con_permisos {
         vista.setVisible(true);
         vista.getBtnGuardar().addActionListener(l -> validar());
         lista();
+
+        List<Permisos> listar = bdPermisos.obtenerDatos(14);
+         for (int i = 0; i < listar.size(); i++) {
+             if(listar.get(i).isEstado()==true){
+                 System.out.println(i+ "verdadero");
+             }
+             else
+             {
+                  System.out.println(i+ "false");
+             }
+             int y = listar.get(i).getId();
+             vista.getTablapermisos().setValueAt(listar.get(i).isEstado(),y-1,2);
+         
+         }
     }
     public void lista() {
         modelo = new DefaultTableModel() {
@@ -75,13 +90,14 @@ public class Con_permisos {
 
         vista.getTablapermisos().setModel(modelo);
         check(2, vista.getTablapermisos());
-
     }
     public void check(int colum, JTable table) {
 
         TableColumn tc = vista.getTablapermisos().getColumnModel().getColumn(colum);
         tc.setCellEditor(table.getDefaultEditor(Boolean.class));
         tc.setCellRenderer(table.getDefaultRenderer(Boolean.class));
+//        vista.getTablapermisos().getColumnModel().getColumn(2).setResizable(true);
+       
     }
 
     public void validar() {
@@ -99,7 +115,6 @@ public class Con_permisos {
     public void modificar() {
         int id = 0;
         int idrol = Integer.parseInt(vista.getTxtidRol().getText());
-
         boolean estado;
         for (int i = 0; i < vista.getTablapermisos().getRowCount(); i++) {
             id = Integer.parseInt(vista.getTablapermisos().getValueAt(i, 0).toString());
@@ -116,7 +131,7 @@ public class Con_permisos {
     }
 
     public void guardarPermisos() {
-        int idrol = Integer.parseInt(vista.getTxtidRol().getText());
+        int idrol= Integer.parseInt(vista.getTxtidRol().getText());
         int id = 0;
         String nombrPermiso;
         boolean estado;

@@ -45,17 +45,37 @@ public class permisosBD extends Permisos{
             return false;
         } 
     }
-    
+    public List cargarCheck(int id_rol) {
+        String sql = "Select id,estado from editar_permisos"
+                + " where id_rol=" + id_rol+ "order by id";
+        List<Permisos> listar = new ArrayList<Permisos>();
+        try {
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                Permisos r = new Permisos();
+                r.setId(rs.getInt("id"));
+                r.setEstado(rs.getBoolean("estado"));
+                listar.add(r);
+            }
+            rs.close();
+            return listar;
+        } catch (Exception e) {
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
     public List<Permisos> obtenerDatos(int idRol){
         List<Permisos> listar = new  ArrayList<Permisos>();
         try{
-            String sql = "select * from editar_permisos" + " where \"id_rol\"='" + idRol + "' and estado = 'true'";
+            String sql = "select * from editar_permisos" + " where \"id_rol\"='" + idRol + "'";
+            // and estado = 'true'
             ResultSet rs = conectar.query(sql);
             while (rs.next()){
                 Permisos r = new Permisos();
                 r.setId(rs.getInt("id"));
                 r.setId_rol(rs.getInt("id_rol"));
                 r.setNombre_permiso(rs.getString("nombre_permiso"));
+                r.setEstado(rs.getBoolean("estado"));
                 listar.add(r);
             }
             rs.close();

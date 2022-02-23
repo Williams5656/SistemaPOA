@@ -166,7 +166,7 @@ public class Con_rol {
         Con_permisos rol=new Con_permisos(user);
         int fila = vista.getTabla_rol().getSelectedRow();
         int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila,1).toString());
-        Con_permisos.vista.getTxtidRol().setText(""+idrol);
+        rol.vista.getTxtidRol().setText(""+idrol);
         System.out.println(idrol+"sad");
     }
     

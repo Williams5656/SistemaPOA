@@ -5,6 +5,7 @@
  */
 package POA.Vista;
 
+import POA.Modelo.Validadores.Fondos;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,13 +17,14 @@ import javax.swing.JToggleButton;
  *
  * @author MIGUEL
  */
-public class vis_Persona extends javax.swing.JInternalFrame {
+public class vis_Persona extends Fondos.fondo_internalframe {
 
     /**
      * Creates new form vis_Persona
      */
     public vis_Persona() {
         initComponents();
+        setImage("/POA/Vista/img/instituto.jpg");
     }
 
     /**
@@ -76,7 +78,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         fecha = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
-        fondogrande = new javax.swing.JLabel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(1145, 605));
@@ -289,9 +290,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
         fondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 56, 107)));
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 390, 480));
 
-        fondogrande.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/instituto.jpg"))); // NOI18N
-        getContentPane().add(fondogrande, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1140, 570));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -465,7 +463,6 @@ public class vis_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnNuevo;
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel fondo;
-    private javax.swing.JLabel fondogrande;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;

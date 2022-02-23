@@ -263,8 +263,8 @@ public class cont_usuario {
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
         vista.getTxtcontra().setText(bdusuario.getContrasenia());  
         int idrol = lista.get(0).getRol();
-            String nrol = listar.get(idrol).getNombre_rol();
-         vista.getComborol().setSelectedItem(nrol);
+        List<RolMD> listar1 = bdrol.obtenerDatos(idrol);
+        vista.getComborol().setSelectedItem(listar1.get(0).getNombre_rol());
         vista.getComboestado().setSelectedItem(bdusuario.getEstado());
         
         
@@ -292,8 +292,8 @@ public class cont_usuario {
             vista.getTableUsuario().setValueAt(lista.get(i).getNombreUsuario(), i, 1);
             vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);
             int idrol = lista.get(i).getRol();
-            String nrol = listar.get(idrol).getNombre_rol();
-            vista.getTableUsuario().setValueAt(nrol, i, 3);
+            List<RolMD> listar1 = bdrol.obtenerDatos(idrol);
+            vista.getTableUsuario().setValueAt(listar1.get(0).getNombre_rol(), i, 3);
             vista.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 4);            
             
         }

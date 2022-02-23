@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import POA.Controlador.*;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -35,11 +36,11 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
     
 
     public JButton getBtnGuardar() {
-        return btnGuardar;
+        return btnEliminar;
     }
 
     public void setBtnGuardar(JButton btnGuardar) {
-        this.btnGuardar = btnGuardar;
+        this.btnEliminar = btnGuardar;
     }
 
     public JButton getBtnModificar() {
@@ -73,7 +74,40 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
     public void setTxtCedula(JTextField txtCedula) {
         this.txtCedula = txtCedula;
     }
-        
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
+    }
+
+    public JButton getBtnImprimir() {
+        return btnImprimir;
+    }
+
+    public void setBtnImprimir(JButton btnImprimir) {
+        this.btnImprimir = btnImprimir;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public void setBtnNuevo(JButton btnNuevo) {
+        this.btnNuevo = btnNuevo;
+    }
+
+    public JLabel getLblNombre() {
+        return lblNombre;
+    }
+
+    public void setLblNombre(JLabel lblNombre) {
+        this.lblNombre = lblNombre;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,10 +122,14 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         txtCedula = new javax.swing.JTextField();
         comboPerfil = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaAsignacion = new javax.swing.JTable();
+        btnGuardar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
+        lblNombre = new javax.swing.JLabel();
+        btnImprimir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -101,23 +139,23 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cédula:");
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
-        panel.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 140, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        panel.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 140, -1));
 
-        panel.add(comboPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 140, -1));
+        panel.add(comboPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Perfil:");
-        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
-        btnGuardar.setText("GUARDAR");
-        panel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 11, -1, -1));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        panel.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
-        panel.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 11, -1, -1));
+        panel.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
         tablaAsignacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,18 +167,35 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablaAsignacion);
 
-        panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 141, -1, 115));
+        panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 670, 170));
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        panel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+
+        btnNuevo.setText("NUEVO");
+        panel.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 110, 40));
+
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        panel.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 210, 20));
+
+        btnImprimir.setText("IMPRIMIR");
+        panel.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 120, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/fondo azul (1).jpg"))); // NOI18N
-        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 310));
+        jLabel3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jLabel3KeyReleased(evt);
+            }
+        });
+        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,15 +207,22 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel3KeyReleased
+    }//GEN-LAST:event_jLabel3KeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox<String> comboPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JPanel panel;
     private javax.swing.JTable tablaAsignacion;
     private javax.swing.JTextField txtCedula;

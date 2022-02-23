@@ -3,6 +3,8 @@ package POA.Controlador;
 import POA.Modelo.BaseDatosAsignacion;
 import POA.Vista.*;
 import POA.Modelo.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -52,6 +54,14 @@ public class ControladorAsignacion {
                 seleccionar();
             };
         
+        });
+        
+        ventanaAsignacion.getTxtCedula().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                mostrarNombrePersona();
+            }
+            
         });
 
     }
@@ -206,6 +216,14 @@ public class ControladorAsignacion {
         ventanaAsignacion.getBtnGuardar().setEnabled(true);
         
         ventanaAsignacion.getTablaAsignacion().setCellSelectionEnabled(false);
-    }    
+    }
+    
+    public void mostrarNombrePersona(){
+        for (PersonaMD person : listaPersonas){
+            if (person.getCedula().equals(ventanaAsignacion.getTxtCedula().getText())){
+                ventanaAsignacion.getLblNombre().setText(person.getNombres() + " " + person.getApellidos());
+            }
+        }
+    }
 
 }

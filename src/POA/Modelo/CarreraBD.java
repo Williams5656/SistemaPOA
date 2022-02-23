@@ -106,12 +106,11 @@ public class CarreraBD extends CarreraMD {
         }
     }
 
-    public boolean modificar(String placa) {
+    public boolean modificar(String codigo_carrera) {
 
         String nsql = "UPDATE carrera SET \n"
                 + "  nombre = '" + getNombre_carrera() + "',fecha_inicio ='" + getFecha_inicio() + "',modalidad ='" + getModalidad() + "',coordinador ='" + getCoordinador()+ "'\n"
-                + "WHERE  ='" + getCodigo_carrera() + "';";
-
+                + "WHERE \"codigo_carrera\"='" + codigo_carrera + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
@@ -121,8 +120,8 @@ public class CarreraBD extends CarreraMD {
         }
     }
 
-    public boolean Eliminar(String codigo) {
-        String nsql = " delete from carrera where \"codigo\"='" + codigo + "'";
+    public boolean Eliminar(String codigo_carrera) {
+        String nsql = " delete from carrera where \"codigo\"='" + codigo_carrera + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {

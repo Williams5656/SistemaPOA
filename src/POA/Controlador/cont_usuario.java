@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 public class cont_usuario {
     private final Vis_Usuario vista;
     private UsuarioBD bdusuario = new UsuarioBD();
-
+    RolBD bdrol = new RolBD();
     public cont_usuario(Vis_Usuario vista) {
         this.vista = vista;
         vista.setVisible(true);
@@ -63,7 +63,7 @@ public class cont_usuario {
 //    }
     
     public void roles(){
-        RolBD bdrol = new RolBD();
+        
         List<RolMD> listar = bdrol.mostrardatos();
         for (int i = 0; i < listar.size(); i++) {
             vista.getComborol().addItem(listar.get(i).getNombre_rol());
@@ -152,6 +152,10 @@ public class cont_usuario {
         bdusuario.setContrasenia((vista.getTxtcontra().getText()));
         String estado = (String) vista.getComboestado().getSelectedItem();
         bdusuario.setEstado(estado);
+         List<RolMD> listar = bdrol.mostrardatos();
+         int idrol = vista.getComborol().getSelectedIndex();
+         int nrol = listar.get(idrol).getId_rol();
+         System.out.println(nrol);
         if (vista.getTxtcedula().getText().equals("")||vista.getTxtUsuario().getText().equals("")||vista.getTxtcontra().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
             nuevo();

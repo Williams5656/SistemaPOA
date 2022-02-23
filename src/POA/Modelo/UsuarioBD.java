@@ -108,7 +108,7 @@ public class UsuarioBD extends UsuarioMD {
             ResultSet rs = conectar.query(sql);
             byte[] is;
             while (rs.next()) {
-                UsuarioBD m = new UsuarioBD();
+                UsuarioMD m = new UsuarioMD();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));

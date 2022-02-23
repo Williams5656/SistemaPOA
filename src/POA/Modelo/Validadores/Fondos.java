@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  */
 public class Fondos {
 
-    public static class panel_imagen extends JPanel {
+    private static class panel_imagen extends JPanel {
 
         private Image imagen;
 
@@ -65,5 +65,14 @@ public class Fondos {
             pi.setImagen(nombre_imagen);
         }
 
+    }
+
+    public static panel_imagen fondo_panel(String ruta) {
+        
+        panel_imagen pi = new panel_imagen();
+        
+        pi.setImagen(ruta);
+        
+        return pi;
     }
 }

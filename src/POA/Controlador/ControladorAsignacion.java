@@ -37,14 +37,14 @@ public class ControladorAsignacion {
         ventanaAsignacion.setTitle("Asignación");
         ventanaAsignacion.setVisible(true);
         lista();
-        ventanaAsignacion.getTxtCedula().setEnabled(false);
-        ventanaAsignacion.getComboPerfil().setEnabled(false);
+        
         ventanaAsignacion.getBtnModificar().setEnabled(false);
         ventanaAsignacion.getBtnEliminar().setEnabled(false);
-        ventanaAsignacion.getBtnGuardar().setEnabled(false);
+           
         ventanaAsignacion.getBtnGuardar().addActionListener(e -> guardar());
-        ventanaAsignacion.getBtnNuevo().addActionListener(e -> nuevo());
         ventanaAsignacion.getBtnModificar().addActionListener(e -> modificar());
+        ventanaAsignacion.getBtnEliminar().addActionListener(e -> eliminar());
+        
         ventanaAsignacion.getPanel().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -184,10 +184,18 @@ public class ControladorAsignacion {
         Object[] fila = new Object[3];
         
         listaAsignados = baseDatosAsignacion.mostrarDatos();
+        listaPersonas = baseDatosPersona.mostrardatos();
         for (ModeloAsignacion user : listaAsignados) {
             
             fila[0] = user.getId();
-            fila[1] = user.getCodigoPersona();
+            
+            for (PersonaMD person : listaPersonas){
+                if (person.getCedula().equals(user.getCodigoPersona())){
+                    fila[1] = person.getNombres() + " " + person.getApellidos();
+                }
+            }
+            
+            
             
             for (PerfilMD perfil : listaPerfiles){
                 if (perfil.getCodigo() == user.getPerfil()){
@@ -204,8 +212,8 @@ public class ControladorAsignacion {
     
     public void seleccionar(){
         ventanaAsignacion.getBtnModificar().setEnabled(true);
-        ventanaAsignacion.getBtnEliminar().setEnabled(true);
         ventanaAsignacion.getBtnGuardar().setEnabled(false);
+        ventanaAsignacion.getBtnEliminar().setEnabled(true);
         
         int seleccionado = ventanaAsignacion.getTablaAsignacion().getSelectedRow();
         ventanaAsignacion.getTxtCedula().setText(listaAsignados.get(seleccionado).getCodigoPersona());
@@ -237,13 +245,10 @@ public class ControladorAsignacion {
     }
     
     public void nuevo(){
-        ventanaAsignacion.getBtnModificar().setEnabled(false);
-        ventanaAsignacion.getBtnEliminar().setEnabled(false);
-        ventanaAsignacion.getBtnGuardar().setEnabled(true);
-        ventanaAsignacion.getTxtCedula().setEnabled(true);
-        ventanaAsignacion.getComboPerfil().setEnabled(true);
         ventanaAsignacion.getTxtCedula().setText("");
         ventanaAsignacion.getComboPerfil().setSelectedIndex(0);
+        ventanaAsignacion.getBtnModificar().setEnabled(false);
+        ventanaAsignacion.getBtnGuardar().setEnabled(true);
         ventanaAsignacion.getLblNombre().setText("");
         
         ventanaAsignacion.getTablaAsignacion().setCellSelectionEnabled(false);
@@ -257,6 +262,12 @@ public class ControladorAsignacion {
                 ventanaAsignacion.getLblNombre().setText(person.getNombres() + " " + person.getApellidos());
             }
         }
+    }
+    
+    public void eliminar(){
+        int select = ventanaAsignacion.getTablaAsignacion().getSelectedRow();
+        baseDatosAsignacion.eliminar(listaAsignados.get(select).getId());
+        lista();
     }
 
 }

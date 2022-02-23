@@ -57,7 +57,7 @@ public class BaseDatosAsignacion {
     }
     
     public void eliminar(int codigo){
-        String sql = "delete from asignacion where codigo = '" + codigo + "';";
+        String sql = "delete from asignacion where id = '" + codigo + "';";
         
         conn.noQuery(sql);
     }

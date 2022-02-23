@@ -191,7 +191,6 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         comborol = new javax.swing.JComboBox<>();
         jSeparator11 = new javax.swing.JSeparator();
         lblnombre = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         btncedula = new javax.swing.JButton();
         lblmensaje = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -336,9 +335,6 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
         lblnombre.setForeground(new java.awt.Color(0, 0, 204));
         getContentPane().add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 230, 20));
 
-        jLabel10.setText("Nombre");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 70, 30));
-
         btncedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
         btncedula.setBorder(null);
         btncedula.setBorderPainted(false);
@@ -387,7 +383,6 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> comboestado;
     private javax.swing.JComboBox<String> comborol;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

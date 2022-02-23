@@ -80,12 +80,13 @@ public class cont_usuario {
         for (int i = 0; i < lista.size(); i++) {
             
             if (vista.getTxtcedula().getText().equals(lista.get(i).getCedula())) {
-                vista.getLblmensaje().setVisible(false);
+                
                 cedcorrect();
                 vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
-                
+                vista.getTxtcedula().setEditable(false);
+                n=2;               
             }else{
-                vista.getLblmensaje().setVisible(true);
+                
             }
            
         }
@@ -100,7 +101,12 @@ public class cont_usuario {
                         }
         
         switch(n){
+            case 0: vista.getLblmensaje().setVisible(true);
+                break;
             case 1: JOptionPane.showMessageDialog(null, "*Usuario ya existente");
+                break;
+            case 2: vista.getLblmensaje().setVisible(false);
+                break;
         }
         
         
@@ -108,8 +114,8 @@ public class cont_usuario {
     }
     public void cedexistente(){
         
+        
         vista.getTxtcedula().setEditable(true);
-        vista.getTxtcedula().setEditable(false);
         vista.getTxtUsuario().setEditable(false);
         vista.getTxtcontra().setEditable(false);
         vista.getLblmensaje().setVisible(false);
@@ -132,6 +138,7 @@ public class cont_usuario {
     
     
     public void nuevo(){
+        
         vista.getBtnguardar().setEnabled(true);
         vista.getBtnmodificar().setEnabled(false);
         vista.getTxtcedula().setEditable(true);
@@ -141,6 +148,7 @@ public class cont_usuario {
         vista.getLblmensaje().setVisible(true);
         vista.getLblnombre().setText("");
         vista.getComboestado().setSelectedIndex(0);
+        cedexistente();
         
         
     }

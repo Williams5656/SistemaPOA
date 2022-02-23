@@ -110,7 +110,7 @@ public class CarreraBD extends CarreraMD {
 
         String nsql = "UPDATE carrera SET \n"
                 + "  nombre = '" + getNombre_carrera() + "',fecha_inicio ='" + getFecha_inicio() + "',modalidad ='" + getModalidad() + "',coordinador ='" + getCoordinador()+ "'\n"
-                + "WHERE \"codigo_carrera\"='" + codigo_carrera + "'";
+                + "WHERE \"codigo\"='" + codigo_carrera + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {

@@ -84,6 +84,8 @@ public class cont_usuario {
                 cedcorrect();
                 vista.getLblnombre().setText(lista.get(i).getNombres()+" "+lista.get(i).getApellidos());
                 
+            }else{
+                vista.getLblmensaje().setVisible(true);
             }
            
         }

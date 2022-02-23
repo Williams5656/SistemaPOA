@@ -271,7 +271,7 @@ public class Vis_Carrera extends javax.swing.JInternalFrame {
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 700, 270));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel5.setText("Lista Persona");
+        jLabel5.setText("Lista Carrera");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N

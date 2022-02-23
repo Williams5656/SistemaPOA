@@ -218,13 +218,13 @@ public class Vis_Usuario extends javax.swing.JInternalFrame {
 
         tableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cedula", "Usuario", "Contraseña", "Estado"
+                "Cedula", "Usuario", "Contraseña", "Rol", "Estado"
             }
         ));
         jScrollPane1.setViewportView(tableUsuario);

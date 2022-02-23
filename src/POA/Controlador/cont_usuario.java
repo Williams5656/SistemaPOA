@@ -163,6 +163,7 @@ public class cont_usuario {
          List<RolMD> listar = bdrol.mostrardatos();
          int idrol = vista.getComborol().getSelectedIndex();
          int nrol = listar.get(idrol).getId_rol();
+         bdusuario.setRol(nrol);
          System.out.println(nrol);
         if (vista.getTxtcedula().getText().equals("")||vista.getTxtUsuario().getText().equals("")||vista.getTxtcontra().getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
@@ -222,6 +223,10 @@ public class cont_usuario {
     public void modificar() {
         bdusuario.setCedula(vista.getTxtcedula().getText());
         bdusuario.setNombreUsuario(vista.getTxtUsuario().getText());
+         List<RolMD> listar = bdrol.mostrardatos();
+         int idrol = vista.getComborol().getSelectedIndex();
+         int nrol = listar.get(idrol).getId_rol();
+         bdusuario.setRol(nrol);
         bdusuario.setContrasenia((vista.getTxtcontra().getText()));
         
         int resp2 = JOptionPane.showConfirmDialog(null, "Confirme si esta seguro modificar");
@@ -245,17 +250,23 @@ public class cont_usuario {
         modelo = (DefaultTableModel) vista.getTableUsuario().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTableUsuario().getSelectedRow(), 0);
         System.out.println(cedula);
+        List<RolMD> listar = bdrol.mostrardatos();
         List<UsuarioMD> lista = bdusuario.obtenerDatos(cedula);
         bdusuario.setCedula(lista.get(0).getCedula());
         bdusuario.setNombreUsuario(lista.get(0).getNombreUsuario());
         bdusuario.setContrasenia(lista.get(0).getContrasenia());
+        bdusuario.setRol(lista.get(0).getRol());
         bdusuario.setEstado(lista.get(0).getEstado());
         
         
         vista.getTxtcedula().setText(bdusuario.getCedula());
         vista.getTxtUsuario().setText(bdusuario.getNombreUsuario());
-        vista.getTxtcontra().setText(bdusuario.getContrasenia());     
+        vista.getTxtcontra().setText(bdusuario.getContrasenia());  
+        int idrol = lista.get(0).getRol();
+            String nrol = listar.get(idrol).getNombre_rol();
+         vista.getComborol().setSelectedItem(nrol);
         vista.getComboestado().setSelectedItem(bdusuario.getEstado());
+        
         
         vista.getTxtcedula().setEditable(false);
         vista.getTxtcedula().setEditable(true);
@@ -268,6 +279,7 @@ public class cont_usuario {
     
     public void lista(){
         DefaultTableModel modelo;
+         List<RolMD> listar = bdrol.mostrardatos();
         modelo = (DefaultTableModel) vista.getTableUsuario().getModel();
         List<UsuarioMD> lista = bdusuario.mostrardatos();
         int columnas = modelo.getColumnCount();
@@ -279,7 +291,10 @@ public class cont_usuario {
             vista.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 0);
             vista.getTableUsuario().setValueAt(lista.get(i).getNombreUsuario(), i, 1);
             vista.getTableUsuario().setValueAt(lista.get(i).getContrasenia(), i, 2);
-            vista.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 3);            
+            int idrol = lista.get(i).getRol();
+            String nrol = listar.get(idrol).getNombre_rol();
+            vista.getTableUsuario().setValueAt(nrol, i, 3);
+            vista.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 4);            
             
         }
     }

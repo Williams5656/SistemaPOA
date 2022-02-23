@@ -37,9 +37,11 @@ import org.postgresql.util.Base64;
 public class UsuarioBD extends UsuarioMD {
     Conect conectar = new Conect();
 
-    public UsuarioBD(String cedula, String nombreUsuario, String contrasenia, String estado) {
-        super(cedula, nombreUsuario, contrasenia, estado);
+    public UsuarioBD(String cedula, String nombreUsuario, String contrasenia, int rol, String estado) {
+        super(cedula, nombreUsuario, contrasenia, rol, estado);
     }
+
+   
 
     public UsuarioBD() {
         
@@ -56,6 +58,7 @@ public class UsuarioBD extends UsuarioMD {
                 m.setCedula(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
+                m.setRol(rs.getInt("rol"));
                 m.setEstado(rs.getString("estado"));
                 
                 listaA.add(m);
@@ -71,7 +74,7 @@ public class UsuarioBD extends UsuarioMD {
 
   public boolean guardar() {
        
-        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia,estado)" + "VALUES ('" + getCedula()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getEstado()+ "')";
+        String nsql = "INSERT INTO usuario(cedula,usuario,contrasenia,rol,estado)" + "VALUES ('" + getCedula()+ "','" + getNombreUsuario()+ "','" + getContrasenia()+ "','" + getRol()+"','" + getEstado()+ "')";
 
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -86,7 +89,7 @@ public class UsuarioBD extends UsuarioMD {
    public boolean modificar(String cedula){
           //Transformo image a base64 encode para postgresl
         
-            String nsql= "update usuario set \"usuario\"='"+getNombreUsuario()+  "',\"contrasenia\"='"+getContrasenia()+ "'" 
+            String nsql= "update usuario set \"usuario\"='"+getNombreUsuario()+  "',\"contrasenia\"='"+getContrasenia()+ "',\"rol\"='"+getRol()+  "'" 
                     + " where \"cedula\"='"+cedula+"'";
             
             if(conectar.noQuery(nsql)==null){
@@ -112,6 +115,7 @@ public class UsuarioBD extends UsuarioMD {
                 m.setCedula(rs.getString("cedula"));
                 m.setNombreUsuario(rs.getString("usuario"));
                 m.setContrasenia(rs.getString("contrasenia"));
+                m.setRol(rs.getInt("rol"));
                 m.setEstado(rs.getString("estado"));
                 listaA.add(m);
             }

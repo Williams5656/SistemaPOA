@@ -12,14 +12,18 @@ public class UsuarioMD {
     private String cedula;
     private String nombreUsuario;
     private String contrasenia;
+    private int rol;
     private String estado;
 
-    public UsuarioMD(String cedula, String nombreUsuario, String contrasenia, String estado) {
+    public UsuarioMD(String cedula, String nombreUsuario, String contrasenia, int rol, String estado) {
         this.cedula = cedula;
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
+        this.rol = rol;
         this.estado = estado;
     }
+
+  
 
     
 
@@ -58,4 +62,16 @@ public class UsuarioMD {
     public void setEstado(String estado) {
         this.estado = estado;
     } 
+
+    public int getRol() {
+        return rol;
+    }
+
+    public void setRol(int rol) {
+        this.rol = rol;
+    }
+
+    
+    
+    
 }

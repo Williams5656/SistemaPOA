@@ -5,11 +5,13 @@ import POA.Vista.*;
 import POA.Modelo.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,12 +58,23 @@ public class ControladorAsignacion {
         
         });
         
+        listaPersonas = baseDatosPersona.mostrardatos();
         ventanaAsignacion.getTxtCedula().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
-                mostrarNombrePersona();
+                
+                for (PersonaMD person : listaPersonas) {
+                    if (person.getCedula().equals(ventanaAsignacion.getTxtCedula().getText())) {
+                        ventanaAsignacion.getLblNombre().setText(person.getNombres() + " " + person.getApellidos());
+                    }
+                    
+                }
+                
+                if (ventanaAsignacion.getTxtCedula().getText().equals(""))
+                    ventanaAsignacion.getLblNombre().setText("");
+                
             }
-            
+
         });
 
     }
@@ -198,6 +211,16 @@ public class ControladorAsignacion {
                 ventanaAsignacion.getComboPerfil().setSelectedItem(perfil.getNombre());
             }
         }
+        
+        listaPersonas = baseDatosPersona.mostrardatos();
+        for (PersonaMD person : listaPersonas) {
+                    if (person.getCedula().equals(ventanaAsignacion.getTxtCedula().getText())) {
+                        ventanaAsignacion.getLblNombre().setText(person.getNombres() + " " + person.getApellidos());
+                    }
+        }
+        
+        
+        
     }
     
     public void cargarComboPerfil(){
@@ -214,11 +237,14 @@ public class ControladorAsignacion {
         ventanaAsignacion.getComboPerfil().setSelectedIndex(0);
         ventanaAsignacion.getBtnModificar().setEnabled(false);
         ventanaAsignacion.getBtnGuardar().setEnabled(true);
+        ventanaAsignacion.getLblNombre().setText("");
         
         ventanaAsignacion.getTablaAsignacion().setCellSelectionEnabled(false);
     }
     
     public void mostrarNombrePersona(){
+        ventanaAsignacion.getLblNombre().setText("ajksdgk");
+        ventanaAsignacion.getComboPerfil().setSelectedIndex(1);
         for (PersonaMD person : listaPersonas){
             if (person.getCedula().equals(ventanaAsignacion.getTxtCedula().getText())){
                 ventanaAsignacion.getLblNombre().setText(person.getNombres() + " " + person.getApellidos());

@@ -178,7 +178,7 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
 
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        panel.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 210, 20));
+        panel.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 420, 20));
 
         btnImprimir.setText("IMPRIMIR");
         panel.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 120, 40));

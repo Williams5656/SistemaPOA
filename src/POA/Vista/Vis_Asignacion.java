@@ -158,11 +158,13 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
+        btnEliminar.setToolTipText("Eliminar");
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
         panel.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
+        btnModificar.setToolTipText("Modificar");
         btnModificar.setBorderPainted(false);
         btnModificar.setContentAreaFilled(false);
         panel.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
@@ -180,11 +182,13 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         panel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 670, 170));
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
+        btnGuardar.setToolTipText("Guardar");
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
         panel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
+        btnNuevo.setToolTipText("Nuevo");
         btnNuevo.setBorderPainted(false);
         btnNuevo.setContentAreaFilled(false);
         panel.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 40));
@@ -194,11 +198,13 @@ public class Vis_Asignacion extends javax.swing.JInternalFrame {
         panel.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 390, 20));
 
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
+        btnImprimir.setToolTipText("Imprimir");
         btnImprimir.setBorderPainted(false);
         btnImprimir.setContentAreaFilled(false);
         panel.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 60, 40));
 
         btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btn_buscar.setToolTipText("Buscar");
         btn_buscar.setBorderPainted(false);
         btn_buscar.setContentAreaFilled(false);
         panel.add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, -1, -1));

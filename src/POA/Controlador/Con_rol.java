@@ -68,7 +68,7 @@ public class Con_rol {
             }
         });
         vista.getBtn_ver_permiso().addActionListener(l -> permisos());
-        vista.getBtn_editar_permiso().addActionListener(l-> verPermiso());
+        vista.getBtn_editar_permiso().addActionListener(l -> verPermiso());
         vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
     }
@@ -78,7 +78,7 @@ public class Con_rol {
         vista.getBtn_eliminar().setEnabled(false);
         vista.getBtn_ver_permiso().setEnabled(false);
         vista.getBtn_editar_permiso().setEnabled(false);
-        
+
     }
 
     private void cargarDialogo(int origen) throws SQLException {
@@ -124,25 +124,36 @@ public class Con_rol {
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         cargarTabla();
-        Con_permisos rol=new Con_permisos(user);
-        
+        Con_permisos rol = new Con_permisos(user);
+
     }
-    
+
+    public void cargarChecks() {
+        permisosBD bdP = new permisosBD();
+        int fila1 = vista.getTabla_rol().getSelectedRow();
+        List<Permisos> lista = bdP.cargarCheck(Integer.parseInt(vista.getTabla_rol().getValueAt(fila1,1).toString()));
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i).isEstado());
+            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).isEstado(), i,2);
+        }
+    }
+
     public void cargarTabla() {
         DefaultTableModel model = new DefaultTableModel();
         model = (DefaultTableModel) vista.getTabla_rol().getModel();
         model.addColumn("id");
         model.addColumn("id_Rol");
-        model.addColumn("Nombre_Permiso");        
-       //Con_permisos.vista.getTablapermisos().setModel(model);
-       cargarRol();
+        model.addColumn("Nombre_Permiso");
+        //Con_permisos.vista.getTablapermisos().setModel(model);
+        cargarRol();
     }
-    
-    public void cargarRol(){
+
+    public void cargarRol() {
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTabla_rol().getModel();
         permisosBD bdPermisos = new permisosBD();
         int fila = vista.getTabla_rol().getSelectedRow();
+        
         int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 1).toString());
         List<Permisos> lista = bdPermisos.obtenerDatos(idrol);
         int columnas = modelo.getColumnCount();
@@ -156,20 +167,20 @@ public class Con_rol {
             Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getNombre_permiso(), i, 2);
         }
     }
-    
+
     public void permisos() {
         Vis_Permisos user = new Vis_Permisos();
         Con_principal.vista.getESCRITORIO().add(user);
         Dimension desktopSize = Con_principal.vista.getESCRITORIO().getSize();
         Dimension FrameSize = user.getSize();
         user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        Con_permisos rol=new Con_permisos(user);
+        Con_permisos rol = new Con_permisos(user);
+        cargarChecks();
         int fila = vista.getTabla_rol().getSelectedRow();
-        int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila,1).toString());
-        rol.vista.getTxtidRol().setText(""+idrol);
-        System.out.println(idrol+"sad");
+        int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 1).toString());
+        Con_permisos.vista.getTxtidRol().setText("" + idrol);
+        System.out.println(idrol + "sad");
     }
-    
 
     public void DefinirMetodo(int n) throws SQLException {
         if (n == 1) {//ingresar
@@ -220,7 +231,7 @@ public class Con_rol {
         }
     }
 
-    public void seleccionar() {        
+    public void seleccionar() {
         vista.getBtn_eliminar().setEnabled(true);
         vista.getBtn_editar().setEnabled(true);
         vista.getBtn_ver_permiso().setEnabled(true);

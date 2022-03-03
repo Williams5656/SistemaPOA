@@ -121,6 +121,7 @@ public class cont_usuario {
         vista.getLblmensaje().setVisible(false);
         vista.getLblnombre().setText("");
         vista.getComboestado().setEnabled(false);
+        vista.getComborol().setEnabled(false);
         
         
     }
@@ -132,7 +133,7 @@ public class cont_usuario {
         vista.getTxtcontra().setEditable(true);
         vista.getLblmensaje().setVisible(false);
         vista.getComboestado().setEnabled(true);
-        
+        vista.getComborol().setEnabled(true);
         
     }
     
@@ -148,6 +149,7 @@ public class cont_usuario {
         vista.getLblmensaje().setVisible(true);
         vista.getLblnombre().setText("");
         vista.getComboestado().setSelectedIndex(0);
+        vista.getComborol().setSelectedIndex(0);
         cedexistente();
         
         

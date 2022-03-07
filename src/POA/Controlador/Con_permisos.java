@@ -4,9 +4,11 @@
  */
 package POA.Controlador;
 
+import static POA.Controlador.Con_rol.vista;
 import POA.Modelo.Permisos;
 import POA.Modelo.permisosBD;
 import POA.Vista.Vis_Permisos;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -113,7 +115,7 @@ public class Con_permisos {
             }
             bdPermisos.setEstado(estado);
             bdPermisos.Modificar(idrol, id);
-
+           
         }
         JOptionPane.showMessageDialog(null, "Editado correctamente");
     }
@@ -136,7 +138,9 @@ public class Con_permisos {
             bdPermisos.setEstado(estado);
             bdPermisos.setId_rol(idrol);
             bdPermisos.insertar();
+            
         }
         JOptionPane.showMessageDialog(null, "Guardado correctamente");
     }
+    
 }

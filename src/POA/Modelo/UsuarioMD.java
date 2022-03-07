@@ -21,11 +21,7 @@ public class UsuarioMD {
         this.contrasenia = contrasenia;
         this.rol = rol;
         this.estado = estado;
-    }
-
-  
-
-    
+    } 
 
     public UsuarioMD() {
     }

@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Con_rol {
 
-    private final Vis_Roles vista;
+    public static Vis_Roles vista;
     RolBD bdrol = new RolBD();
     int fila = -1;
     int n;
@@ -71,6 +71,10 @@ public class Con_rol {
         vista.getBtn_editar_permiso().addActionListener(l -> verPermiso());
         vista.getBtn_cancelar().addActionListener(l -> vista.getVista_NuevoRol().dispose());
         lista();
+    }
+
+    Con_rol() {
+
     }
 
     public void activarbotones() {
@@ -128,13 +132,62 @@ public class Con_rol {
 
     }
 
-    public void cargarChecks() {
+    public static void cargarChecks() {
+        System.out.println("Amor");
+        int fila1 = 0;
         permisosBD bdP = new permisosBD();
-        int fila1 = vista.getTabla_rol().getSelectedRow();
-        List<Permisos> lista = bdP.cargarCheck(Integer.parseInt(vista.getTabla_rol().getValueAt(fila1,1).toString()));
+        if (vista.getTabla_rol().getRowCount() ==0) {
+            System.out.println("no hay datso");
+        }else{
+            fila1 = vista.getTabla_rol().getSelectedRow();
+        }
+        List<Permisos> lista = bdP.cargarCheck(Integer.parseInt(vista.getTabla_rol().getValueAt(fila1, 1).toString()));
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).isEstado());
-            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).isEstado(), i,2);
+            Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).isEstado(), i, 2);
+            //Activar Botones
+           /* if (i == 0) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_asignacion().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_asignacion().setEnabled(false);
+                }
+            }
+            if (i == 1) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_perfil().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_perfil().setEnabled(false);
+                }
+            }
+            if (i == 2) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_usuario().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_usuario().setEnabled(false);
+                }
+            }
+            if (i == 3) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_persona().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_persona().setEnabled(false);
+                }
+            }
+            if (i == 4) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_roles().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_roles().setEnabled(false);
+                }
+            }
+            if (i == 5) {
+                if (lista.get(i).isEstado() == true) {
+                    Con_principal.vista.getBtn_carrera().setEnabled(true);
+                } else {
+                    Con_principal.vista.getBtn_carrera().setEnabled(false);
+                }
+            }*/
         }
     }
 
@@ -153,7 +206,7 @@ public class Con_rol {
         modelo = (DefaultTableModel) vista.getTabla_rol().getModel();
         permisosBD bdPermisos = new permisosBD();
         int fila = vista.getTabla_rol().getSelectedRow();
-        
+
         int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 1).toString());
         List<Permisos> lista = bdPermisos.obtenerDatos(idrol);
         int columnas = modelo.getColumnCount();
@@ -193,7 +246,6 @@ public class Con_rol {
     }
 
     public void modificar() {
-
         bdrol.setId_rol(Integer.parseInt(vista.getTxt_id().getText()));
         bdrol.setNumero_rol(Integer.parseInt(vista.getTxt_numero().getText()));
         bdrol.setNombre_rol(vista.getTxt_nombrerol().getText());

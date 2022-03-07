@@ -29,6 +29,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
 /**
  *
@@ -155,6 +156,18 @@ public class UsuarioBD extends UsuarioMD {
         }
 
     }
-
+    public int rol(String usuario, String contra) throws SQLException{
+        System.out.println("tengo suezzzzzz");
+        String sql = "select rol from usuario where usuario = '"+usuario+"' and contrasenia= '"+contra+"'";
+        ResultSet rs = conectar.query(sql);      
+        if (rs.next()) {
+            return rs.getInt("rol");          
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR USUARIO NO REGISTRADO", "", 2);
+        }
+        rs.close();
+        return 0;
+    }
+    
   
 }

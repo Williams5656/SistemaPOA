@@ -157,7 +157,6 @@ public class UsuarioBD extends UsuarioMD {
 
     }
     public int rol(String usuario, String contra) throws SQLException{
-        System.out.println("tengo suezzzzzz");
         String sql = "select rol from usuario where usuario = '"+usuario+"' and contrasenia= '"+contra+"'";
         ResultSet rs = conectar.query(sql);      
         if (rs.next()) {

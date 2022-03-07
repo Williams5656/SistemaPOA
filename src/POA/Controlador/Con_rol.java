@@ -133,7 +133,6 @@ public class Con_rol {
     }
 
     public static void cargarChecks() {
-        System.out.println("Amor");
         int fila1 = 0;
         permisosBD bdP = new permisosBD();
         if (vista.getTabla_rol().getRowCount() ==0) {
@@ -145,49 +144,6 @@ public class Con_rol {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).isEstado());
             Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).isEstado(), i, 2);
-            //Activar Botones
-           /* if (i == 0) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_asignacion().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_asignacion().setEnabled(false);
-                }
-            }
-            if (i == 1) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_perfil().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_perfil().setEnabled(false);
-                }
-            }
-            if (i == 2) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_usuario().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_usuario().setEnabled(false);
-                }
-            }
-            if (i == 3) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_persona().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_persona().setEnabled(false);
-                }
-            }
-            if (i == 4) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_roles().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_roles().setEnabled(false);
-                }
-            }
-            if (i == 5) {
-                if (lista.get(i).isEstado() == true) {
-                    Con_principal.vista.getBtn_carrera().setEnabled(true);
-                } else {
-                    Con_principal.vista.getBtn_carrera().setEnabled(false);
-                }
-            }*/
         }
     }
 
@@ -197,7 +153,6 @@ public class Con_rol {
         model.addColumn("id");
         model.addColumn("id_Rol");
         model.addColumn("Nombre_Permiso");
-        //Con_permisos.vista.getTablapermisos().setModel(model);
         cargarRol();
     }
 
@@ -210,9 +165,7 @@ public class Con_rol {
         int idrol = Integer.parseInt(vista.getTabla_rol().getValueAt(fila, 1).toString());
         List<Permisos> lista = bdPermisos.obtenerDatos(idrol);
         int columnas = modelo.getColumnCount();
-//        for (int j = vista.getTabla_rol().getRowCount() - 1; j >= 0; j--) {
-//            modelo.removeRow(j);
-//        }
+
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
             Con_permisos.vista.getTablapermisos().setValueAt(lista.get(i).getId(), i, 0);

@@ -30,7 +30,6 @@ public class vis_poa extends javax.swing.JInternalFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnGenerar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
@@ -72,11 +71,6 @@ public class vis_poa extends javax.swing.JInternalFrame {
 
         jLabel2.setText("AÑO:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
-
-        btnGenerar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/guardar.png"))); // NOI18N
-        btnGenerar.setBorderPainted(false);
-        btnGenerar.setContentAreaFilled(false);
-        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,6 +150,7 @@ public class vis_poa extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 270, 50));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("CARRERA:");
@@ -175,6 +170,7 @@ public class vis_poa extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 270, -1));
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 510, 250));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -211,7 +207,6 @@ public class vis_poa extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnAñadir;
-    private javax.swing.JButton btnGenerar;
     private javax.swing.JToggleButton btnNuevo;
     private javax.swing.JToggleButton btnSiguiente;
     private javax.swing.JButton jButton1;

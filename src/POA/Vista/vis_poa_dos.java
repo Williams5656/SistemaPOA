@@ -6,6 +6,11 @@
 package POA.Vista;
 
 import POA.Modelo.Validadores.Fondos;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -19,6 +24,126 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
     public vis_poa_dos() {
         initComponents();
         setImage("/POA/Vista/img/instituto.jpg");
+    }
+
+    public JToggleButton getBtnAñadir() {
+        return btnAñadir;
+    }
+
+    public void setBtnAñadir(JToggleButton btnAñadir) {
+        this.btnAñadir = btnAñadir;
+    }
+
+    public JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(JButton btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
+    public JButton getBtnImprimir() {
+        return btnImprimir;
+    }
+
+    public void setBtnImprimir(JButton btnImprimir) {
+        this.btnImprimir = btnImprimir;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public void setBtnModificar(JButton btnModificar) {
+        this.btnModificar = btnModificar;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public void setBtnNuevo(JButton btnNuevo) {
+        this.btnNuevo = btnNuevo;
+    }
+
+    public JComboBox<String> getCbx_actividad() {
+        return cbx_actividad;
+    }
+
+    public void setCbx_actividad(JComboBox<String> cbx_actividad) {
+        this.cbx_actividad = cbx_actividad;
+    }
+
+    public JComboBox<String> getCbx_anio() {
+        return cbx_anio;
+    }
+
+    public void setCbx_anio(JComboBox<String> cbx_anio) {
+        this.cbx_anio = cbx_anio;
+    }
+
+    public JComboBox<String> getCbx_carrera() {
+        return cbx_carrera;
+    }
+
+    public void setCbx_carrera(JComboBox<String> cbx_carrera) {
+        this.cbx_carrera = cbx_carrera;
+    }
+
+    public JComboBox<String> getCbx_obje_opera() {
+        return cbx_obje_opera;
+    }
+
+    public void setCbx_obje_opera(JComboBox<String> cbx_obje_opera) {
+        this.cbx_obje_opera = cbx_obje_opera;
+    }
+
+    public JComboBox<String> getCbx_proyecto() {
+        return cbx_proyecto;
+    }
+
+    public void setCbx_proyecto(JComboBox<String> cbx_proyecto) {
+        this.cbx_proyecto = cbx_proyecto;
+    }
+
+    public JTable getTabla_Evidencias() {
+        return tabla_Evidencias;
+    }
+
+    public void setTabla_Evidencias(JTable tabla_Evidencias) {
+        this.tabla_Evidencias = tabla_Evidencias;
+    }
+
+    public JTextField getTxtArchivo() {
+        return txtArchivo;
+    }
+
+    public void setTxtArchivo(JTextField txtArchivo) {
+        this.txtArchivo = txtArchivo;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
     }
 
     /**
@@ -45,21 +170,21 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         btnGuardar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        tabla_Evidencias = new javax.swing.JTable();
+        txtArchivo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(1002, 537));
@@ -119,7 +244,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         jLabel8.setText("IMPRIMIR");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
 
-        tabla.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_Evidencias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -130,10 +255,10 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tabla);
+        jScrollPane1.setViewportView(tabla_Evidencias);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 480, 310));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 220, -1));
+        getContentPane().add(txtArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 220, -1));
 
         jLabel9.setText("OBJETIVO");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 60, -1));
@@ -141,30 +266,30 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         jLabel10.setText("OPERATIVO");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setContentAreaFilled(false);
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 40, -1));
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
+        btnNuevo.setBorderPainted(false);
+        btnNuevo.setContentAreaFilled(false);
+        getContentPane().add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 40, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 81, 50, 40));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/WhatsApp Image 2022-02-15 at 00.32.29.jpeg"))); // NOI18N
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 81, 50, 40));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 50, -1));
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/impresion.png"))); // NOI18N
+        btnImprimir.setBorderPainted(false);
+        btnImprimir.setContentAreaFilled(false);
+        getContentPane().add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 50, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 50, 40));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/modificar.png"))); // NOI18N
+        btnModificar.setBorderPainted(false);
+        btnModificar.setContentAreaFilled(false);
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 50, 40));
 
         jLabel11.setText("MODIFICAR");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
@@ -180,7 +305,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
 
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 400, 90));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 340, 20));
+        getContentPane().add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 340, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,17 +317,17 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnAñadir;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox<String> cbx_actividad;
     private javax.swing.JComboBox<String> cbx_anio;
     private javax.swing.JComboBox<String> cbx_carrera;
     private javax.swing.JComboBox<String> cbx_obje_opera;
     private javax.swing.JComboBox<String> cbx_proyecto;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -218,8 +343,8 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTable tabla;
+    private javax.swing.JTable tabla_Evidencias;
+    private javax.swing.JTextField txtArchivo;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

@@ -62,6 +62,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         jTextField2 = new javax.swing.JTextField();
 
         setClosable(true);
+        setPreferredSize(new java.awt.Dimension(1002, 537));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -131,7 +132,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         ));
         jScrollPane1.setViewportView(tabla);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(529, 174, -1, 347));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 480, 310));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 220, -1));
 
         jLabel9.setText("OBJETIVO");
@@ -143,7 +144,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/buscar (2).png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/nuevo.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -179,7 +180,7 @@ public class vis_poa_dos extends Fondos.fondo_internalframe {
 
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 400, 90));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 340, 20));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 340, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -20,13 +20,18 @@ public class Conect {
 //    String cadConexion="jdbc:postgresql://localhost:5432/sistema";
 //    String pgUser="postgres";
 //    String pgContra="1234";
+//    Connection con;
+//    Statement st;
+//    ResultSet rs;
+//    String cadConexion="jdbc:postgresql://ec2-44-199-52-133.compute-1.amazonaws.com:5432/dc3k5f62r653lp";
+//    String pgUser="znfnqjrnxvbgqe";
+//    String pgContra="f48f4656ce162f56bdc4ed25c0384bcff30056bece5403fd038aa4b60f84c75e";
     Connection con;
     Statement st;
     ResultSet rs;
-    String cadConexion="jdbc:postgresql://ec2-44-199-52-133.compute-1.amazonaws.com:5432/dc3k5f62r653lp";
-    String pgUser="znfnqjrnxvbgqe";
-    String pgContra="f48f4656ce162f56bdc4ed25c0384bcff30056bece5403fd038aa4b60f84c75e";
-    
+    String cadConexion="jdbc:postgresql://34.125.185.213/sistema";
+    String pgUser="postgres";
+    String pgContra="postgres"; 
     
      public Conect() {
         
@@ -80,5 +85,27 @@ public class Conect {
 
     public void setCon(Connection con) {
         this.con = con;
+    }
+    public void cierraConexion() {
+    try {
+        con.close();
+    }catch (SQLException ex) {
+            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
+    public void cierraConsultas() {
+    try {
+        if (rs != null) {
+            rs.close();
+        }
+        if (st != null) {
+            st.close();
+        }
+        if (con != null) {
+            con.close();
+        }
+    } catch (SQLException ex) {
+            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

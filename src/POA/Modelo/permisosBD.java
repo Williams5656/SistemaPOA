@@ -38,7 +38,7 @@ public class permisosBD extends Permisos {
 
     public boolean Modificar(int id_rol, int id) {
         String nsql = "update editar_permisos set \"estado\"='" + isEstado() + "'"
-                + " where \"id_rol\"='" + id_rol + "' and id =" + id;
+                + " where \"id_rol\"=" + id_rol + " and id =" + id;
 
         if (conectar.noQuery(nsql) == null) {
             return true;

@@ -94,6 +94,32 @@ public class Vis_Principal extends javax.swing.JFrame {
         return ESCRITORIO;
     }
 
+    public JMenuItem getBtn_actividades() {
+        return btn_actividades;
+    }
+
+    public void setBtn_actividades(JMenuItem btn_actividades) {
+        this.btn_actividades = btn_actividades;
+    }
+
+    public JMenuItem getBtn_evidencias() {
+        return btn_evidencias;
+    }
+
+    public void setBtn_evidencias(JMenuItem btn_evidencias) {
+        this.btn_evidencias = btn_evidencias;
+    }
+
+    public JMenuItem getBtn_poa() {
+        return btn_poa;
+    }
+
+    public void setBtn_poa(JMenuItem btn_poa) {
+        this.btn_poa = btn_poa;
+    }
+
+     
+     
     public void setESCRITORIO(JDesktopPane ESCRITORIO) {
         this.ESCRITORIO = ESCRITORIO;
     }
@@ -122,6 +148,10 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_roles = new javax.swing.JMenuItem();
         btn_carrera = new javax.swing.JMenuItem();
         btn_permisos = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        btn_poa = new javax.swing.JMenuItem();
+        btn_actividades = new javax.swing.JMenuItem();
+        btn_evidencias = new javax.swing.JMenuItem();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/POA/Vista/img/ISTA.jpg"))); // NOI18N
 
@@ -218,6 +248,19 @@ public class Vis_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(MENU_ACADEMICO);
 
+        jMenu1.setText("POA");
+
+        btn_poa.setText("INICIO");
+        jMenu1.add(btn_poa);
+
+        btn_actividades.setText("ACTIVIDADES");
+        jMenu1.add(btn_actividades);
+
+        btn_evidencias.setText("EVIDENCIAS");
+        jMenu1.add(btn_evidencias);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -267,16 +310,20 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane ESCRITORIO;
     private javax.swing.JMenu MENU_ACADEMICO;
     private javax.swing.JMenu MENU_USUARIO;
+    private javax.swing.JMenuItem btn_actividades;
     private javax.swing.JMenuItem btn_asignacion;
     private javax.swing.JMenuItem btn_carrera;
+    private javax.swing.JMenuItem btn_evidencias;
     private javax.swing.JMenuItem btn_perfil;
     private javax.swing.JMenuItem btn_permisos;
     private javax.swing.JMenuItem btn_persona;
+    private javax.swing.JMenuItem btn_poa;
     private javax.swing.JMenuItem btn_roles;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuItem btn_usuario;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

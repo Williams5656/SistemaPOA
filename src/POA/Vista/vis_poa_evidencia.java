@@ -16,12 +16,12 @@ import javax.swing.JToggleButton;
  *
  * @author MIGUEL
  */
-public class vis_poa_dos extends Fondos.fondo_internalframe {
+public class vis_poa_evidencia extends Fondos.fondo_internalframe {
 
     /**
      * Creates new form vis_poa_dos
      */
-    public vis_poa_dos() {
+    public vis_poa_evidencia() {
         initComponents();
         setImage("/POA/Vista/img/instituto.jpg");
     }

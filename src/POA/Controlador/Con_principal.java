@@ -14,6 +14,9 @@ import POA.Vista.Vis_Carrera;
 import POA.Vista.Vis_Usuario;
 import POA.Vista.vis_Persona;
 import POA.Vista.vis_inicioSesion;
+import POA.Vista.vis_poa;
+import POA.Vista.vis_poa_actividad;
+import POA.Vista.vis_poa_evidencia;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 
@@ -36,8 +39,10 @@ public class Con_principal {
         vista.getBtn_salir().addActionListener(e -> salir());
         vista.getBtn_usuario().addActionListener(e -> usuario());
         vista.getBtn_asignacion().addActionListener(e -> asignacion());
-         vista.getBtn_carrera().addActionListener(e -> carrera());
-
+        vista.getBtn_carrera().addActionListener(e -> carrera());
+        vista.getBtn_poa().addActionListener(e -> poa());
+        vista.getBtn_actividades().addActionListener(e -> actividad());
+         vista.getBtn_evidencias().addActionListener(e -> evidencia());
     }
 
     private void perfil() {
@@ -104,6 +109,33 @@ public class Con_principal {
         Dimension FrameSize = carrera.getSize();
         carrera.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
          con_carrera concarrera = new con_carrera(carrera);
+
+    }
+     
+     private void poa() {
+         vis_poa user = new vis_poa();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        //cont_usuario us = new cont_usuario(user);
+    }
+
+    private void actividad() {
+        vis_poa_actividad user = new vis_poa_actividad();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+       // ControladorAsignacion rol=new ControladorAsignacion(user);
+    }   
+     private void evidencia() {
+          vis_poa_evidencia user = new vis_poa_evidencia();
+        vista.getESCRITORIO().add(user);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = user.getSize();
+        user.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        //ControladorAsignacion rol=new ControladorAsignacion(user);
 
     }
 }

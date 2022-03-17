@@ -148,6 +148,7 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_roles = new javax.swing.JMenuItem();
         btn_carrera = new javax.swing.JMenuItem();
         btn_permisos = new javax.swing.JMenuItem();
+        btn_periodos = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         btn_poa = new javax.swing.JMenuItem();
         btn_actividades = new javax.swing.JMenuItem();
@@ -246,6 +247,14 @@ public class Vis_Principal extends javax.swing.JFrame {
         btn_permisos.setText("Permisos");
         MENU_ACADEMICO.add(btn_permisos);
 
+        btn_periodos.setText("Periodo_Academico");
+        btn_periodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_periodosActionPerformed(evt);
+            }
+        });
+        MENU_ACADEMICO.add(btn_periodos);
+
         jMenuBar1.add(MENU_ACADEMICO);
 
         jMenu1.setText("POA");
@@ -302,6 +311,10 @@ public class Vis_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_rolesActionPerformed
 
+    private void btn_periodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_periodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_periodosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,6 +328,7 @@ public class Vis_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btn_carrera;
     private javax.swing.JMenuItem btn_evidencias;
     private javax.swing.JMenuItem btn_perfil;
+    private javax.swing.JMenuItem btn_periodos;
     private javax.swing.JMenuItem btn_permisos;
     private javax.swing.JMenuItem btn_persona;
     private javax.swing.JMenuItem btn_poa;

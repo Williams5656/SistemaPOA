@@ -292,6 +292,7 @@ public class Con_rol {
         vista.getTxt_nombrerol().setText("");
         vista.getTxt_observaciones().setText("");
         activarbotones();
+        System.out.println("Funciona");
     }
 
 }

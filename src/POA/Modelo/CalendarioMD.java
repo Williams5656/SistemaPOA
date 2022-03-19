@@ -14,6 +14,9 @@ public class CalendarioMD {
     private int id_Periodo;
     private int id_TipoActividad;
 
+    public CalendarioMD() {
+    }
+
     public CalendarioMD(int id_Carrera, int id_Periodo, int id_Actividad) {
         this.id_Carrera = id_Carrera;
         this.id_Periodo = id_Periodo;

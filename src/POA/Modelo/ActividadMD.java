@@ -22,6 +22,9 @@ public class ActividadMD extends CalendarioMD{
         super(id_Carrera, id_Periodo, id_Actividad);
     }
 
+    public ActividadMD() {
+    }
+
     public ActividadMD(int id_TipoActividad, int id_Actividad, String Nombre_Actividad, String Responsables, String Descripcion, String Fecha_Inicio, String Fecha_Limite, int id_Carrera, int id_Periodo ) {
         super(id_Carrera, id_Periodo, id_Actividad);
         this.id_TipoActividad = id_TipoActividad;

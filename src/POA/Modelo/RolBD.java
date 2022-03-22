@@ -68,8 +68,8 @@ public class RolBD extends RolMD{
                 listar.add(r);
             }
             rs.close();
-            conectar.cierraConexion();
-            conectar.cierraConsultas();
+            //conectar.cierraConexion();
+            //conectar.cierraConsultas();
             return listar;
         }catch (Exception e) {
             Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);

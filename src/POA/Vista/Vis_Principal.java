@@ -124,6 +124,15 @@ public class Vis_Principal extends javax.swing.JFrame {
         this.ESCRITORIO = ESCRITORIO;
     }
 
+    public JMenuItem getBtn_periodos() {
+        return btn_periodos;
+    }
+
+    public void setBtn_periodos(JMenuItem btn_periodos) {
+        this.btn_periodos = btn_periodos;
+    }
+
+    
     
     /**
      * This method is called from within the constructor to initialize the form.

@@ -12,6 +12,7 @@ import POA.Vista.Vis_Principal;
 import POA.Vista.Vis_Roles;
 import POA.Vista.Vis_Carrera;
 import POA.Vista.Vis_Usuario;
+import POA.Vista.vis_PeriodoAcademico;
 import POA.Vista.vis_Persona;
 import POA.Vista.vis_inicioSesion;
 import POA.Vista.vis_poa;
@@ -43,8 +44,17 @@ public class Con_principal {
         vista.getBtn_poa().addActionListener(e -> poa());
         vista.getBtn_actividades().addActionListener(e -> actividad());
          vista.getBtn_evidencias().addActionListener(e -> evidencia());
+         vista.getBtn_periodos().addActionListener(e -> periodo());
     }
 
+    private void periodo(){
+        vis_PeriodoAcademico periodo = new vis_PeriodoAcademico();
+        vista.getESCRITORIO().add(periodo);
+        Dimension desktopSize = vista.getESCRITORIO().getSize();
+        Dimension FrameSize = periodo.getSize();
+        periodo.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        con_periodoAcademico peri = new con_periodoAcademico(periodo);
+    }
     private void perfil() {
         Vis_Perfil zap = new Vis_Perfil();
         vista.getESCRITORIO().add(zap);
